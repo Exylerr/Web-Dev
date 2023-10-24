@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title> PUP-ACE (APPLICATION FOR CHANGE OF ENROLLMENT FORM) </title>
-        <link rel="icon" type="image/icon" href="https://www.pup.edu.ph/about/images/PUPLogo.png?fbclid=IwAR3VWyHLJQuDB60t8MVweChvJVy4jSmZG3MPDtoI41tYlJfNd8BgyMho6yQ">
-        <style>
-            body {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/PUP_Mabini_Campus_-_gate_and_pylon_%28close-up%29_%28PUP%2C_Santa_Mesa%2C_Manila%29%282018-03-06%29.jpg');
-                background-size: 20in;
-                background-repeat: no-repeat;
-            }
-        </style>
-    </head>
-    </body>
-        <div class="rounded-panel"></div>
-            <a href="https://www.pup.edu.ph" target="_blank"><img src="https://www.pup.edu.ph/about/images/PUPLogo.png?fbclid=IwAR3VWyHLJQuDB60t8MVweChvJVy4jSmZG3MPDtoI41tYlJfNd8BgyMho6yQ" class = "puplogo" height="125" width="125"></a>
-            <p class="pup-ace"> <b>PUP-ACE</b> Enrollment Application </p>
-            <p class="sign-in"> <u>Sign In</u> </p>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> PUP-ACE (APPLICATION FOR CHANGE OF ENROLLMENT FORM) </title>
+    <link rel="icon" type="image/icon" href="https://www.pup.edu.ph/about/images/PUPLogo.png?fbclid=IwAR3VWyHLJQuDB60t8MVweChvJVy4jSmZG3MPDtoI41tYlJfNd8BgyMho6yQ">
+    <style>
+        body {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/PUP_Mabini_Campus_-_gate_and_pylon_%28close-up%29_%28PUP%2C_Santa_Mesa%2C_Manila%29%282018-03-06%29.jpg');
+            background-size: 20in;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="rounded-panel"></div>
+        <a href="https://www.pup.edu.ph" target="_blank"><img src="https://www.pup.edu.ph/about/images/PUPLogo.png?fbclid=IwAR3VWyHLJQuDB60t8MVweChvJVy4jSmZG3MPDtoI41tYlJfNd8BgyMho6yQ" class="puplogo" height="125" width="125"></a>
+        <p class="pup-ace"> <b>PUP-ACE</b> Enrollment Application </p>
+        <p class="sign-in"> <u>Sign In</u> </p>
 
-                <style>
-                    .rounded-panel {
-                    background-color: #f0f0f0;
-                    border: 1px solid #ccc;
-                    width: 1790px;
-                    height: 875px;
-                    margin-top: 45px;
-                    margin-left: 50px;
-                    border-radius: 100px;
-                    opacity: 75%;
-                    }
-                    .puplogo {
-                        position: absolute;
-                        top: 6%;
-                        right: 46%;
-                    }
-                    .pup-ace {
-                        font-family:'Tahoma';
-                        font-size: 32px;
-                        position: absolute;
-                        top: 18%;
-                        right: 37%;
-                    }
-                    .sign-in {
-                        font-family:'Tahoma';
-                        font-size: 18px;
-                        position: absolute;
-                        top: 24%;
-                        right: 47.8%;
-                    }
-        </style>
-    </body>
-<html>
+    <div class="login-form">
+        <form>
+            <input type="text" placeholder="STUDENT NUMBER" name="Studno" required><br>
+
+            <input type="password" placeholder="PASSWORD" name="psw" required><br>
+                
+            <button type="submit">SIGN IN</button>
+        </form>
+    </div>
+
+    <style>
+        .rounded-panel {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 100px;
+            width: 1790px;
+            height: 875px;
+            margin-top: 45px;
+            margin-left: 50px;
+            opacity: 75%;
+        }
+        .puplogo {
+            position: absolute;
+            top: 6%;
+            right: 46%;
+        }
+        .pup-ace {
+            font-family: 'Tahoma';
+            font-size: 32px;
+            position: absolute;
+            top: 18%;
+            right: 37%;
+        }
+        .sign-in {
+            font-family: 'Tahoma';
+            font-size: 18px;
+            position: absolute;
+            top: 24%;
+            right: 47.8%;
+        }
+        .login-form {
+            position: absolute;
+            top: 35%;
+            right: 50%;
+        }
+        input[type=text], input[type=password] {
+            border: 1px solid #ccc;
+            border-radius: 100px;
+            width: 210%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #800000;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            width: 210%;
+        }
+    </style>
+</body>
+</html>

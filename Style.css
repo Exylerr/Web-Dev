@@ -74,25 +74,27 @@ button {
 .banner{
     width: 100%;
     height: 100vh;
-    background-color:white;   
+    background-color:#ccc;   
 }
 .navbar {
-    background-color:#ccc;
+    background-color:white;
     width: 100%;
     margin: auto;
-    padding: 5px 0;
+    padding: 1px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #000;
 }
 
 .logo {
-    width: 110px;
+    width: 88px;
     cursor: pointer;
-    margin-right: -650px;
+    margin-right: -690px;
+    margin-left: 20px;
 }
-
-h2 {
+.custom-h1 {
+    font-size: 20px;
     margin: 0px;
 }
 .navbar ul li{
@@ -138,4 +140,75 @@ h2 {
     margin-right: -22px; 
     position:relative;
     top: 15px;
+}
+.right {
+    background-color:white;
+    width: 100%;
+    margin: auto;
+    padding: 1px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.right ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 50px;
+    position:relative;
+
+}
+.right ul li a{
+    text-decoration: none;
+    color:black;
+    transition:color 0.5s;
+}
+.right ul li:hover a {
+    color: #800000; 
+}
+.right ul li ::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background:#800000;
+    position: absolute;
+    left:10px;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.right ul li :hover::after{
+    width: 100%;
+}
+.custom-h2 {
+    font-size: 20px;
+    margin: 20px 10px 0px 10px;
+}
+
+.student-info {
+    text-align: center;
+}
+
+.custom-student-no {
+    font-size: 18px;
+    margin: 1px 1;
+    /* Customize the styles for STUDENT NO. */
+    color: #800000;
+    font-weight: bold;
+}
+
+.history{
+    width: 30px; 
+    height: 40px; 
+    cursor: pointer;
+    margin-right: -20px; 
+    position:relative;
+    top: 35px;
+}
+.rules{
+    width: 30px; 
+    height: 38px; 
+    cursor: pointer;
+    margin-right: -22px; 
+    position:relative;
+    top: 28px;
 }

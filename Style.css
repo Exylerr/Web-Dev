@@ -7,43 +7,43 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 100px;
-    width: 1790px;
-    height: 875px;
-    margin-top: 45px;
-    margin-left: 50px;
+    width: 1600px;
+    height: 800px;
+    margin-top: 70px;
+    margin-left: 155px;
     opacity: 90%;
 }
 .puplogo {
     position: absolute;
-    top: 8%;
+    top: 16%;
     right: 46%;
 }
 .pup-ace {
     font-family: 'Tahoma';
     font-size: 32px;
     position: absolute;
-    top: 20%;
+    top: 27%;
     right: 37%;
 }
 .sign-in {
     font-family: 'Tahoma';
     font-size: 18px;
     position: absolute;
-    top: 27%;
+    top: 35%;
     right: 47.8%;
+}
+.login-form {
+    position: absolute;
+    top: 40%;
+    right: 52.5%;
 }
 .terms {
     font-family: 'Tahoma';
     font-size: 18px;
     position: absolute;
     text-align: center;
-    top: 70%;
+    top: 65%;
     right: 35.8%;
-}
-.login-form {
-    position: absolute;
-    top: 34%;
-    right: 52.5%;
 }
 input[type=text], input[type=password] {
     font-family: 'Tahoma';

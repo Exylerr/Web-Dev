@@ -1,5 +1,7 @@
+/*log in page*/
+
 .page1-background {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/PUP_Mabini_Campus_-_gate_and_pylon_%28close-up%29_%28PUP%2C_Santa_Mesa%2C_Manila%29%282018-03-06%29.jpg');
+    background-image: url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
     background-size: 20in;
     background-repeat: no-repeat;
 }
@@ -66,27 +68,24 @@ button {
     border: none;
     cursor: pointer;
 }
-*{
+
+/*homepage*/
+
+.page2-background{
     margin: 0;
     padding: 0;
-    font-family: 'Tahoma';
-}
-.banner{
-    width: 100%;
-    height: 100vh;
-    background-color:#ccc;   
+    background-color:#ffffff;
 }
 .navbar {
-    background-color:white;
+    background-color:#ffffff;
     width: 100%;
     margin: auto;
     padding: 1px 0;
+    font-family: 'tahoma';
     display: flex;
-    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
 }
-
 .logo {
     width: 88px;
     cursor: pointer;
@@ -95,7 +94,6 @@ button {
 }
 .custom-h1 {
     font-size: 20px;
-    margin: 0px;
 }
 .navbar ul li{
     list-style: none;
@@ -106,7 +104,7 @@ button {
 }
 .navbar ul li a{
     text-decoration: none;
-    color:black;
+    color:#000000;
     transition:color 0.5s;
 }
 .navbar ul li:hover a {
@@ -141,13 +139,20 @@ button {
     position:relative;
     top: 15px;
 }
+
+
+
+
+
+
+
 .right {
-    background-color:white;
+    background-color:#ffffff;
     width: 100%;
     margin: auto;
     padding: 1px 0;
+    font-family: 'tahoma';
     display: flex;
-    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
 }
@@ -160,7 +165,7 @@ button {
 }
 .right ul li a{
     text-decoration: none;
-    color:black;
+    color:#000000;
     transition:color 0.5s;
 }
 .right ul li:hover a {

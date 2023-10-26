@@ -2,7 +2,7 @@
 
 .page1-background {
     background-image: url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
-    background-size: 20in;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .rounded-panel {
@@ -126,7 +126,6 @@ button {
 .date, .logout {
     width: 20px;
     height: 20px;
-    color: #ffffff;
 }
 
 

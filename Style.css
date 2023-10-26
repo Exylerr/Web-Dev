@@ -74,141 +74,61 @@ button {
 .page2-background{
     margin: 0;
     padding: 0;
-    background-color:#ccc;
-}
-.navbar {
-    background-color:#ffffff;
-    width: 100%;
-    font-family: 'tahoma';
-    display: flex;
+    background-color:#dbdada;
 }
 .logo {
-    width: 80px;
+    width: 100px;
+    margin: 0px;
     cursor: pointer;
-    margin-right: -690px;
     margin-left: 20px;
 }
 .title {
+    font-family: 'Tahoma';
     font-size: 20px;
-}
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position:relative;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color:#000000;
-    transition:color 0.5s;
-}
-.navbar ul li:hover a {
-    color: #800000; 
-}
-.navbar ul li ::after{
-    content: '';
-    height: 3px;
-    width: 0%;
-    background:#800000;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-.navbar ul li :hover::after{
-    width: 100%;
-}
-.calendar{
-    width: 22px; 
-    height: 22px; 
-    cursor: pointer;
-    margin-right: -20px; 
-    position:relative;
-    top: 5px;
-}
-.logout{
-    width: 30px; 
-    height: 38px; 
-    cursor: pointer;
-    margin-right: -22px; 
-    position:relative;
-    top: 15px;
-}
+    margin-left: 30px;
+    color: #ffffff;
 
-
-
-
-
-
-
-.right {
-    background-color:#ffffff;
-    width: 100%;
-    margin: auto;
-    padding: 1px 0;
-    font-family: 'tahoma';
+}
+.header, .logo, .navigation-bar {
+    margin: 0;
+    padding: 0;
+    background-color: #800000;
+}
+.header {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #000;
+    align-items: center;
 }
-.right ul li{
+.navigation-bar {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.navigation-bar ul {
+    position: -webkit-sticky;
+    position: sticky;
     list-style: none;
-    display: inline-block;
-    margin: 0 50px;
-    position:relative;
-
-}
-.right ul li a{
-    text-decoration: none;
-    color:#000000;
-    transition:color 0.5s;
-}
-.right ul li:hover a {
-    color: #800000; 
-}
-.right ul li ::after{
-    content: '';
-    height: 3px;
-    width: 0%;
-    background:#800000;
-    position: absolute;
-    left:10px;
-    bottom: -10px;
-    transition: 0.5s;
-}
-.right ul li :hover::after{
-    width: 100%;
-}
-.custom-h2 {
+    font-family: 'Tahoma';
     font-size: 20px;
-    margin: 20px 10px 0px 10px;
+    margin: 0;
+    padding: 0;
+}
+.navigation-bar li {
+    display: inline;
+    margin-right: 20px;
+}
+.navigation-bar a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.navigation-bar a:hover {
+    background-color: #111;
+}
+.date, .logout {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
 }
 
-.student-info {
-    text-align: center;
-}
 
-.custom-student-no {
-    font-size: 18px;
-    margin: 1px 1;
-    /* Customize the styles for STUDENT NO. */
-    color: #800000;
-    font-weight: bold;
-}
 
-.history{
-    width: 30px; 
-    height: 40px; 
-    cursor: pointer;
-    margin-right: -20px; 
-    position:relative;
-    top: 35px;
-}
-.rules{
-    width: 30px; 
-    height: 38px; 
-    cursor: pointer;
-    margin-right: -22px; 
-    position:relative;
-    top: 28px;
-}
+

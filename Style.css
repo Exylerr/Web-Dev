@@ -59,7 +59,7 @@ input[type=text], input[type=password] {
 }
 button {
     background-color: #800000;
-    color: white;
+    color: #ffffff;
     font-family: 'Tahoma';  
     border-radius: 100px;
     width: 250%;
@@ -74,25 +74,21 @@ button {
 .page2-background{
     margin: 0;
     padding: 0;
-    background-color:#ffffff;
+    background-color:#ccc;
 }
 .navbar {
     background-color:#ffffff;
     width: 100%;
-    margin: auto;
-    padding: 1px 0;
     font-family: 'tahoma';
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #000;
 }
 .logo {
-    width: 88px;
+    width: 80px;
     cursor: pointer;
     margin-right: -690px;
     margin-left: 20px;
 }
-.custom-h1 {
+.title {
     font-size: 20px;
 }
 .navbar ul li{

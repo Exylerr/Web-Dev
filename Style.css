@@ -139,3 +139,9 @@ button {
 }
 
 /*body*/
+.student-info{
+    font-family: 'Tahoma';
+    font-size: 18px;
+    position: absolute;
+    margin-left: 30px;
+}

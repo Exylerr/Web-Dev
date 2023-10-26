@@ -78,10 +78,10 @@ body {
     zoom: 100%;
     overflow: hidden;
 }
-.page2-background{
+.page2-background {
     margin: 0;
     padding: 0;
-    background-color:#dbdada;
+    background-color: #dbdada;
 }
 .logo {
     width: 100px;
@@ -94,7 +94,6 @@ body {
     font-size: 20px;
     margin-left: 30px;
     color: #ffffff;
-
 }
 .header, .logo, .navigation-bar {
     margin: 0;
@@ -104,6 +103,7 @@ body {
 .header {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #5c0303;
 }
 .navigation-bar {
     flex: 1;
@@ -126,15 +126,13 @@ body {
 .navigation-bar a {
     text-decoration: none;
     color: #ffffff;
+    transition: color 0.3s;
 }
-.navigation-bar a:hover {
-    background-color: #111;
+.navigation-bar a:hover, .navigation-bar li:hover {
+    color: #242627;
 }
 .date, .logout {
     width: 20px;
     height: 20px;
+    vertical-align: middle;
 }
-
-
-
-

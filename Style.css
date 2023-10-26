@@ -1,5 +1,4 @@
 /*log in page*/
-
 body {
     zoom: 100%;
     overflow: hidden;
@@ -9,6 +8,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/*inside log-in panel*/
 .rounded-panel {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
@@ -51,6 +52,8 @@ body {
     top: 65%;
     right: 35.8%;
 }
+
+/*inputting information when logging in*/
 input[type=text], input[type=password] {
     font-family: 'Tahoma';
     border: 1px solid #ccc;
@@ -74,15 +77,13 @@ button {
 }
 
 /*homepage*/
-body {
-    zoom: 100%;
-    overflow: hidden;
-}
 .page2-background {
     margin: 0;
     padding: 0;
     background-color: #dbdada;
 }
+
+/*header*/
 .logo {
     width: 100px;
     margin: 0px;
@@ -136,3 +137,5 @@ body {
     height: 20px;
     vertical-align: middle;
 }
+
+/*body*/

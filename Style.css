@@ -81,13 +81,13 @@ button {
 
 /*header*/
 .logo {
-    width: 100px;
+    width: 60px;
     margin-left: 40px;
 }
 .title {
     font-family: 'Tahoma';
-    font-size: 27px;
-    margin-left: 90px;
+    font-size: 23px;
+    margin-left: 80px;
     color: #ffffff;
 }
 .header, .navigation-bar {
@@ -110,8 +110,8 @@ button {
     position: sticky;
     list-style: none;
     font-family: 'Tahoma';
-    font-size: 20px;
-    margin: 0;
+    font-size: 15px;
+    margin-right: 20px;
     padding: 0;
 }
 .navigation-bar li {
@@ -130,14 +130,14 @@ button {
     pointer-events: none;
 }
 .date{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     vertical-align: middle;
     margin-right: 5px;
 }
 .settings {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
     margin-right: 60px;
 }

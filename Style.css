@@ -81,18 +81,16 @@ button {
 
 /*header*/
 .logo {
-    width: 100px;    
-    margin: 0px;
-    padding: 0px;
-    cursor: pointer;
+    width: 100px;
+    margin-left: 40px;
 }
 .title {
     font-family: 'Tahoma';
     font-size: 20px;
-    margin-left: 30px;
+    margin-left: 90px;
     color: #ffffff;
 }
-.header, .logo, .navigation-bar {
+.header, .navigation-bar {
     margin: 0;
     padding: 0;
     background-color: #800000;
@@ -151,5 +149,5 @@ button {
     color: #800000;
     position: absolute;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 180px;
 }

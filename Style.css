@@ -82,8 +82,8 @@ button {
 /*header*/
 .logo {
     width: 100px;    
-    margin: 20px;
-    padding: px;
+    margin: 0px;
+    padding: 0px;
     cursor: pointer;
 }
 .title {

@@ -101,14 +101,13 @@ button {
     border-bottom: 1px solid #5c0303;
 }
 .navigation-bar {
+    position: -webkit-sticky;
+    position: sticky;
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 .navigation-bar ul {
-    position: -webkit-sticky;
-    position: sticky;
-    list-style: none;
     font-family: 'Tahoma';
     font-size: 15px;
     margin-right: 20px;
@@ -122,9 +121,6 @@ button {
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s;
-}
-.navigation-bar a:hover, .navigation-bar li:hover {
-    color: #242627;
 }
 .no-hover {
     pointer-events: none;

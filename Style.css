@@ -128,6 +128,9 @@ button {
 .navigation-bar a:hover, .navigation-bar li:hover {
     color: #242627;
 }
+.no-hover {
+    pointer-events: none;
+}
 .date{
     width: 30px;
     height: 30px;

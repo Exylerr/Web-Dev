@@ -128,16 +128,24 @@ button {
 .navigation-bar a:hover, .navigation-bar li:hover {
     color: #242627;
 }
-.date, .logout {
-    width: 20px;
-    height: 20px;
+.date{
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
+    margin-right: 5px;
+}
+.settings {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 60px;
 }
 
 /*body*/
 .student-info{
     font-family: 'Tahoma';
     font-size: 18px;
+    color: #800000;
     position: absolute;
     margin-top: 20px;
     margin-left: 30px;

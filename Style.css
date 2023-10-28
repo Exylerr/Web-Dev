@@ -105,11 +105,10 @@ button {
     display: flex;
     justify-content: flex-end;
 }
-
 .navigation-bar ul {
     font-family: 'Tahoma';
     font-size: 15px;
-    margin-right: 25px;
+    margin-right: 20px;
     padding: 0;
 }
 .navigation-bar li {
@@ -121,9 +120,6 @@ button {
     color: #ffffff;
     transition: color 0.3s;
 }
-.navigation-bar a:hover {
-    background-color: #ddd;
-}
 .no-hover {
     pointer-events: none;
 }
@@ -132,7 +128,6 @@ button {
     height: 20px;
     vertical-align: middle;
     margin-right: 5px;
-    cursor: pointer;
 }
 .settings {
     width: 30px;
@@ -179,5 +174,7 @@ button {
     font-family: 'Tahoma';
     font-size: 18px;
     color: #800000;
-    font-weight: bold;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 180px;
 }

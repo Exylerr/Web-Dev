@@ -83,7 +83,6 @@ button {
     margin-left: 55px;
 }
 .title {
-    font-family: 'Tahoma';
     font-size: 20px;
     margin-left: 80px;
     color: #ffffff;
@@ -105,7 +104,6 @@ button {
     justify-content: flex-end;
 }
 .navigation-bar ul {
-    font-family: 'Tahoma';
     font-size: 15px;
     margin-right: 20px;
     padding: 0;
@@ -168,7 +166,6 @@ button {
 
 /*body*/
 .student-info {
-    font-family: 'Tahoma';
     font-size: 18px;
     color: #800000;
     position: absolute;

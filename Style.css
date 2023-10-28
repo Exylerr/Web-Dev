@@ -73,7 +73,8 @@ button {
 /*homepage*/
 .page2-background {
     margin: 0;
-    padding: 0;
+    padding: 0; 
+    background-position: center;
     background-color: #dbdada;
 }
 
@@ -185,3 +186,63 @@ button {
     margin-top: 20px;
     margin-left: 180px;
 }
+/*calendar*/
+.date-container {
+    font-family: 'Tahoma';
+    margin-right: -1000px;
+    float: right;
+}
+/*acad stat*/
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* 100% of the viewport height for vertical centering */
+    text-align: center; /* Center text horizontally */
+}
+.academic-status {
+    font-family: 'Tahoma';
+    color: #800000;
+    display: flex;            /* Display the elements in a row */
+    flex-wrap: wrap;          /* Allow them to wrap to the next line if needed */
+    justify-content: space-between; /* Space items evenly along the row */
+}
+
+.academic-status p {
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+}
+/*ACE Dropdown*/
+/* Style the dropdown container */
+#ACE {
+    padding: 1px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin: 1px 0;
+}
+/* Style the dropdown options */
+#ACE option {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    padding: 1px;
+}
+
+/* Style the label */
+label {
+    display: inline-block;
+    font-weight: bold;
+    color:#800000;
+    margin-bottom: 5px;
+}
+
+/* Style the displayed selection */
+#selected-ACE {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+

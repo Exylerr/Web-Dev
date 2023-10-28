@@ -37,7 +37,7 @@
     </div>
 
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const settingsIcon = document.getElementById("settingsIcon");
     const dropdownPanel = document.getElementById("dropdownPanel");
 
@@ -51,7 +51,7 @@
     });
 
     document.addEventListener("click", function (e) {
-        if (e.target !== settingsIcon && e.target !== dropdownPanel) {
+        if (e.target !== settingsIcon && e.target !== dropdownPanel && !dropdownPanel.contains(e.target)) {
             dropdownPanel.style.display = "none";
         }
     });

@@ -8,11 +8,7 @@
     align-items: center;
     height: 90vh;
 }
-
-/* Center all elements on the page */
 body {
-    text-align: center;
-    background-color: #f0f0f0;
     font-family: 'Tahoma';
     margin: 0;
     padding: 0;
@@ -33,10 +29,12 @@ body {
 .pup-ace {
     font-size: 32px;
     font-weight: bold;
+    text-align: center;
     margin-top: 10px;
 }
 .sign-in {
     font-size: 20px;
+    text-align: center;
     color: #555;
     margin-top: 10px;
 }
@@ -45,12 +43,13 @@ body {
 }
 .terms {
     font-size: 16px;
+    text-align: center;
     color: #888;
     margin-top: 20px;
 }
 
 /*inputting information when logging in*/
-input[type=text], input[type=password] {
+input[type=text], input[type=password] { 
     border: 1px solid #ccc;
     border-radius: 20px;
     width: 100%;

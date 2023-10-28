@@ -107,10 +107,11 @@ button {
     display: flex;
     justify-content: flex-end;
 }
+
 .navigation-bar ul {
     font-family: 'Tahoma';
     font-size: 15px;
-    margin-right: 20px;
+    margin-right: 25px;
     padding: 0;
 }
 .navigation-bar li {
@@ -122,6 +123,9 @@ button {
     color: #ffffff;
     transition: color 0.3s;
 }
+.navigation-bar a:hover {
+    background-color: #ddd;
+}
 .no-hover {
     pointer-events: none;
 }
@@ -130,11 +134,46 @@ button {
     height: 20px;
     vertical-align: middle;
     margin-right: 5px;
+    cursor: pointer;
 }
 .settings {
     width: 30px;
     height: 30px;
     vertical-align: middle;
+}
+/*drop down */
+.dropdown a {
+    display: block;
+    background-color: #800000;
+    color: white;
+    padding: px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /*body*/
@@ -142,7 +181,5 @@ button {
     font-family: 'Tahoma';
     font-size: 18px;
     color: #800000;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 180px;
+    font-weight: bold;
 }

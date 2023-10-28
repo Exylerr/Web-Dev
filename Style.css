@@ -1,8 +1,11 @@
-body {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/PUP_Mabini_Campus_-_gate_and_pylon_%28close-up%29_%28PUP%2C_Santa_Mesa%2C_Manila%29%282018-03-06%29.jpg');
-    background-size: 20in;
+/*log in page*/
+.page1-background {
+    background-image: url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
 }
+
+/*inside log-in panel*/
 .rounded-panel {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
@@ -15,7 +18,7 @@ body {
 }
 .puplogo {
     position: absolute;
-    top: 16%;
+    top: 15%;
     right: 46%;
 }
 .pup-ace {
@@ -45,6 +48,8 @@ body {
     top: 65%;
     right: 35.8%;
 }
+
+/*inputting information when logging in*/
 input[type=text], input[type=password] {
     font-family: 'Tahoma';
     border: 1px solid #ccc;
@@ -57,7 +62,7 @@ input[type=text], input[type=password] {
 }
 button {
     background-color: #800000;
-    color: white;
+    color: #ffffff;
     font-family: 'Tahoma';  
     border-radius: 100px;
     width: 250%;
@@ -66,149 +71,116 @@ button {
     border: none;
     cursor: pointer;
 }
-*{
+
+/*homepage*/
+.page2-background {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-}
-.banner{
-    width: 100%;
-    height: 100vh;
-    background-color:#ccc;   
-}
-.navbar {
-    background-color:white;
-    width: 100%;
-    margin: auto;
-    padding: 1px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #000;
+    background-color: #dbdada;
 }
 
+/*header*/
 .logo {
-    width: 88px;
-    cursor: pointer;
-    margin-right: -690px;
-    margin-left: 20px;
+    width: 60px;
+    margin-left: 55px;
 }
-.custom-h1 {
+.title {
+    font-family: 'Tahoma';
     font-size: 20px;
-    margin: 0px;
+    margin-left: 80px;
+    color: #ffffff;
 }
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position:relative;
-
+.header, .navigation-bar {
+    margin: 0;
+    padding: 0;
+    background-color: #800000;
 }
-.navbar ul li a{
-    text-decoration: none;
-    color:black;
-    transition:color 0.5s;
-}
-.navbar ul li:hover a {
-    color: #800000; 
-}
-.navbar ul li ::after{
-    content: '';
-    height: 3px;
-    width: 0%;
-    background:#800000;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-.navbar ul li :hover::after{
-    width: 100%;
-}
-.calendar{
-    width: 22px; 
-    height: 22px; 
-    cursor: pointer;
-    margin-right: -20px; 
-    position:relative;
-    top: 5px;
-}
-.logout{
-    width: 30px; 
-    height: 38px; 
-    cursor: pointer;
-    margin-right: -22px; 
-    position:relative;
-    top: 15px;
-}
-.right {
-    background-color:white;
-    width: 100%;
-    margin: auto;
-    padding: 1px 0;
+.header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #5c0303;
 }
-.right ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 50px;
-    position:relative;
+.navigation-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.navigation-bar ul {
+    font-family: 'Tahoma';
+    font-size: 15px;
+    margin-right: 25px;
+    padding: 0;
 }
-.right ul li a{
+.navigation-bar li {
+    display: inline;
+    margin-right: 20px;
+}
+.navigation-bar a {
     text-decoration: none;
-    color:black;
-    transition:color 0.5s;
+    color: #ffffff;
+    transition: color 0.3s;
 }
-.right ul li:hover a {
-    color: #800000; 
+.navigation-bar a:hover {
+    background-color: #ddd;
 }
-.right ul li ::after{
-    content: '';
-    height: 3px;
-    width: 0%;
-    background:#800000;
+.no-hover {
+    pointer-events: none;
+}
+.date{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.settings {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+/*drop down */
+.dropdown a {
+    display: block;
+    background-color: #800000;
+    color: white;
+    padding: px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
     position: absolute;
-    left:10px;
-    bottom: -10px;
-    transition: 0.5s;
-}
-.right ul li :hover::after{
-    width: 100%;
-}
-.custom-h2 {
-    font-size: 20px;
-    margin: 20px 10px 0px 10px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.student-info {
-    text-align: center;
+.dropdown-content li {
+    list-style: none;
 }
 
-.custom-student-no {
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*body*/
+.student-info{
+    font-family: 'Tahoma';
     font-size: 18px;
-    margin: 1px 1;
-    /* Customize the styles for STUDENT NO. */
     color: #800000;
     font-weight: bold;
 }
 
-.history{
-    width: 30px; 
-    height: 40px; 
-    cursor: pointer;
-    margin-right: -20px; 
-    position:relative;
-    top: 25px;
-}
-.rules{
-    width: 30px; 
-    height: 38px; 
-    cursor: pointer;
-    margin-right: -22px; 
-    position:relative;
-    top: 17px;
-}

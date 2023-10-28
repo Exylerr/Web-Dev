@@ -3,73 +3,71 @@
     background-image: url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+body {
+    font-family: 'Tahoma';
+    margin: 0;
+    padding: 0;
 }
 
 /*inside log-in panel*/
 .rounded-panel {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border: 1px solid #ccc;
-    border-radius: 100px;
-    width: 1600px;
-    height: 800px;
-    margin-top: 70px;
-    margin-left: 155px;
-    opacity: 90%;
-}
-.puplogo {
-    position: absolute;
-    top: 15%;
-    right: 46%;
+    border-radius: 30px;
+    padding: 40px;
+    opacity: 0.9;
+    text-align: center;
+    margin: 70px auto 0 auto; 
+    max-width: 600px;
+    box-shadow: 0 2px 4px #0000001a;
 }
 .pup-ace {
-    font-family: 'Tahoma';
     font-size: 32px;
-    position: absolute;
-    top: 27%;
-    right: 37%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }
 .sign-in {
-    font-family: 'Tahoma';
-    font-size: 18px;
-    position: absolute;
-    top: 35%;
-    right: 47.8%;
+    font-size: 20px;
+    text-align: center;
+    color: #555;
+    margin-top: 10px;
 }
 .login-form {
-    position: absolute;
-    top: 40%;
-    right: 52.5%;
+    margin-top: 20px;
 }
 .terms {
-    font-family: 'Tahoma';
-    font-size: 18px;
-    position: absolute;
+    font-size: 16px;
     text-align: center;
-    top: 65%;
-    right: 35.8%;
+    color: #888;
+    margin-top: 20px;
 }
 
 /*inputting information when logging in*/
-input[type=text], input[type=password] {
-    font-family: 'Tahoma';
+input[type=text], input[type=password] { 
     border: 1px solid #ccc;
-    border-radius: 100px;
-    width: 250%;
-    padding: 20px 40px;
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
     margin: 10px 0;
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
 }
 button {
     background-color: #800000;
-    color: #ffffff;
-    font-family: 'Tahoma';  
-    border-radius: 100px;
-    width: 250%;
-    padding: 20px 40px;
+    color: #fff;
+    border-radius: 20px;
+    width: 100%;
+    padding: 15px;
     margin: 10px 0;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
 /*homepage*/
@@ -85,7 +83,6 @@ button {
     margin-left: 55px;
 }
 .title {
-    font-family: 'Tahoma';
     font-size: 20px;
     margin-left: 80px;
     color: #ffffff;
@@ -101,17 +98,14 @@ button {
     border-bottom: 1px solid #5c0303;
 }
 .navigation-bar {
-    position: -webkit-sticky;
     position: sticky;
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
-
 .navigation-bar ul {
-    font-family: 'Tahoma';
     font-size: 15px;
-    margin-right: 25px;
+    margin-right: 20px;
     padding: 0;
 }
 .navigation-bar li {
@@ -123,64 +117,71 @@ button {
     color: #ffffff;
     transition: color 0.3s;
 }
-.navigation-bar a:hover {
-    background-color: #ddd;
-}
 .no-hover {
     pointer-events: none;
 }
-.date{
+.date {
     width: 20px;
     height: 20px;
     vertical-align: middle;
     margin-right: 5px;
-    cursor: pointer;
 }
 .settings {
     width: 30px;
     height: 30px;
+    margin-left: -100px;
     vertical-align: middle;
-}
-/*drop down */
-.dropdown a {
-    display: block;
-    background-color: #800000;
-    color: white;
-    padding: px;
-    text-decoration: none;
-    border: none;
     cursor: pointer;
-}
-
-.dropdown {
     position: relative;
-    display: inline-block;
 }
-
-.dropdown-content {
+.dropdown-panel {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    border: 1px solid #a1a0a0;
+    box-shadow: 0 4px 8px 0 #00000033;
+    z-index: 1;
+    right: 20px;
+    top: 50px;
+    margin-top: 10px;
     min-width: 160px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: left;
+}
+.dropdown-panel::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 54%;
+    border: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent #fff transparent;
+    transform: translateX(-50%); 
+}
+.dropdown-panel a {
+    display: block;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 5px 10px;
+    color: #333;
+    transition: background-color 0.2s; 
+}
+.dropdown-panel a:hover {
+    background-color: #800000; 
+    color: #fff; 
 }
 
-.dropdown-content li {
-    list-style: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.dropdown:hover .dropdown-content {
+/* Show the dropdown panel when the settings icon is clicked */
+#settingsIcon:hover + #dropdownPanel, 
+#dropdownPanel:hover {
     display: block;
 }
 
 /*body*/
-.student-info{
-    font-family: 'Tahoma';
+.student-info {
     font-size: 18px;
     color: #800000;
-    font-weight: bold;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 180px;
 }
-/*afhsasgbhdgk*/

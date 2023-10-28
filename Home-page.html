@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css" type="text/css">
-    <title> PUP-ACE FORM </title>
+    <title>PUP-ACE FORM</title>
     <link rel="icon" type="image/icon" href="Images/PUPLogo.png">
 </head>
 <body class="page2-background">
@@ -14,23 +13,42 @@
         <div class="logo">
             <img src="Images/PUPLogo.png" class="logo">
         </div>
-        
-    <a class="title"> <b>PUP-ACE FORM</b> </a>
-        
+
+        <a class="title"><b>PUP-ACE FORM</b></a>
+
         <nav class="navigation-bar">
             <ul>
-                <li><img src="Images/calendar.png" class="date"></li>
-                <li class="no-hover"><a href="#">1st Sem 2023-2024</a></li>
-                <li> <a href="#"><img src="Images/Settings.png" class="settings"></a> </li>
+                <li><a href="#" id="settingsLink"><img src="Images/Settings.png" class="settings" id="settingsIcon"></a></li>
             </ul>
         </nav>
     </div>
-    
+
     <div class="page-body">
         <div class="student-info">
-            <h2 class="custom-h2"> [STUDENT NAME] </h2>
-            <div class="custom-student-no"> [STUDENT NUMBER] </div>
+            <h2 class="custom-h2">[STUDENT NAME]</h2>
+            <div class="custom-student-no">[STUDENT NUMBER]</div>
         </div>
     </div>
+
+    <div class="dropdown-panel" id="dropdownPanel">
+        <a href="#">History</a>
+        <a href="#">Rules</a>
+        <a href="#">Log Out</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const settingsIcon = document.getElementById("settingsIcon");
+            const dropdownPanel = document.getElementById("dropdownPanel");
+            
+            settingsIcon.addEventListener("click", function () {
+                if (dropdownPanel.style.display === "block") {
+                    dropdownPanel.style.display = "none";
+                } else {
+                    dropdownPanel.style.display = "block";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

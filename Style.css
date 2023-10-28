@@ -99,7 +99,6 @@ button {
     border-bottom: 1px solid #5c0303;
 }
 .navigation-bar {
-    position: -webkit-sticky;
     position: sticky;
     flex: 1;
     display: flex;
@@ -123,7 +122,7 @@ button {
 .no-hover {
     pointer-events: none;
 }
-.date{
+.date {
     width: 20px;
     height: 20px;
     vertical-align: middle;
@@ -133,44 +132,42 @@ button {
     width: 30px;
     height: 30px;
     vertical-align: middle;
-}
-/*drop down */
-.dropdown a {
-    display: block;
-    background-color: #800000;
-    color: white;
-    padding: px;
-    text-decoration: none;
-    border: none;
     cursor: pointer;
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
+.dropdown-panel {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #fff;
+    border: 1px solid #ccc;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 20px;
+    top: 50px;
+    min-width: 160px;
+    padding: 10px;
+    text-align: left;
+}
+.dropdown-panel a {
+    display: block;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 5px 10px;
+    color: #333;
+    transition: background-color 0.2s; 
+}
+.dropdown-panel a:hover {
+    background-color: #800000; 
+    color: #fff; 
 }
 
-.dropdown-content li {
-    list-style: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.dropdown:hover .dropdown-content {
+/* Show the dropdown panel when the settings icon is clicked */
+#settingsIcon:hover + #dropdownPanel, 
+#dropdownPanel:hover {
     display: block;
 }
 
 /*body*/
-.student-info{
+.student-info {
     font-family: 'Tahoma';
     font-size: 18px;
     color: #800000;

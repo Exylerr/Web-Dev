@@ -37,18 +37,25 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const settingsIcon = document.getElementById("settingsIcon");
-            const dropdownPanel = document.getElementById("dropdownPanel");
-            
-            settingsIcon.addEventListener("click", function () {
-                if (dropdownPanel.style.display === "block") {
-                    dropdownPanel.style.display = "none";
-                } else {
-                    dropdownPanel.style.display = "block";
-                }
-            });
-        });
+       document.addEventListener("DOMContentLoaded", function () {
+    const settingsIcon = document.getElementById("settingsIcon");
+    const dropdownPanel = document.getElementById("dropdownPanel");
+
+    settingsIcon.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (dropdownPanel.style.display === "block") {
+            dropdownPanel.style.display = "none";
+        } else {
+            dropdownPanel.style.display = "block";
+        }
+    });
+
+    document.addEventListener("click", function (e) {
+        if (e.target !== settingsIcon && e.target !== dropdownPanel) {
+            dropdownPanel.style.display = "none";
+        }
+    });
+});
     </script>
 </body>
 </html>

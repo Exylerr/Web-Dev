@@ -23,51 +23,11 @@
         </nav>
     </div>
 
-    <div class="page-body">
-        <div class="student-info">
-            <h2 class="custom-h2">[STUDENT NAME]</h2>
-            <div class="custom-student-no">[STUDENT NUMBER]</div>
-            <div class="date-container">1st Sem 2023-2024</div>
-        </div>
-    </div>
-    <div class="centered-content">
-        <div class="academic-status">
-            <p>Academic Status: Regular</p>
-            <p>Units Allowed to Enroll: 21</p>
-            <p>Approved Overload Units: 0</p>
-            <p>Units Currently Enrolled: 21</p>
-        </div>
-    </div>
-    <label for="ACE">Application for Change of Enrollment:</label>
-    <select id="ACE" onchange="displayACE()">
-        <option value="" disabled selected></option>
-        <option value="AOS">Adding of Subject</option>
-        <option value="COS">Change of Subject</option>
-        <option value="W">Withdrawal</option>
-    </select>
-    <p id="selected-ACE"></p>
-    <script>
-        function displayACE() {
-    var select = document.getElementById("ACE");
-    var selectedACE = select.options[select.selectedIndex].text;
-    var displayElement = document.getElementById("selected-ACE");
-}
-    </script>
-  <form action="/action_page.php">
-    <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-    <textarea id="Reasons" name="Reasons" rows="5" cols="70">Please state your reason.</textarea>
-    <br>
-    <input type="submit" value="Done">
-  </form>
-
-    </script>
-    
     <div class="dropdown-panel" id="dropdownPanel">
         <a href="#">History</a>
         <a href="#">Rules</a>
         <a href="#">Log Out</a>
     </div>
-
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -90,5 +50,46 @@
         });
     });
     </script>
+
+    <div class="page-body">
+        <div class="student-info">
+            <h2 class="custom-h2">[STUDENT NAME]</h2>
+            <div class="custom-student-no">[STUDENT NUMBER]</div>
+            <div class="date-container">1st Sem 2023-2024</div>
+        </div>
+    </div>
+
+    <div class="centered-content">
+        <div class="academic-status">
+            <p>Academic Status: Regular</p>
+            <p>Units Allowed to Enroll: 21</p>
+            <p>Approved Overload Units: 0</p>
+            <p>Units Currently Enrolled: 21</p>
+        </div>
+    </div>
+
+    <label for="ACE">Application for Change of Enrollment:</label>
+    <select id="ACE" onchange="displayACE()">
+        <option value="" disabled selected></option>
+        <option value="AOS">Adding of Subject</option>
+        <option value="COS">Change of Subject</option>
+        <option value="W">Withdrawal</option>
+    </select>
+    <p id="selected-ACE"></p>
+    <script>
+        function displayACE() {
+    var select = document.getElementById("ACE");
+    var selectedACE = select.options[select.selectedIndex].text;
+    var displayElement = document.getElementById("selected-ACE");
+}
+    </script>
+        <form action="/action_page.php">
+            <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
+            <textarea id="Reasons" name="Reasons" rows="5" cols="70">Please state your reason.</textarea>
+            <br>
+            <input type="submit" value="Done">
+        </form>
+    </script>
+
 </body>
 </html>

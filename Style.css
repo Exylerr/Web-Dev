@@ -186,12 +186,14 @@ button {
     margin-top: 20px;
     margin-left: 180px;
 }
+
 /*calendar*/
 .date-container {
     font-family: 'Tahoma';
     margin-right: -1000px;
     float: right;
 }
+
 /*acad stat*/
 .centered-content {
     display: flex;
@@ -207,12 +209,12 @@ button {
     flex-wrap: wrap;          /* Allow them to wrap to the next line if needed */
     justify-content: space-between; /* Space items evenly along the row */
 }
-
 .academic-status p {
     width: 300px;
     margin: 15px;
     padding: 15px;
 }
+
 /*ACE Dropdown*/
 /* Style the dropdown container */
 #ACE {
@@ -223,6 +225,7 @@ button {
     width: 200px;
     margin: 1px 0;
 }
+
 /* Style the dropdown options */
 #ACE option {
     background-color: #f2f2f2;

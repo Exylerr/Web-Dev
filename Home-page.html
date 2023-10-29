@@ -55,7 +55,7 @@
         <h2 class="custom-h2">[STUDENT NAME]</h2>
         <div class="custom-student-no">[STUDENT NUMBER]</div>
         <div class="date-container">
-            <p>1st Sem 2023-2024</p>
+            <p><b>1st Sem 2023-2024</b></p>
         </div>
     </div>
 
@@ -76,18 +76,17 @@
             <option value="COS">Change of Subject</option>
             <option value="W">Withdrawal</option>
         </select>
-        <p id="selected-ACE"></p>
-
+        
         <script>
             function displayACE() {
-        var select = document.getElementById("ACE");
-        var selectedACE = select.options[select.selectedIndex].text;
-        var displayElement = document.getElementById("selected-ACE");
-        }
-        </script>
-            <form action="/action_page.php">
+                var select = document.getElementById("ACE");
+                var selectedACE = select.options[select.selectedIndex].text;
+                var displayElement = document.getElementById("selected-ACE");
+            }
+            </script>
+            <form>
                 <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-                <textarea id="Reasons" name="Reasons" rows="5" cols="70">Please state your reason.</textarea><br>
+                <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70"></textarea><br>
                 <input type="submit" value="Done">
             </form>
         </script>

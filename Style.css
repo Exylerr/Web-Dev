@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
 }
 body {
     font-family: 'Tahoma';
@@ -76,7 +76,7 @@ button {
     padding: 0; 
     background-position: center;
     background-color: #dbdada;
-    height: 90vh;
+    height: 100vh;
 }
 
 /*header*/

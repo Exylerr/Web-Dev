@@ -235,16 +235,16 @@ button {
     width: 200px;
     margin: 30px 0 15px 0;
 }
-
-/* Style the dropdown options */
 #ACE option {
     background-color: #f2f2f2;
     color: #333;
     font-size: 16px;
     padding: 1px;
 }
-
-/* Style the label */
+#selected-ACE {
+    margin-top: 10px;
+    font-weight: bold;
+}
 label {
     display: inline-block;
     font-weight: bold;
@@ -252,11 +252,6 @@ label {
     margin-bottom: 5px;
 }
 
-/* Style the displayed selection */
-#selected-ACE {
-    margin-top: 10px;
-    font-weight: bold;
-}
 /* Calendar styling */
 .calendar {
     display: flex;

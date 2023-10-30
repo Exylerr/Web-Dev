@@ -75,20 +75,160 @@
             <option value="AOS">Adding of Subject</option>
             <option value="COS">Change of Subject</option>
         </select>
-        
-        <script>
-            function displayACE() {
-                var select = document.getElementById("ACE");
-                var selectedACE = select.options[select.selectedIndex].text;
-                var displayElement = document.getElementById("selected-ACE");
+
+    <div class="calendar">
+        <label for="application-date">Application Date: </label>
+        <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
+        <span id="date-output" class="date-output"></span>
+    </div>
+
+    <form>
+        <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
+        <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70"></textarea><br>
+        <input type="submit" value="Done">
+    </form>
+
+    <div class="box" id="contentAOS" style="display: none;">
+        <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
+        <div id="table-container">
+            <table id="myTable">
+                <tr>
+                    <th>CODE</th>
+                    <th>SUBJECT TITLE</th>
+                    <th>DAY</th>
+                    <th>TIME</th>
+                    <th>ROOM</th>
+                    <th>UNITS</th>
+                </tr>
+                <tr>
+                    <td contenteditable="true" maxlength="10"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </table>
+            <button id="add-row">Add Row</button>
+            </div>
+        </div>
+        <div class="box" id="contentCOS" style="display: none;">
+            <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
+            <div id="table-container2">
+                <table id="toTable">
+                    <tr>
+                        <th>CODE</th>
+                        <th>SUBJECT TITLE</th>
+                        <th>DAY</th>
+                        <th>TIME</th>
+                        <th>ROOM</th>
+                        <th>UNITS</th>
+                    </tr>
+                    <tr>
+                        <td contenteditable="true" maxlength="10"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                </table>
+                <button id="add-row">Add Row</button>
+        </div>
+    </div>
+
+<script>
+    function displayACE() {
+        var select = document.getElementById("ACE");
+        var selectedACE = select.options[select.selectedIndex].value;
+
+        // Get the content divs
+        var contentAOS = document.getElementById("contentAOS");
+        var contentCOS = document.getElementById("contentCOS");
+
+        if (selectedACE === "AOS") {
+            contentAOS.style.display = "block";
+            contentCOS.style.display = "none";
+        } else if (selectedACE === "COS") {
+            contentAOS.style.display = "none";
+            contentCOS.style.display = "block";
+        } else {
+            contentAOS.style.display = "none";
+            contentCOS.style.display = "none";
+        }
+    }
+</script>
+
+    <script>
+        // JavaScript for date output
+        function formatDate(date) {
+            const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function updateDateOutput() {
+            const currentDate = new Date();
+            const formattedDate = formatDate(currentDate);
+            document.getElementById('date-output').textContent = `(${formattedDate})`;
+        }
+
+        updateDateOutput();
+    </script>
+
+    <script>
+        const content = document.getElementById("content");
+        const tableContainer = document.getElementById("table-container");
+        const table = document.getElementById("myTable");
+        const addRowButton = document.getElementById("add-row");
+
+        addRowButton.addEventListener("click", function() {
+            const newRow = table.insertRow(-1);
+            const cells = [];
+
+            for (let i = 0; i < 6; i++) {
+                cells.push(newRow.insertCell(i));
+                cells[i].contentEditable = true;
+
+                if (i === 0) {
+                    cells[i].addEventListener("input", function() {
+                        if (cells[i].textContent.length > 10) {
+                            cells[i].textContent = cells[i].textContent.slice(0, 10);
+                        }
+                    });
+                }
             }
-            </script>
-            <form>
-                <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-                <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70"></textarea><br>
-                <input type="submit" value="Done">
-            </form>
-        </script>
+        });
+
+        content.style.display = "none"; // Initially hide the table
+    </script>
+    <script>
+        const contentCOS = document.getElementById("contentCOS");
+        const tableContainer2 = document.getElementById("table-container2");
+        const toTable = document.getElementById("toTable");
+        const addRowButton2 = document.getElementById("add-row2");
+    
+        addRowButton2.addEventListener("click", function() {
+            const newRow = toTable.insertRow(-1);
+            const cells = [];
+    
+            for (let i = 0; i < 6; i++) {
+                cells.push(newRow.insertCell(i));
+                cells[i].contentEditable = true;
+    
+                if (i === 0) {
+                    cells[i].addEventListener("input", function() {
+                        if (cells[i].textContent.length > 10) {
+                            cells[i].textContent = cells[i].textContent.slice(0, 10);
+                        }
+                    });
+                }
+            }
+        });
+    
+        contentCOS.style.display = "none"; // Initially hide the table
+    </script>
+    
+    </div>
     </div>
 </body>
 </html>

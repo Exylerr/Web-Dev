@@ -264,13 +264,13 @@ label {
     margin-right: 10px;
 }
 
+/*Calendar*/
 .calendar-icon {
     width: 23px; 
     height: 25px;
     cursor: pointer;
     margin-right: 10px;
 }
-
 .date-output {
     font-weight: bold;
 }
@@ -279,6 +279,7 @@ label {
     color: #800000;
     
 }
+
 /* Add styling for the table container */
 /* Add styling for the table container */
 #table-container, #table-container2 {

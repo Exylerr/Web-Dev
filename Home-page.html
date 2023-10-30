@@ -54,7 +54,7 @@
     <div class="student-info">
         <h2 class="custom-h2">[STUDENT NAME]</h2>
         <div class="custom-student-no">[STUDENT NUMBER]</div>
-        <div id="semester-info" class="date-container">
+        <div class="semester-info">
             <p><b>1st Sem 2023-2024</b></p>
         </div>
     </div>
@@ -145,98 +145,99 @@
         </div>
     </div>
 
-<script>
-    function displayACE() {
-        var select = document.getElementById("ACE");
-        var selectedACE = select.options[select.selectedIndex].value;
+        <script>
+            function displayACE() {
+                var select = document.getElementById("ACE");
+                var selectedACE = select.options[select.selectedIndex].value;
 
-        // Get the content divs
-        var contentAOS = document.getElementById("contentAOS");
-        var contentCOS = document.getElementById("contentCOS");
+                // Get the content divs
+                var contentAOS = document.getElementById("contentAOS");
+                var contentCOS = document.getElementById("contentCOS");
 
-        if (selectedACE === "AOS") {
-            contentAOS.style.display = "block";
-            contentCOS.style.display = "none";
-        } else if (selectedACE === "COS") {
-            contentAOS.style.display = "none";
-            contentCOS.style.display = "block";
-        } else {
-            contentAOS.style.display = "none";
-            contentCOS.style.display = "none";
-        }
-    }
-</script>
-
-    <script>
-        // JavaScript for date output
-        function formatDate(date) {
-            const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-            return date.toLocaleDateString('en-US', options);
-        }
-
-        function updateDateOutput() {
-            const currentDate = new Date();
-            const formattedDate = formatDate(currentDate);
-            document.getElementById('date-output').textContent = `(${formattedDate})`;
-        }
-
-        updateDateOutput();
-    </script>
-
-    <script>
-        const content = document.getElementById("content");
-        const tableContainer = document.getElementById("table-container");
-        const table = document.getElementById("myTable");
-        const addRowButton = document.getElementById("add-row");
-
-        addRowButton.addEventListener("click", function() {
-            const newRow = table.insertRow(-1);
-            const cells = [];
-
-            for (let i = 0; i < 6; i++) {
-                cells.push(newRow.insertCell(i));
-                cells[i].contentEditable = true;
-
-                if (i === 0) {
-                    cells[i].addEventListener("input", function() {
-                        if (cells[i].textContent.length > 10) {
-                            cells[i].textContent = cells[i].textContent.slice(0, 10);
-                        }
-                    });
+                if (selectedACE === "AOS") {
+                    contentAOS.style.display = "block";
+                    contentCOS.style.display = "none";
+                } else if (selectedACE === "COS") {
+                    contentAOS.style.display = "none";
+                    contentCOS.style.display = "block";
+                } else {
+                    contentAOS.style.display = "none";
+                    contentCOS.style.display = "none";
                 }
             }
-        });
+        </script>
 
-        content.style.display = "none"; // Initially hide the table
-    </script>
-    <script>
-        const contentCOS = document.getElementById("contentCOS");
-        const tableContainer2 = document.getElementById("table-container2");
-        const toTable = document.getElementById("toTable");
-        const addRowButton2 = document.getElementById("add-row2");
-    
-        addRowButton2.addEventListener("click", function() {
-            const newRow = toTable.insertRow(-1);
-            const cells = [];
-    
-            for (let i = 0; i < 6; i++) {
-                cells.push(newRow.insertCell(i));
-                cells[i].contentEditable = true;
-    
-                if (i === 0) {
-                    cells[i].addEventListener("input", function() {
-                        if (cells[i].textContent.length > 10) {
-                            cells[i].textContent = cells[i].textContent.slice(0, 10);
-                        }
-                    });
-                }
+        <script>
+            // JavaScript for date output
+            function formatDate(date) {
+                const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+                return date.toLocaleDateString('en-US', options);
             }
-        });
-    
-        contentCOS.style.display = "none"; // Initially hide the table
-    </script>
+
+            function updateDateOutput() {
+                const currentDate = new Date();
+                const formattedDate = formatDate(currentDate);
+                document.getElementById('date-output').textContent = `(${formattedDate})`;
+            }
+
+            updateDateOutput();
+        </script>
+
+        <script>
+            const content = document.getElementById("content");
+            const tableContainer = document.getElementById("table-container");
+            const table = document.getElementById("myTable");
+            const addRowButton = document.getElementById("add-row");
+
+            addRowButton.addEventListener("click", function() {
+                const newRow = table.insertRow(-1);
+                const cells = [];
+
+                for (let i = 0; i < 6; i++) {
+                    cells.push(newRow.insertCell(i));
+                    cells[i].contentEditable = true;
+
+                    if (i === 0) {
+                        cells[i].addEventListener("input", function() {
+                            if (cells[i].textContent.length > 10) {
+                                cells[i].textContent = cells[i].textContent.slice(0, 10);
+                            }
+                        });
+                    }
+                }
+            });
+
+            content.style.display = "none"; // Initially hide the table
+        </script>
+
+        <script>
+            const contentCOS = document.getElementById("contentCOS");
+            const tableContainer2 = document.getElementById("table-container2");
+            const toTable = document.getElementById("toTable");
+            const addRowButton2 = document.getElementById("add-row2");
+            
+            addRowButton2.addEventListener("click", function() {
+                const newRow = toTable.insertRow(-1);
+                const cells = [];
+            
+                for (let i = 0; i < 6; i++) {
+                    cells.push(newRow.insertCell(i));
+                    cells[i].contentEditable = true;
+            
+                    if (i === 0) {
+                        cells[i].addEventListener("input", function() {
+                            if (cells[i].textContent.length > 10) {
+                                cells[i].textContent = cells[i].textContent.slice(0, 10);
+                            }
+                        });
+                    }
+                }
+            });
+            
+            contentCOS.style.display = "none"; // Initially hide the table
+        </script>
     
     </div>
-    </div>
+</div>
 </body>
 </html>

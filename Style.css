@@ -257,3 +257,27 @@ label {
     margin-top: 10px;
     font-weight: bold;
 }
+/* Calendar styling */
+.calendar {
+    display: flex;
+    align-items: center;
+    margin-left: 1150px;
+    margin-top: -35px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.calendar-icon {
+    width: 23px; 
+    height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.date-output {
+    font-weight: bold;
+}
+
+

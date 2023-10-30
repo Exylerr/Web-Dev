@@ -75,6 +75,25 @@
             <option value="AOS">Adding of Subject</option>
             <option value="COS">Change of Subject</option>
         </select>
+        <div class="calendar">
+            <label for="application-date">Application Date: </label>
+            <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
+            <span id="date-output" class="date-output"></span>
+        </div>
+        <script>
+            function formatDate(date) {
+            const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+            return date.toLocaleDateString('en-US', options);
+        }
+    
+        function updateDateOutput() {
+            const currentDate = new Date();
+            const formattedDate = formatDate(currentDate);
+            document.getElementById('date-output').textContent = `(${formattedDate})`;
+        }
+    
+        updateDateOutput();
+        </script>
         
         <script>
             function displayACE() {

@@ -70,64 +70,74 @@ button {
     font-weight: bold;
 }
 
-/*homepage*/
+/* homepage */
 .page2-background {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     background-position: center;
     background-color: #dbdada;
     height: 100vh;
 }
 
-/*header*/
+/* header */
 .logo {
     width: 60px;
     margin-left: 55px;
 }
+
 .title {
     font-size: 20px;
     margin-left: 80px;
     color: #ffffff;
 }
+
 .header, .navigation-bar {
     margin: 0;
     padding: 0;
     background-color: #800000;
 }
+
 .header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #5c0303;
 }
+
 .navigation-bar {
     position: sticky;
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
+
 .navigation-bar ul {
     font-size: 15px;
     margin-right: 20px;
     padding: 0;
 }
+
 .navigation-bar li {
     display: inline;
     margin-right: 20px;
 }
+
 .navigation-bar a {
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s;
 }
+
 .no-hover {
     pointer-events: none;
 }
+
 .date {
     width: 20px;
     height: 20px;
     vertical-align: middle;
     margin-right: 5px;
 }
+
 .settings {
     width: 30px;
     height: 30px;
@@ -136,6 +146,7 @@ button {
     cursor: pointer;
     position: relative;
 }
+
 .dropdown-panel {
     display: none;
     position: absolute;
@@ -150,6 +161,7 @@ button {
     padding: 10px;
     text-align: left;
 }
+
 .dropdown-panel::before {
     content: "";
     position: absolute;
@@ -158,47 +170,52 @@ button {
     border: solid;
     border-width: 0 20px 20px 20px;
     border-color: transparent transparent #fff transparent;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
+
 .dropdown-panel a {
     display: block;
     text-decoration: none;
     margin: 5px 0;
     padding: 5px 10px;
     color: #333;
-    transition: background-color 0.2s; 
+    transition: background-color 0.2s;
 }
+
 .dropdown-panel a:hover {
-    background-color: #800000; 
-    color: #fff; 
+    background-color: #800000;
+    color: #fff;
 }
 
 /* Show the dropdown panel when the settings icon is clicked */
-#settingsIcon:hover + #dropdownPanel, 
+#settingsIcon:hover + #dropdownPanel,
 #dropdownPanel:hover {
     display: block;
 }
 
-/*body*/
-.page-body{
+/* body */
+.page-body {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 30px;
     padding: 40px;
     opacity: 0.9;
-    margin: 170px auto 0 auto; 
+    margin: 170px auto 0 auto;
     max-width: 80%;
     max-height: auto;
     box-shadow: 0 2px 4px #0000001a;
 }
+
 .student-info {
     font-size: 18px;
     color: #800000;
     position: absolute;
+    justify-content: flex-end;
     margin-top: 20px;
     margin-left: 180px;
 }
-.semester-info{
+
+.semester-info {
     font-size: 18px;
     color: #800000;
     position: absolute;
@@ -206,27 +223,29 @@ button {
     margin-left: 1550px;
 }
 
-/*acad stat*/
+/* academic status */
 .centered-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
+
 .academic-status {
     color: #800000;
-    display: flex;            /* Display the elements in a row */
-    flex-wrap: wrap;          /* Allow them to wrap to the next line if needed */
-    justify-content: space-between; /* Space items evenly along the row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: -30px;
 }
+
 .academic-status p {
     width: 300px;
     margin: 15px;
     padding: 15px;
 }
 
-/*ACE Dropdown*/
+/* ACE Dropdown */
 /* Style the dropdown container */
 #ACE {
     padding: 1px;
@@ -236,48 +255,52 @@ button {
     width: 200px;
     margin: 30px 0 15px 0;
 }
+
 #ACE option {
     background-color: #f2f2f2;
     color: #333;
     font-size: 16px;
     padding: 1px;
 }
+
 #selected-ACE {
     margin-top: 10px;
     font-weight: bold;
 }
 
-/*Calendar*/
-.calendar {
-    display: flex;
-    align-items: center;
-    margin-left: 1150px;
-    margin-top: -35px;
-}
+/* all labels */
 label {
     display: inline-block;
     font-weight: bold;
-    color:#800000;
+    color: #800000;
     margin-bottom: 1px;
     margin-right: 10px;
 }
+
+/* Calendar */
+label[for="application-date"] {
+    display: inline-block;
+    font-weight: bold;
+    color: #800000;
+    margin-bottom: 1px;
+    margin-left: 600px;
+}
+
 .calendar-icon {
     width: 23px;
     height: 25px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-left: 5px;
 }
+
 .date-output {
     font-weight: bold;
+    margin-left: 1px;
 }
-.custom-h3{
-    font-size: 18px;
-    color: #800000;
-}
-
 
 /* Add styling for the table container */
-#table-container, #table-container2 {
+#table-container,
+#table-container2 {
     width: 100%;
     max-width: 100%;
     max-height: none;
@@ -285,42 +308,47 @@ label {
 }
 
 /* Apply styling to the tables */
-#myTable, #toTable {
+#myTable,
+#toTable {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
-#myTable th, #toTable th,
-#myTable td, #toTable td {
+#myTable th,
+#toTable th,
+#myTable td,
+#toTable td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
     font-size: 14px;
 }
 
-#myTable th, #toTable th {
+#myTable th,
+#toTable th {
     background-color: #f2f2f2;
 }
 
 /* Style the editable cells when they are focused */
-#myTable td[contenteditable="true"]:focus, #toTable td[contenteditable="true"]:focus {
+#myTable td[contenteditable="true"]:focus,
+#toTable td[contenteditable="true"]:focus {
     outline: 2px solid #800000;
 }
 
 /* Style the table headers when they are focused */
-#myTable th[contenteditable="true"]:focus, #toTable th[contenteditable="true"]:focus {
+#myTable th[contenteditable="true"]:focus,
+#toTable th[contenteditable="true"]:focus {
     outline: 2px solid #800000;
 }
 
 /* Style the "Add Row" button */
-#add-row,#add-row2 {
+#add-row,
+#add-row2 {
     display: block;
     margin-top: 10px;
     background-color: #800000;
     color: #fff;
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    resize: none;
+    padding: 5px 10
 }

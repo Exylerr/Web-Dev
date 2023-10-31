@@ -81,11 +81,10 @@
         <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
         <span id="date-output" class="date-output"></span>
 
-
     <script>
         // JavaScript for date output
         function formatDate(date) {
-            const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
             return date.toLocaleDateString('en-US', options);
         }
 

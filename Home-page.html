@@ -54,9 +54,10 @@
     <div class="student-info">
         <h2 class="custom-h2">[STUDENT NAME]</h2>
         <div class="custom-student-no">[STUDENT NUMBER]</div>
-        <div class="semester-info">
-            <p><b>1st Sem 2023-2024</b></p>
-        </div>
+    </div>
+
+    <div class="semester-info">
+        <p><b>1st Sem 2023-2024</b></p>
     </div>
 
     <div class="page-body">
@@ -82,10 +83,25 @@
         <span id="date-output" class="date-output"></span>
     </div>
 
+    <script>
+        // JavaScript for date output
+        function formatDate(date) {
+            const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function updateDateOutput() {
+            const currentDate = new Date();
+            const formattedDate = formatDate(currentDate);
+            document.getElementById('date-output').textContent = `(${formattedDate})`;
+        }
+
+        updateDateOutput();
+    </script>
+
     <form>
         <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-        <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70"></textarea><br>
-        <input type="submit" value="Done">
+        <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
     </form>
 
     <div class="box" id="contentAOS" style="display: none;">
@@ -165,22 +181,6 @@
                     contentCOS.style.display = "none";
                 }
             }
-        </script>
-
-        <script>
-            // JavaScript for date output
-            function formatDate(date) {
-                const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-                return date.toLocaleDateString('en-US', options);
-            }
-
-            function updateDateOutput() {
-                const currentDate = new Date();
-                const formattedDate = formatDate(currentDate);
-                document.getElementById('date-output').textContent = `(${formattedDate})`;
-            }
-
-            updateDateOutput();
         </script>
 
         <script>

@@ -251,7 +251,7 @@ label {
     margin-right: 10px;
 }
 
-/* Calendar */
+/* Date */
 label[for="application-date"] {
     display: inline-block;
     font-weight: bold;

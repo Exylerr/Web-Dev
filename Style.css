@@ -180,7 +180,7 @@ button {
     border-radius: 30px;
     padding: 40px;
     opacity: 0.9;
-    margin: 170px auto 0 auto;
+    margin: 10px auto 0 auto;
     max-width: 80%;
     max-height: auto;
     box-shadow: 0 2px 4px #0000001a;
@@ -188,15 +188,15 @@ button {
 .student-info {
     font-size: 18px;
     color: #800000;
-    position: absolute;
+    position: relative;
     margin-top: 20px;
     margin-left: 180px;
 }
 .semester-info {
     font-size: 18px;
     color: #800000;
-    position: absolute;
-    margin-top: 120px;
+    position: relative;
+    margin-top: 10px;
     margin-left: 1550px;
 }
 

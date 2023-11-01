@@ -189,7 +189,6 @@ button {
     font-size: 18px;
     color: #800000;
     position: absolute;
-    justify-content: flex-end;
     margin-top: 20px;
     margin-left: 180px;
 }

@@ -200,6 +200,14 @@ button {
     margin-left: 1550px;
 }
 
+/* aligning the element to be in fixed position */
+.alignment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
 /* academic status */
 .centered-content {
     display: flex;
@@ -228,7 +236,6 @@ button {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 200px;
-    margin: 30px 0 15px 0;
 }
 #ACE option {
     background-color: #f2f2f2;
@@ -256,7 +263,6 @@ label[for="application-date"] {
     font-weight: bold;
     color: #800000;
     text-align: right;
-    margin-left: 600px;
 }
 .calendar-icon {
     width: 23px;

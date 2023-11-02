@@ -256,6 +256,9 @@ label {
 }
 
 /* Date */
+.date {
+    margin-right: 70px;
+}
 label[for="application-date"] {
     display: inline-block;
     font-weight: bold;

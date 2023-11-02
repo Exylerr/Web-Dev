@@ -210,7 +210,6 @@ button {
 
 /* academic status */
 .centered-content {
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -218,7 +217,6 @@ button {
 .academic-status {
     color: #800000;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: -30px;
 }

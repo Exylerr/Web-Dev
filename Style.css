@@ -196,8 +196,9 @@ button {
     font-size: 18px;
     color: #800000;
     position: relative;
+    text-align: end;
     margin-top: 10px;
-    margin-left: 1550px;
+    margin-right: 200px;
 }
 
 /* aligning the element to be in fixed position */

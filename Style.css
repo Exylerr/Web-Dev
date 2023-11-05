@@ -340,7 +340,6 @@ label[for="application-date"] {
 /*Footer*/
 footer {
     background-color: #800000;
-    color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -353,4 +352,8 @@ footer {
     font-size: 10px;
     text-align: end;
     margin-right: 150px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
 }

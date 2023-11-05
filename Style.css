@@ -70,6 +70,11 @@ button {
     font-weight: bold;
 }
 
+/*Class terms*/
+.termsuse, .privacy {
+    color: #800000;
+}
+
 /* homepage */
 .page2-background {
     margin: 0;
@@ -339,6 +344,12 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 8px;
+    padding: 15px;
     border-top: 1px solid #5c0303;
+}
+.footer-links {
+    color: #ffffff;
+    font-size: 10px;
+    text-align: end;
+    margin-right: 40px;
 }

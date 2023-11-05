@@ -349,6 +349,7 @@ footer {
 }
 .footer-links {
     color: #ffffff;
+    font-family: 'Tahoma';
     font-size: 10px;
     text-align: end;
     margin-right: 150px;

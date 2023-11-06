@@ -337,7 +337,7 @@ label[for="application-date"] {
     padding: 5px 10
 }
 
-/*Footer*/
+/* Footer */
 footer {
     background-color: #800000;
     position: fixed;
@@ -345,18 +345,23 @@ footer {
     width: 100%;
     padding: 15px;
     border-top: 1px solid #5c0303;
+    text-align: center; /* Center the content */
 }
+
 .footer-links {
     color: #ffffff;
     font-family: 'Tahoma';
     font-size: 10px;
-    text-align: end;
-    margin-right: 115px;
+    margin: 0; /* Remove margin for better alignment */
 }
+
 footer a {
     color: white;
     text-decoration: none;
+    margin: 0 10px; /* Add margin to separate links */
 }
+
 footer a:hover {
     text-decoration: underline;
 }
+

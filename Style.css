@@ -345,22 +345,19 @@ footer {
     width: 100%;
     padding: 15px;
     border-top: 1px solid #5c0303;
-    text-align: center; /* Center the content */
+    text-align: center;
 }
-
 .footer-links {
     color: #ffffff;
     font-family: 'Tahoma';
     font-size: 10px;
-    margin: 0; /* Remove margin for better alignment */
+    margin: 0;
 }
-
 footer a {
     color: white;
     text-decoration: none;
-    margin: 0 10px; /* Add margin to separate links */
+    margin: 0 10px;
 }
-
 footer a:hover {
     text-decoration: underline;
 }

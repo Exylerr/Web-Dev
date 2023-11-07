@@ -347,10 +347,12 @@ label[for="application-date"] {
 /* Footer */
 footer {
     background-color: #800000;
+    top: 100%;
     padding: 15px;
-    margin-top: 362px;
+    margin-top: 40px;
     border-top: 1px solid #5c0303;
-    text-align: center;
+    text-align: right;
+    position: sticky;
 }
 .footer-links {
     color: #ffffff;

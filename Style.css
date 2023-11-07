@@ -84,6 +84,13 @@ button {
     height: 100vh;
 }
 
+/* Container for the entire content */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the container takes at least the full viewport height */
+}
+
 /* header */
 .logo {
     width: 60px;
@@ -340,10 +347,8 @@ label[for="application-date"] {
 /* Footer */
 footer {
     background-color: #800000;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     padding: 15px;
+    margin-top: 362px;
     border-top: 1px solid #5c0303;
     text-align: center;
 }

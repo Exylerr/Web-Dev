@@ -9,244 +9,246 @@
     <link rel="icon" type="image/icon" href="Images/PUPLogo.png">
 </head>
 <body class="page2-background">
-    <div class="header">
-        <div class="logo">
-            <img src="Images/PUPLogo.png" class="logo">
-        </div>
-
-        <a class="title"><b>PUP-ACE FORM</b></a>
-
-        <nav class="navigation-bar">
-            <ul>
-                <li><a href="#" id="settingsLink"><img src="Images/Settings.png" class="settings" id="settingsIcon"></a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="dropdown-panel" id="dropdownPanel">
-        <a href="#">History</a>
-        <a href="#">Rules</a>
-        <a href="#">Log Out</a>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const settingsIcon = document.getElementById("settingsIcon");
-        const dropdownPanel = document.getElementById("dropdownPanel");
-
-        settingsIcon.addEventListener("click", function (e) {
-            e.stopPropagation();
-            if (dropdownPanel.style.display === "block") {
-                dropdownPanel.style.display = "none";
-            } else {
-                dropdownPanel.style.display = "block";
-            }
-        });
-
-        document.addEventListener("click", function (e) {
-            if (e.target !== settingsIcon && e.target !== dropdownPanel && !dropdownPanel.contains(e.target)) {
-                dropdownPanel.style.display = "none";
-            }
-        });
-    });
-    </script>
-
-    <div class="student-info">
-        <h2 class="custom-h2">[STUDENT NAME]</h2>
-        <div class="custom-student-no">[STUDENT NUMBER]</div>
-    </div>
-
-    <div class="semester-info">
-        <p><b>1st Sem 2023-2024</b></p>
-    </div>
-
-    <div class="page-body">
-        <div class="centered-content">
-            <div class="academic-status">
-                <p>Academic Status: <b>Regular</b></p>
-                <p>Units Allowed to Enroll: <b>21</b></p>
-                <p>Approved Overload Units: <b>0</b></p>
-                <p>Units Currently Enrolled: <b>21</b></p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="Images/PUPLogo.png" class="logo">
             </div>
+
+            <a class="title"><b>PUP-ACE FORM</b></a>
+
+            <nav class="navigation-bar">
+                <ul>
+                    <li><a href="#" id="settingsLink"><img src="Images/Settings.png" class="settings" id="settingsIcon"></a></li>
+                </ul>
+            </nav>
         </div>
 
-    <div class="alignment">
-        <div class="box">
-            <label for="ACE">Application for Change of Enrollment:</label>
-            <select id="ACE" onchange="displayACE()">
-                <option value="" disabled selected></option>
-                <option value="AOS">Adding of Subject</option>
-                <option value="COS">Change of Subject</option>
-            </select>
+        <div class="dropdown-panel" id="dropdownPanel">
+            <a href="#">History</a>
+            <a href="#">Rules</a>
+            <a href="#">Log Out</a>
         </div>
-
-        <div class="date">
-            <label for="application-date">Application Date: </label>
-            <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
-            <span id="date-output" class="date-output"></span>
-        </div>
-    </div>
-
-    <script>
-        // JavaScript for date output
-        function formatDate(date) {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
-        }
-
-        function updateDateOutput() {
-            const currentDate = new Date();
-            const formattedDate = formatDate(currentDate);
-            document.getElementById('date-output').textContent = `(${formattedDate})`;
-        }
-
-        updateDateOutput();
-    </script>
-
-    <form>
-        <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-        <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
-    </form>
-
-        <div class="box" id="contentAOS" style="display: none;">
-            <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
-            <div id="table-container">
-                <table id="myTable">
-                    <tr>
-                        <th>CODE</th>
-                        <th>SUBJECT TITLE</th>
-                        <th>DAY</th>
-                        <th>TIME</th>
-                        <th>ROOM</th>
-                        <th>UNITS</th>
-                    </tr>
-                    <tr>
-                        <td contenteditable="true" maxlength="10"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                    </tr>
-                </table>
-                
-                <button id="add-row">Add Row</button>
-            </div>
-        </div>
-
-    
-        <div class="box" id="contentCOS" style="display: none;">
-            <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
-            <div id="table-container2">
-                <table id="toTable">
-                    <tr>
-                        <th>CODE</th>
-                        <th>SUBJECT TITLE</th>
-                        <th>DAY</th>
-                        <th>TIME</th>
-                        <th>ROOM</th>
-                        <th>UNITS</th>
-                    </tr>
-
-                    <tr>
-                        <td contenteditable="true" maxlength="10"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                    </tr>
-                </table>
-
-                <button id="add-row2">Add Row</button>
-                
-            </div>
-        </div>
-    </div>
 
         <script>
-            function displayACE() {
-                var select = document.getElementById("ACE");
-                var selectedACE = select.options[select.selectedIndex].value;
+            document.addEventListener("DOMContentLoaded", function () {
+            const settingsIcon = document.getElementById("settingsIcon");
+            const dropdownPanel = document.getElementById("dropdownPanel");
 
-                // Get the content divs
-                var contentAOS = document.getElementById("contentAOS");
-                var contentCOS = document.getElementById("contentCOS");
-
-                if (selectedACE === "AOS") {
-                    contentAOS.style.display = "block";
-                    contentCOS.style.display = "none";
-                } else if (selectedACE === "COS") {
-                    contentAOS.style.display = "none";
-                    contentCOS.style.display = "block";
+            settingsIcon.addEventListener("click", function (e) {
+                e.stopPropagation();
+                if (dropdownPanel.style.display === "block") {
+                    dropdownPanel.style.display = "none";
                 } else {
-                    contentAOS.style.display = "none";
-                    contentCOS.style.display = "none";
+                    dropdownPanel.style.display = "block";
                 }
+            });
+
+            document.addEventListener("click", function (e) {
+                if (e.target !== settingsIcon && e.target !== dropdownPanel && !dropdownPanel.contains(e.target)) {
+                    dropdownPanel.style.display = "none";
+                }
+            });
+        });
+        </script>
+
+        <div class="student-info">
+            <h2 class="custom-h2">[STUDENT NAME]</h2>
+            <div class="custom-student-no">[STUDENT NUMBER]</div>
+        </div>
+
+        <div class="semester-info">
+            <p><b>1st Sem 2023-2024</b></p>
+        </div>
+
+        <div class="page-body">
+            <div class="centered-content">
+                <div class="academic-status">
+                    <p>Academic Status: <b>Regular</b></p>
+                    <p>Units Allowed to Enroll: <b>21</b></p>
+                    <p>Approved Overload Units: <b>0</b></p>
+                    <p>Units Currently Enrolled: <b>21</b></p>
+                </div>
+            </div>
+
+        <div class="alignment">
+            <div class="box">
+                <label for="ACE">Application for Change of Enrollment:</label>
+                <select id="ACE" onchange="displayACE()">
+                    <option value="" disabled selected></option>
+                    <option value="AOS">Adding of Subject</option>
+                    <option value="COS">Change of Subject</option>
+                </select>
+            </div>
+
+            <div class="date">
+                <label for="application-date">Application Date: </label>
+                <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
+                <span id="date-output" class="date-output"></span>
+            </div>
+        </div>
+
+        <script>
+            // JavaScript for date output
+            function formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
             }
+
+            function updateDateOutput() {
+                const currentDate = new Date();
+                const formattedDate = formatDate(currentDate);
+                document.getElementById('date-output').textContent = `(${formattedDate})`;
+            }
+
+            updateDateOutput();
         </script>
 
-        <script>
-            const content = document.getElementById("content");
-            const tableContainer = document.getElementById("table-container");
-            const table = document.getElementById("myTable");
-            const addRowButton = document.getElementById("add-row");
+        <form>
+            <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
+            <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
+        </form>
 
-            addRowButton.addEventListener("click", function() {
-                const newRow = table.insertRow(-1);
-                const cells = [];
+            <div class="box" id="contentAOS" style="display: none;">
+                <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
+                <div id="table-container">
+                    <table id="myTable">
+                        <tr>
+                            <th>CODE</th>
+                            <th>SUBJECT TITLE</th>
+                            <th>DAY</th>
+                            <th>TIME</th>
+                            <th>ROOM</th>
+                            <th>UNITS</th>
+                        </tr>
+                        <tr>
+                            <td contenteditable="true" maxlength="10"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                        </tr>
+                    </table>
+                    
+                    <button id="add-row">Add Row</button>
+                </div>
+            </div>
 
-                for (let i = 0; i < 6; i++) {
-                    cells.push(newRow.insertCell(i));
-                    cells[i].contentEditable = true;
+        
+            <div class="box" id="contentCOS" style="display: none;">
+                <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
+                <div id="table-container2">
+                    <table id="toTable">
+                        <tr>
+                            <th>CODE</th>
+                            <th>SUBJECT TITLE</th>
+                            <th>DAY</th>
+                            <th>TIME</th>
+                            <th>ROOM</th>
+                            <th>UNITS</th>
+                        </tr>
 
-                    if (i === 0) {
-                        cells[i].addEventListener("input", function() {
-                            if (cells[i].textContent.length > 10) {
-                                cells[i].textContent = cells[i].textContent.slice(0, 10);
-                            }
-                        });
+                        <tr>
+                            <td contenteditable="true" maxlength="10"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                        </tr>
+                    </table>
+
+                    <button id="add-row2">Add Row</button>
+                    
+                </div>
+            </div>
+        </div>
+
+            <script>
+                function displayACE() {
+                    var select = document.getElementById("ACE");
+                    var selectedACE = select.options[select.selectedIndex].value;
+
+                    // Get the content divs
+                    var contentAOS = document.getElementById("contentAOS");
+                    var contentCOS = document.getElementById("contentCOS");
+
+                    if (selectedACE === "AOS") {
+                        contentAOS.style.display = "block";
+                        contentCOS.style.display = "none";
+                    } else if (selectedACE === "COS") {
+                        contentAOS.style.display = "none";
+                        contentCOS.style.display = "block";
+                    } else {
+                        contentAOS.style.display = "none";
+                        contentCOS.style.display = "none";
                     }
                 }
-            });
+            </script>
 
-            content.style.display = "none"; // Initially hide the table
-        </script>
+            <script>
+                const content = document.getElementById("content");
+                const tableContainer = document.getElementById("table-container");
+                const table = document.getElementById("myTable");
+                const addRowButton = document.getElementById("add-row");
 
-        <script>
-            const contentCOS = document.getElementById("contentCOS");
-            const tableContainer2 = document.getElementById("table-container2");
-            const toTable = document.getElementById("toTable");
-            const addRowButton2 = document.getElementById("add-row2");
-            
-            addRowButton2.addEventListener("click", function() {
-                const newRow = toTable.insertRow(-1);
-                const cells = [];
-            
-                for (let i = 0; i < 6; i++) {
-                    cells.push(newRow.insertCell(i));
-                    cells[i].contentEditable = true;
-            
-                    if (i === 0) {
-                        cells[i].addEventListener("input", function() {
-                            if (cells[i].textContent.length > 10) {
-                                cells[i].textContent = cells[i].textContent.slice(0, 10);
-                            }
-                        });
+                addRowButton.addEventListener("click", function() {
+                    const newRow = table.insertRow(-1);
+                    const cells = [];
+
+                    for (let i = 0; i < 6; i++) {
+                        cells.push(newRow.insertCell(i));
+                        cells[i].contentEditable = true;
+
+                        if (i === 0) {
+                            cells[i].addEventListener("input", function() {
+                                if (cells[i].textContent.length > 10) {
+                                    cells[i].textContent = cells[i].textContent.slice(0, 10);
+                                }
+                            });
+                        }
                     }
-                }
-            });
-            
-            contentCOS.style.display = "none"; // Initially hide the table
-        </script>
+                });
 
-    <footer>
-        <p class="footer-links">
-            <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |
-            <a href="https://www.pup.edu.ph/terms/"><b>Terms of Use</b></a> |
-            <a href="https://www.pup.edu.ph/privacy/"><b>Privacy Statement</b></a>
-        </p>
-    </footer>
+                content.style.display = "none"; // Initially hide the table
+            </script>
+
+            <script>
+                const contentCOS = document.getElementById("contentCOS");
+                const tableContainer2 = document.getElementById("table-container2");
+                const toTable = document.getElementById("toTable");
+                const addRowButton2 = document.getElementById("add-row2");
+                
+                addRowButton2.addEventListener("click", function() {
+                    const newRow = toTable.insertRow(-1);
+                    const cells = [];
+                
+                    for (let i = 0; i < 6; i++) {
+                        cells.push(newRow.insertCell(i));
+                        cells[i].contentEditable = true;
+                
+                        if (i === 0) {
+                            cells[i].addEventListener("input", function() {
+                                if (cells[i].textContent.length > 10) {
+                                    cells[i].textContent = cells[i].textContent.slice(0, 10);
+                                }
+                            });
+                        }
+                    }
+                });
+                
+                contentCOS.style.display = "none"; // Initially hide the table
+            </script>
+
+        <footer>
+            <p class="footer-links">
+                <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |
+                <a href="https://www.pup.edu.ph/terms/"><b>Terms of Use</b></a> |
+                <a href="https://www.pup.edu.ph/privacy/"><b>Privacy Statement</b></a>
+            </p>
+        </footer>
+    </div>
 </div>
 </body>
 </html>

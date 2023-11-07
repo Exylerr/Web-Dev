@@ -277,11 +277,11 @@ label[for="application-date"] {
     font-weight: bold;
     color: #800000;
     text-align: right;
+    margin-right: 1px;
 }
 .calendar-icon {
-    width: 23px;
+    width: 25px;
     height: 25px;
-    cursor: pointer;
     text-align: right;
     margin-left: 5px;
 }

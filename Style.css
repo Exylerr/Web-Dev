@@ -386,3 +386,28 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Footer */
+footer {
+    background-color: #800000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid #5c0303;
+    text-align: center;
+}
+.footer-links {
+    color: #ffffff;
+    font-family: 'Tahoma';
+    font-size: 10px;
+    margin: 0;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}

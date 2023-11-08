@@ -80,7 +80,7 @@ button {
     margin: 0;
     padding: 0;
     background-position: center;
-    background-color: #dbdada;
+    background-color: #ebebeb;
     height: 100vh;
 }
 
@@ -344,6 +344,17 @@ label[for="application-date"] {
     padding: 5px 10
 }
 
+/*delete row button*/
+.delete-row, .delete-row2 {
+    background-color: #800000; 
+    color: #fff; 
+    border: none;
+    padding: 3px 3px; 
+    border-radius: 10px; 
+    font-size: 14px; 
+    cursor: pointer;
+}
+
 /* Footer */
 footer {
     background-color: #800000;
@@ -367,15 +378,4 @@ footer a {
 }
 footer a:hover {
     text-decoration: underline;
-}
-
-/*delete row button*/
-.delete-row, .delete-row2 {
-    background-color: #800000; 
-    color: #fff; 
-    border: none;
-    padding: 3px 3px; 
-    border-radius: 10px; 
-    font-size: 14px; 
-    cursor: pointer;
 }

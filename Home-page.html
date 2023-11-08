@@ -49,23 +49,23 @@
                 </div>
             </div>
 
-        <div class="alignment">
-            <div class="box">
-                <form onsubmit="return validateForm()">
-                    <label for="ACE">Application for Change of Enrollment:</label>
-                    <select id="ACE" onchange="displayACE()">
-                    <option value="" disabled selected></option>
-                    <option value="AOS">Adding of Subject</option>
-                    <option value="COS">Change of Subject</option>
-                </select>
-            </div>
+            <div class="alignment">
+                <div class="box">
+                    <form onsubmit="return validateForm()">
+                        <label for="ACE">Application for Change of Enrollment:</label>
+                        <select id="ACE" onchange="displayACE()">
+                        <option value="" disabled selected></option>
+                        <option value="AOS">Adding of Subject</option>
+                        <option value="COS">Change of Subject</option>
+                    </select>
+                </div>
 
-            <div class="date">
-                <label for="application-date">Application Date: </label>
-                <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
-                <span id="date-output" class="date-output"></span>
+                <div class="date">
+                    <label for="application-date">Application Date: </label>
+                    <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
+                    <span id="date-output" class="date-output"></span>
+                </div>
             </div>
-        </div>
 
             <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
             <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
@@ -129,9 +129,8 @@
                 </div>
             </div>
             
-        <input type="submit" id="submit" value="Submit" style="display: none;">
-
-    </form>
+            <input type="submit" id="submit" value="Submit" style="display: none;">
+            
         </div>
         <footer>
             <p class="footer-links">

@@ -51,8 +51,9 @@
 
         <div class="alignment">
             <div class="box">
-                <label for="ACE">Application for Change of Enrollment:</label>
-                <select id="ACE" onchange="displayACE()">
+                <form onsubmit="return validateForm()">
+                    <label for="ACE">Application for Change of Enrollment:</label>
+                    <select id="ACE" onchange="displayACE()">
                     <option value="" disabled selected></option>
                     <option value="AOS">Adding of Subject</option>
                     <option value="COS">Change of Subject</option>
@@ -66,10 +67,8 @@
             </div>
         </div>
 
-        <form>
             <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
             <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
-        </form>
 
             <div class="box" id="contentAOS" style="display: none;">
                 <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
@@ -82,6 +81,7 @@
                             <th>TIME</th>
                             <th>ROOM</th>
                             <th>UNITS</th>
+                            <th>Action</th>
                         </tr>
                         <tr>
                             <td contenteditable="true" maxlength="10"></td>
@@ -90,10 +90,11 @@
                             <td contenteditable="true"></td>
                             <td contenteditable="true"></td>
                             <td contenteditable="true"></td>
+                            <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
                         </tr>
                     </table>
                     
-                    <button id="add-row">Add Row</button>
+                    <button id="add-row" type="button">Add Row</button>
                 </div>
             </div>
 
@@ -109,6 +110,7 @@
                             <th>TIME</th>
                             <th>ROOM</th>
                             <th>UNITS</th>
+                            <th>Action</th>
                         </tr>
 
                         <tr>
@@ -118,15 +120,17 @@
                             <td contenteditable="true"></td>
                             <td contenteditable="true"></td>
                             <td contenteditable="true"></td>
+                            <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
                         </tr>
                     </table>
 
-                    <button id="add-row2">Add Row</button>
+                    <button id="add-row2" type="button">Add Row</button>
                     
                 </div>
             </div>
+                <input type="submit" id="submit" value="Submit" style="display: none;">
+    </form>
         </div>
-
         <footer>
             <p class="footer-links">
                 <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |

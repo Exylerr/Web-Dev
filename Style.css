@@ -368,3 +368,14 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/*delete row button*/
+.delete-row, .delete-row2 {
+    background-color: #800000; 
+    color: #fff; 
+    border: none;
+    padding: 3px 3px; 
+    border-radius: 10px; 
+    font-size: 14px; 
+    cursor: pointer;
+}

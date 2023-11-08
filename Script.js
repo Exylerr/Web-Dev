@@ -54,44 +54,156 @@ function displayACE() {
     }
 }
 
-/*Script for Table1*/
-const addRowButton = document.getElementById("add-row");
-addRowButton.addEventListener("click", function() {
-    const table = document.getElementById("myTable");
-    const newRow = table.insertRow(-1);
-    const cells = [];
+// Function to display or hide the submit button
+function toggleSubmitButton(display) {
+    const submitButton = document.getElementById("submit");
+    submitButton.style.display = display;
+}
 
-    for (let i = 0; i < 6; i++) {
-        cells.push(newRow.insertCell(i));
-        cells[i].contentEditable = true;
+// Event listener for the ACE dropdown
+document.getElementById("ACE").addEventListener("change", function () {
+    const selectedACE = this.value;
 
-        if (i === 0) {
-            cells[i].addEventListener("input", function() {
-                if (cells[i].textContent.length > 10) {
-                    cells[i].textContent = cells[i].textContent.slice(0, 10);
-                }
-            });
-        }
+    if (selectedACE === "AOS" || selectedACE === "COS") {
+        toggleSubmitButton("block"); 
+    } else {
+        toggleSubmitButton("none"); 
     }
 });
 
-/*Script for Table2*/
-const addRowButton2 = document.getElementById("add-row2");
-addRowButton2.addEventListener("click", function() {
-    const toTable = document.getElementById("toTable");
-    const newRow = toTable.insertRow(-1);
-    const cells = [];
+// Event listener for form submission
+document.querySelector("form").addEventListener("submit", function (event) {
+    
+    if (!isFormValid()) {
+        event.preventDefault(); 
+        alert("Please complete the form before submitting."); 
+    } else {
+        alert("Please check you webmail for updates.");
+    }
+});
 
-    for (let i = 0; i < 6; i++) {
-        cells.push(newRow.insertCell(i));
-        cells[i].contentEditable = true;
+// Function to validate the form
+function isFormValid() {
+   
+    const reasonsField = document.getElementById("Reasons");
+    const reasonsValue = reasonsField.value.trim(); 
+    if (reasonsValue === "") {
+        alert("Please provide a reason for the change of enrollment."); 
+        return false; 
+    }
 
-        if (i === 0) {
-            cells[i].addEventListener("input", function() {
-                if (cells[i].textContent.length > 10) {
-                    cells[i].textContent = cells[i].textContent.slice(0, 10);
-                }
-            });
+    if (!isTableFilled("myTable") && !isTableFilled("toTable")) {
+        return false; 
+    }
+
+    return true; 
+}
+
+// Function to check if the table is filled
+function isTableFilled(tableId) {
+    const table = document.getElementById(tableId);
+    const rows = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < rows.length; i++) { 
+        const cells = rows[i].getElementsByTagName("td");
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.trim() === "") {
+                return false;
+            }
         }
     }
+    return true; 
+}
+
+// Event listener for the "Add Row" button for Table1
+document.getElementById("add-row").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "AOS") {
+        const table = document.getElementById("myTable");
+        const newRow = table.insertRow(-1);
+        const cells = [];
+
+        for (let i = 0; i < 6; i++) {
+            cells.push(newRow.insertCell(i));
+            cells[i].contentEditable = true;
+
+            if (i === 0) {
+                cells[i].addEventListener("input", function () {
+                    if (cells[i].textContent.length > 10) {
+                        cells[i].textContent = cells[i].textContent.slice(0, 10);
+                    }
+                });
+            }
+        }
+        const deleteCell = newRow.insertCell(6);
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-row";
+        deleteButton.textContent = "Delete Row";
+        deleteButton.onclick = function () {
+            deleteRow(this);
+        };
+        deleteCell.appendChild(deleteButton);
+    }
+});
+
+// Event listener for the "Add Row" button for Table2
+document.getElementById("add-row2").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "COS") {
+        const table = document.getElementById("toTable");
+        const newRow = table.insertRow(-1);
+        const cells = [];
+
+        for (let i = 0; i < 6; i++) {
+            cells.push(newRow.insertCell(i));
+            cells[i].contentEditable = true;
+
+            if (i === 0) {
+                cells[i].addEventListener("input", function () {
+                    if (cells[i].textContent.length > 10) {
+                        cells[i].textContent = cells[i].textContent.slice(0, 10);
+                    }
+                });
+            }
+        }
+        const deleteCell = newRow.insertCell(6);
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-row2";
+        deleteButton.textContent = "Delete Row";
+        deleteButton.onclick = function () {
+            deleteRow(this);
+        };
+        deleteCell.appendChild(deleteButton);
+    }
+});
+
+// Function to clear the Reason/s for Change of Enrollment text area
+function clearReasonsTextArea() {
+    const reasonsField = document.getElementById("Reasons");
+    reasonsField.value = ""; 
+}
+
+// Event listener for the ACE dropdown
+document.getElementById("ACE").addEventListener("change", function () {
+    clearReasonsTextArea(); 
+    const selectedACE = this.value;
+
+    if (selectedACE === "AOS" || selectedACE === "COS") {
+        toggleSubmitButton("block"); 
+    } else {
+        toggleSubmitButton("none"); 
+    }
+});
+
+// Function to delete a row
+function deleteRow(button) {
+    const row = button.parentElement.parentElement;
+    row.remove(); 
+}
+
+// Event listener for the "Add Row" button
+document.getElementById("add-row").addEventListener("click", function () {
+    addRow("myTable");
 });

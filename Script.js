@@ -202,7 +202,6 @@ function deleteRow(button) {
     const row = button.parentElement.parentElement;
     row.remove(); 
 }
-
 // Event listener for the "Add Row" button
 document.getElementById("add-row").addEventListener("click", function () {
     addRow("myTable");

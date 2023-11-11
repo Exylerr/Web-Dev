@@ -207,3 +207,14 @@ function deleteRow(button) {
 document.getElementById("add-row").addEventListener("click", function () {
     addRow("myTable");
 });
+
+// Function to display the pop-up
+function openPopup() {
+    document.getElementById("popupContainer").style.display = "block";
+}
+// Function to close the pop-up
+function closePopup() {
+    document.getElementById("popupContainer").style.display = "none";
+}
+// Automatically open the pop-up when the page loads
+window.onload = openPopup;

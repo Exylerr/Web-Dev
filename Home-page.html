@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="Images/PUPLogo.png">
 </head>
 <body class="page2-background">
-    <div class="container">
+    <header>
         <div class="header">
             <div class="logo">
                 <img src="Images/PUPLogo.png" class="logo">
@@ -26,120 +26,138 @@
 
         <div class="dropdown-panel" id="dropdownPanel">
             <a href="#">History</a>
-            <a href="#">Rules</a>
             <a href="#">Log Out</a>
         </div>
+    </header>
 
-        <div class="student-info">
-            <h2 class="custom-h2">[STUDENT NAME]</h2>
-            <div class="custom-student-no">[STUDENT NUMBER]</div>
-        </div>
+    <main>
+        <div class="container">
+            <div class="student-info">
+                <h2 class="custom-h2">[STUDENT NAME]</h2>
+                <div class="custom-student-no">[STUDENT NUMBER]</div>
+            </div>
 
-        <div class="semester-info">
-            <p><b>1st Sem 2023-2024</b></p>
-        </div>
+            <div class="semester-info">
+                <p><b>1st Sem 2023-2024</b></p>
+            </div>
 
-        <div class="page-body">
-            <div class="centered-content">
-                <div class="academic-status">
-                    <p>Academic Status: <b>Regular</b></p>
-                    <p>Units Allowed to Enroll: <b>21</b></p>
-                    <p>Approved Overload Units: <b>0</b></p>
-                    <p>Units Currently Enrolled: <b>21</b></p>
+            <div class="page-body">
+                <div class="centered-content">
+                    <div class="academic-status">
+                        <p>Academic Status: <b>Regular</b></p>
+                        <p>Units Allowed to Enroll: <b>21</b></p>
+                        <p>Approved Overload Units: <b>0</b></p>
+                        <p>Units Currently Enrolled: <b>21</b></p>
+                    </div>
                 </div>
-            </div>
 
-        <div class="alignment">
-            <div class="box">
-                <form onsubmit="return validateForm()">
-                    <label for="ACE">Application for Change of Enrollment:</label>
-                    <select id="ACE" onchange="displayACE()">
-                    <option value="" disabled selected></option>
-                    <option value="AOS">Adding of Subject</option>
-                    <option value="COS">Change of Subject</option>
-                </select>
-            </div>
+                <div class="alignment">
+                    <div class="box">
+                        <form onsubmit="return validateForm()">
+                            <label for="ACE">Application for Change of Enrollment:</label>
+                            <select id="ACE" onchange="displayACE()">
+                            <option value="" disabled selected></option>
+                            <option value="AOS">Adding of Subject</option>
+                            <option value="COS">Change of Subject</option>
+                        </select>
+                    </div>
 
-            <div class="date">
-                <label for="application-date">Application Date: </label>
-                <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
-                <span id="date-output" class="date-output"></span>
-            </div>
-        </div>
-
-            <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
-            <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
-
-            <div class="box" id="contentAOS" style="display: none;">
-                <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
-                <div id="table-container">
-                    <table id="myTable">
-                        <tr>
-                            <th>CODE</th>
-                            <th>SUBJECT TITLE</th>
-                            <th>DAY</th>
-                            <th>TIME</th>
-                            <th>ROOM</th>
-                            <th>UNITS</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td contenteditable="true" maxlength="10"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
-                        </tr>
-                    </table>
-                    
-                    <button id="add-row" type="button">Add Row</button>
+                    <div class="date">
+                        <label for="application-date">Application Date: </label>
+                        <img src="Images/calendar.png" alt="Calendar Icon" class="calendar-icon">
+                        <span id="date-output" class="date-output"></span>
+                    </div>
                 </div>
-            </div>
 
-        
-            <div class="box" id="contentCOS" style="display: none;">
-                <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
-                <div id="table-container2">
-                    <table id="toTable">
-                        <tr>
-                            <th>CODE</th>
-                            <th>SUBJECT TITLE</th>
-                            <th>DAY</th>
-                            <th>TIME</th>
-                            <th>ROOM</th>
-                            <th>UNITS</th>
-                            <th>Action</th>
-                        </tr>
+                <p><label for="Reasons">Reason/s for Change of Enrollment:</label></p>
+                <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea> <br>
 
-                        <tr>
-                            <td contenteditable="true" maxlength="10"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td contenteditable="true"></td>
-                            <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
-                        </tr>
-                    </table>
-
-                    <button id="add-row2" type="button">Add Row</button>
-                    
+                <div class="box" id="contentAOS" style="display: none;">
+                    <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
+                    <div id="table-container">
+                        <table id="myTable">
+                            <tr>
+                                <th>CODE</th>
+                                <th>SUBJECT TITLE</th>
+                                <th>DAY</th>
+                                <th>TIME</th>
+                                <th>ROOM</th>
+                                <th>UNITS</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true" maxlength="10"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
+                            </tr>
+                        </table>
+                        
+                        <button id="add-row" type="button">Add Row</button>
+                    </div>
                 </div>
-            </div>
+
+                <div class="box" id="contentCOS" style="display: none;">
+                    <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
+                    <div id="table-container2">
+                        <table id="toTable">
+                            <tr>
+                                <th>CODE</th>
+                                <th>SUBJECT TITLE</th>
+                                <th>DAY</th>
+                                <th>TIME</th>
+                                <th>ROOM</th>
+                                <th>UNITS</th>
+                                <th>Action</th>
+                            </tr>
+
+                            <tr>
+                                <td contenteditable="true" maxlength="10"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
+                            </tr>
+                        </table>
+
+                        <button id="add-row2" type="button">Add Row</button>
+                        
+                    </div>
+                </div>
+                
                 <input type="submit" id="submit" value="Submit" style="display: none;">
-    </form>
+
+            </div>
+        </div>    
+    </main>
+
+    <footer>
+        <p class="footer-links">
+            <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |
+            <a href="https://www.pup.edu.ph/terms/"><b>Terms of Use</b></a> |
+            <a href="https://www.pup.edu.ph/privacy/"><b>Privacy Statement</b></a>
+        </p>
+    </footer>
+
+    <div id="popupContainer" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Rules</h2>
+            <p>Welcome to PUP-ACE Form. Before proceeding, please be aware of the following rules. Make sure you understand well the instruction:</p>
+            <ul>
+                <li>Rule 1: </li>
+                <li>Rule 2: </li>
+                <li>Rule 3: </li>
+            </ul>
+            <p>By using this form, you agree to abide by the rules stated above.</p>
         </div>
-        <footer>
-            <p class="footer-links">
-                <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |
-                <a href="https://www.pup.edu.ph/terms/"><b>Terms of Use</b></a> |
-                <a href="https://www.pup.edu.ph/privacy/"><b>Privacy Statement</b></a>
-            </p>
-        </footer>
     </div>
-</div>
+
     <script src="Script.js"></script>
 </body>
 </html>

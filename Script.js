@@ -53,6 +53,7 @@ function displayACE() {
         contentCOS.style.display = "none";
     }
 }
+
 // Function to display or hide the submit button
 function toggleSubmitButton(display) {
     const submitButton = document.getElementById("submit");
@@ -177,6 +178,7 @@ document.getElementById("add-row2").addEventListener("click", function () {
         deleteCell.appendChild(deleteButton);
     }
 });
+
 // Function to clear the Reason/s for Change of Enrollment text area
 function clearReasonsTextArea() {
     const reasonsField = document.getElementById("Reasons");
@@ -194,16 +196,24 @@ document.getElementById("ACE").addEventListener("change", function () {
         toggleSubmitButton("none"); 
     }
 });
+
 // Function to delete a row
 function deleteRow(button) {
     const row = button.parentElement.parentElement;
     row.remove(); 
 }
-
 // Event listener for the "Add Row" button
 document.getElementById("add-row").addEventListener("click", function () {
     addRow("myTable");
 });
 
-
-
+// Function to display the pop-up
+function openPopup() {
+    document.getElementById("popupContainer").style.display = "block";
+}
+// Function to close the pop-up
+function closePopup() {
+    document.getElementById("popupContainer").style.display = "none";
+}
+// Automatically open the pop-up when the page loads
+window.onload = openPopup;

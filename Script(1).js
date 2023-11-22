@@ -121,22 +121,24 @@ document.getElementById("add-row").addEventListener("click", function () {
 
     if (selectedACE === "AOS") {
         const table = document.getElementById("myTable");
+        const originalRow = table.rows[1]; // Assuming the first row is the original row
         const newRow = table.insertRow(-1);
-        const cells = [];
 
-        for (let i = 0; i < 6; i++) {
-            cells.push(newRow.insertCell(i));
-            cells[i].contentEditable = true;
+        for (let i = 0; i < originalRow.cells.length - 1; i++) {
+            const newCell = newRow.insertCell(i);
+            newCell.innerHTML = originalRow.cells[i].innerHTML; // Clone the cell structure
+            newCell.contentEditable = true; // Make the cell editable
 
             if (i === 0) {
-                cells[i].addEventListener("input", function () {
-                    if (cells[i].textContent.length > 10) {
-                        cells[i].textContent = cells[i].textContent.slice(0, 10);
+                newCell.addEventListener("input", function () {
+                    if (newCell.textContent.length > 10) {
+                        newCell.textContent = newCell.textContent.slice(0, 10);
                     }
                 });
             }
         }
-        const deleteCell = newRow.insertCell(6);
+
+        const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete-row";
         deleteButton.textContent = "Delete Row";
@@ -153,22 +155,24 @@ document.getElementById("add-row2").addEventListener("click", function () {
 
     if (selectedACE === "COS") {
         const table = document.getElementById("toTable");
+        const originalRow = table.rows[1]; // Assuming the first row is the original row
         const newRow = table.insertRow(-1);
-        const cells = [];
 
-        for (let i = 0; i < 6; i++) {
-            cells.push(newRow.insertCell(i));
-            cells[i].contentEditable = true;
+        for (let i = 0; i < originalRow.cells.length - 1; i++) {
+            const newCell = newRow.insertCell(i);
+            newCell.innerHTML = originalRow.cells[i].innerHTML; // Clone the cell structure
+            newCell.contentEditable = true; // Make the cell editable
 
             if (i === 0) {
-                cells[i].addEventListener("input", function () {
-                    if (cells[i].textContent.length > 10) {
-                        cells[i].textContent = cells[i].textContent.slice(0, 10);
+                newCell.addEventListener("input", function () {
+                    if (newCell.textContent.length > 10) {
+                        newCell.textContent = newCell.textContent.slice(0, 10);
                     }
                 });
             }
         }
-        const deleteCell = newRow.insertCell(6);
+
+        const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete-row2";
         deleteButton.textContent = "Delete Row";

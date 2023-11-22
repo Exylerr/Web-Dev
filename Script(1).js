@@ -138,7 +138,7 @@ document.getElementById("add-row").addEventListener("click", function () {
     }
 });
 
-// Event listener for the "Add Row" button for Table2
+// Event listener for the "Add Row" button for Table2 (fromTable)
 document.getElementById("add-row-to").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
 
@@ -172,7 +172,7 @@ document.getElementById("add-row-to").addEventListener("click", function () {
     }
 });
 
-// Event listener for the "Add Row" button for Table1
+// Event listener for the "Add Row" button for Table2 (toTable)
 document.getElementById("add-row-from").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
 

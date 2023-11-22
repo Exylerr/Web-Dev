@@ -244,4 +244,3 @@ function closePopup() {
 }
 // Automatically open the pop-up when the page loads
 window.onload = openPopup;
-

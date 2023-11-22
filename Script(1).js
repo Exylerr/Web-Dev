@@ -1,3 +1,14 @@
+// Function to handle logout
+function logout() {
+    // Redirect to the login page
+    window.location.href = "PUP-ACE.html";
+}
+
+document.getElementById("logoutLink").addEventListener("click", function (event) {
+    event.preventDefault();
+    logout();
+});
+
 /*Script for Date Output*/
 function formatDate(date) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };

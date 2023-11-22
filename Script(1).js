@@ -150,7 +150,7 @@ document.getElementById("add-row").addEventListener("click", function () {
 });
 
 // Event listener for the "Add Row" button for Table2
-document.getElementById("add-row2").addEventListener("click", function () {
+document.getElementById("add-row-to").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
 
     if (selectedACE === "COS") {
@@ -174,7 +174,41 @@ document.getElementById("add-row2").addEventListener("click", function () {
 
         const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
         const deleteButton = document.createElement("button");
-        deleteButton.className = "delete-row2";
+        deleteButton.className = "delete-row";
+        deleteButton.textContent = "Delete Row";
+        deleteButton.onclick = function () {
+            deleteRow(this);
+        };
+        deleteCell.appendChild(deleteButton);
+    }
+});
+
+// Event listener for the "Add Row" button for Table1
+document.getElementById("add-row-from").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "COS") {
+        const table = document.getElementById("fromTable");
+        const originalRow = table.rows[1]; // Assuming the first row is the original row
+        const newRow = table.insertRow(-1);
+
+        for (let i = 0; i < originalRow.cells.length - 1; i++) {
+            const newCell = newRow.insertCell(i);
+            newCell.innerHTML = originalRow.cells[i].innerHTML; // Clone the cell structure
+            newCell.contentEditable = true; // Make the cell editable
+
+            if (i === 0) {
+                newCell.addEventListener("input", function () {
+                    if (newCell.textContent.length > 10) {
+                        newCell.textContent = newCell.textContent.slice(0, 10);
+                    }
+                });
+            }
+        }
+
+        const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-row2"; // Change class to delete-row2
         deleteButton.textContent = "Delete Row";
         deleteButton.onclick = function () {
             deleteRow(this);

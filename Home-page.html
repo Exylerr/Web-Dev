@@ -108,33 +108,62 @@
 
                 <div class="box" id="contentCOS" style="display: none;">
                     <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
+                
+                    <div id="table-container-from">
+                        <label for="from-table">From:</label>
+                        <table id="fromTable">
+                            <tr>
+                                <th>CODE</th>
+                                <th>SUBJECT TITLE</th>
+                                <th>DAY</th>
+                                <th>TIME</th>
+                                <th>ROOM</th>
+                                <th>UNITS</th>
+                                <th>Action</th>
+                            </tr>
+            
+                            <tr>
+                                <td><input type="text" name="code[]" required></td>
+                                <td><input type="text" name="subjectTitle[]" required></td>
+                                <td><input type="text" name="day[]" required></td>
+                                <td><input type="text" name="time[]" required></td>
+                                <td><input type="text" name="room[]" required></td>
+                                <td><input type="text" name="units[]" required></td>
+                                <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
+                            </tr>
+                        </table>
+                
+                        <button id="add-row-from" type="button">Add Row</button>
+                    </div>
+                    
+                    <div id="table-container-to">
+                        <label for="to-table">To:</label>
+                        <table id="toTable">
+                            <tr>
+                                <th>CODE</th>
+                                <th>SUBJECT TITLE</th>
+                                <th>DAY</th>
+                                <th>TIME</th>
+                                <th>ROOM</th>
+                                <th>UNITS</th>
+                                <th>Action</th>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" name="to-code[]" required></td>
+                                <td><input type="text" name="to-subjectTitle[]" required></td>
+                                <td><input type="text" name="to-day[]" required></td>
+                                <td><input type="text" name="to-time[]" required></td>
+                                <td><input type="text" name="to-room[]" required></td>
+                                <td><input type="text" name="to-units[]" required></td>
+                                <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
+                            </tr>
+                        </table>
+
+                        <button id="add-row-to" type="button">Add Row</button>
+                    </div>
+                        
                     <form id="formCOS" onsubmit="return validateForm()" action="" method="">
-                        <div id="table-container2">
-                            <table id="toTable">
-                                <tr>
-                                    <th>CODE</th>
-                                    <th>SUBJECT TITLE</th>
-                                    <th>DAY</th>
-                                    <th>TIME</th>
-                                    <th>ROOM</th>
-                                    <th>UNITS</th>
-                                    <th>Action</th>
-                                </tr>
-                
-                                <tr>
-                                    <td><input type="text" name="code[]" required></td>
-                                    <td><input type="text" name="subjectTitle[]" required></td>
-                                    <td><input type="text" name="day[]" required></td>
-                                    <td><input type="text" name="time[]" required></td>
-                                    <td><input type="text" name="room[]" required></td>
-                                    <td><input type="text" name="units[]" required></td>
-                                    <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
-                                </tr>
-                            </table>
-                
-                            <button id="add-row2" type="button">Add Row</button>
-                        </div>
-                
                         <input type="submit" id="submitCOS" value="Submit">
                     </form>
                 </div>

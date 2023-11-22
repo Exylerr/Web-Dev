@@ -134,7 +134,7 @@ button {
 .no-hover {
     pointer-events: none;
 }
-.settings {
+.logout {
     width: 30px;
     height: 30px;
     margin-left: -100px;
@@ -177,12 +177,6 @@ button {
 .dropdown-panel a:hover {
     background-color: #800000;
     color: #fff;
-}
-
-/* Show the dropdown panel when the settings icon is clicked */
-#settingsIcon:hover + #dropdownPanel,
-#dropdownPanel:hover {
-    display: block;
 }
 
 /* body */

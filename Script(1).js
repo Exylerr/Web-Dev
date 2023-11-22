@@ -1,24 +1,3 @@
-/*Script for the dropdown menu*/
-document.addEventListener("DOMContentLoaded", function () {
-    const settingsIcon = document.getElementById("settingsIcon");
-    const dropdownPanel = document.getElementById("dropdownPanel");
-
-    settingsIcon.addEventListener("click", function (e) {
-        e.stopPropagation();
-        if (dropdownPanel.style.display === "block") {
-            dropdownPanel.style.display = "none";
-        } else {
-            dropdownPanel.style.display = "block";
-        }
-    });
-
-    document.addEventListener("click", function (e) {
-        if (e.target !== settingsIcon && e.target !== dropdownPanel && !dropdownPanel.contains(e.target)) {
-            dropdownPanel.style.display = "none";
-        }
-    });
-});
-
 /*Script for Date Output*/
 function formatDate(date) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };

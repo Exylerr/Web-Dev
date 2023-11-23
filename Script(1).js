@@ -62,19 +62,6 @@ document.getElementById("ACE").addEventListener("change", function () {
     }
 });
 
-// Event listener for form submission
-document.querySelector("form").addEventListener("submit", function (event) {
-    const selectedACE = document.getElementById("ACE").value;
-
-    if (!isFormValid(selectedACE)) {
-        event.preventDefault();
-        alert("Please complete the form before submitting.");
-    } else {
-        alert("Please check your webmail for updates.");
-        clearForm();
-    }
-});
-
 // Function to clear the form after successful submission
 function clearForm() {
     // Clear the reasons textarea

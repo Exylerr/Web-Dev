@@ -53,55 +53,101 @@ function toggleSubmitButton(display) {
 document.getElementById("ACE").addEventListener("change", function () {
     const selectedACE = this.value;
 
+    clearReasonsTextArea(); // Clear the Reasons text area
+
     if (selectedACE === "AOS" || selectedACE === "COS") {
-        toggleSubmitButton("block"); 
+        toggleSubmitButton("block"); // Display the submit button
     } else {
-        toggleSubmitButton("none"); 
+        toggleSubmitButton("none"); // Hide the submit button
     }
 });
 
 // Event listener for form submission
 document.querySelector("form").addEventListener("submit", function (event) {
-    
-    if (!isFormValid()) {
-        event.preventDefault(); 
-        alert("Please complete the form before submitting."); 
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (!isFormValid(selectedACE)) {
+        event.preventDefault();
+        alert("Please complete the form before submitting.");
     } else {
-        alert("Please check you webmail for updates.");
+        alert("Please check your webmail for updates.");
+        clearForm();
     }
 });
 
-// Function to validate the form
-function isFormValid() {
-   
-    const reasonsField = document.getElementById("Reasons");
-    const reasonsValue = reasonsField.value.trim(); 
-    if (reasonsValue === "") {
-        alert("Please provide a reason for the change of enrollment."); 
-        return false; 
-    }
+// Function to clear the form after successful submission
+function clearForm() {
+    // Clear the reasons textarea
+    document.getElementById("Reasons").value = "";
 
-    if (!isTableFilled("myTable") && !isTableFilled("toTable")) {
-        return false; 
-    }
+    // Clear the AOS table
+    clearTable("myTable");
 
-    return true; 
+    // Clear the COS tables
+    clearTable("fromTable");
+    clearTable("toTable");
 }
+
+// Function to clear a table
+function clearTable(tableId) {
+    const table = document.getElementById(tableId);
+    const rows = table.getElementsByTagName("tr");
+
+    // Remove all rows except the header row
+    for (let i = rows.length - 1; i > 0; i--) {
+        table.deleteRow(i);
+    }
+
+    // If there are no rows, add one empty row
+    if (rows.length === 1) {
+        const newRow = table.insertRow(-1);
+        for (let j = 0; j < rows[0].cells.length; j++) {
+            const newCell = newRow.insertCell(j);
+            newCell.innerHTML = "<input type='text' name='code[]' required>";
+        }
+    }
+}
+
+// Function to validate the form
+function isFormValid(selectedACE) {
+    const reasonsField = document.getElementById("Reasons");
+    const reasonsValue = reasonsField.value.trim();
+
+    if (reasonsValue === "") {
+        alert("Please provide a reason for the change of enrollment.");
+        return false;
+    }
+
+    if (selectedACE === "AOS") {
+        if (!isTableFilled("myTable")) {
+            return false;
+        }
+    } else if (selectedACE === "COS") {
+        if (!isTableFilled("fromTable") || !isTableFilled("toTable")) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 
 // Function to check if the table is filled
 function isTableFilled(tableId) {
     const table = document.getElementById(tableId);
     const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < rows.length; i++) { 
+    for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName("td");
         for (let j = 0; j < cells.length; j++) {
-            if (cells[j].textContent.trim() === "") {
+            const inputField = cells[j].getElementsByTagName("input")[0];
+            if (inputField && inputField.value.trim() === "") {
+                alert("Please fill in all the fields in the table.");
                 return false;
             }
         }
     }
-    return true; 
+    return true;
 }
 
 // Event listener for the "Add Row" button for Table1

@@ -103,7 +103,7 @@
 
                 <div class="box" id="contentCOS" style="display: none;">
                     <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
-                
+                    <form id="formCOS" onsubmit="return validateForm()" action="" method="post">
                     <div id="table-container-from">
                         <label for="from-table">From:</label>
                         <table id="fromTable">
@@ -158,7 +158,6 @@
                         <button id="add-row-to" type="button">Add Row</button>
                     </div>
                         
-                    <form id="formCOS" onsubmit="return validateForm()" action="" method="post">
                         <input type="submit" id="submitCOS" value="Submit">
                     </form>
                 </div>

@@ -247,13 +247,13 @@ function clearReasonsTextArea() {
 
 // Event listener for the ACE dropdown
 document.getElementById("ACE").addEventListener("change", function () {
-    clearReasonsTextArea(); 
+    clearReasonsTextArea();
     const selectedACE = this.value;
 
     if (selectedACE === "AOS" || selectedACE === "COS") {
-        toggleSubmitButton("block"); 
+        toggleSubmitButton("block");
     } else {
-        toggleSubmitButton("none"); 
+        toggleSubmitButton("none");
     }
 });
 

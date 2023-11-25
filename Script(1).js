@@ -1,22 +1,11 @@
-/*Script for the dropdown menu*/
-document.addEventListener("DOMContentLoaded", function () {
-    const settingsIcon = document.getElementById("settingsIcon");
-    const dropdownPanel = document.getElementById("dropdownPanel");
-
-    settingsIcon.addEventListener("click", function (e) {
-        e.stopPropagation();
-        if (dropdownPanel.style.display === "block") {
-            dropdownPanel.style.display = "none";
-        } else {
-            dropdownPanel.style.display = "block";
-        }
-    });
-
-    document.addEventListener("click", function (e) {
-        if (e.target !== settingsIcon && e.target !== dropdownPanel && !dropdownPanel.contains(e.target)) {
-            dropdownPanel.style.display = "none";
-        }
-    });
+// Function to handle logout
+function logout() {
+    // Redirect to the login page
+    window.location.href = "PUP-ACE.html";
+}
+document.getElementById("logoutLink").addEventListener("click", function (event) {
+    event.preventDefault();
+    logout();
 });
 
 /*Script for Date Output*/
@@ -64,55 +53,88 @@ function toggleSubmitButton(display) {
 document.getElementById("ACE").addEventListener("change", function () {
     const selectedACE = this.value;
 
+    clearReasonsTextArea(); // Clear the Reasons text area
+
     if (selectedACE === "AOS" || selectedACE === "COS") {
-        toggleSubmitButton("block"); 
+        toggleSubmitButton("block"); // Display the submit button
     } else {
-        toggleSubmitButton("none"); 
+        toggleSubmitButton("none"); // Hide the submit button
     }
 });
 
-// Event listener for form submission
-document.querySelector("form").addEventListener("submit", function (event) {
-    
-    if (!isFormValid()) {
-        event.preventDefault(); 
-        alert("Please complete the form before submitting."); 
-    } else {
-        alert("Please check you webmail for updates.");
+// Function to clear the form after successful submission
+function clearForm() {
+    // Clear the reasons textarea
+    document.getElementById("Reasons").value = "";
+
+    // Clear the AOS table
+    clearTable("myTable");
+
+    // Clear the COS tables
+    clearTable("fromTable");
+    clearTable("toTable");
+}
+
+// Function to clear a table
+function clearTable(tableId) {
+    const table = document.getElementById(tableId);
+    const rows = table.getElementsByTagName("tr");
+
+    // Remove all rows except the header row
+    for (let i = rows.length - 1; i > 0; i--) {
+        table.deleteRow(i);
     }
-});
+
+    // If there are no rows, add one empty row
+    if (rows.length === 1) {
+        const newRow = table.insertRow(-1);
+        for (let j = 0; j < rows[0].cells.length; j++) {
+            const newCell = newRow.insertCell(j);
+            newCell.innerHTML = "<input type='text' name='code[]' required>";
+        }
+    }
+}
 
 // Function to validate the form
-function isFormValid() {
-   
+function isFormValid(selectedACE) {
     const reasonsField = document.getElementById("Reasons");
-    const reasonsValue = reasonsField.value.trim(); 
+    const reasonsValue = reasonsField.value.trim();
+
     if (reasonsValue === "") {
-        alert("Please provide a reason for the change of enrollment."); 
-        return false; 
+        alert("Please provide a reason for the change of enrollment.");
+        return false;
     }
 
-    if (!isTableFilled("myTable") && !isTableFilled("toTable")) {
-        return false; 
+    if (selectedACE === "AOS") {
+        if (!isTableFilled("myTable")) {
+            return false;
+        }
+    } else if (selectedACE === "COS") {
+        if (!isTableFilled("fromTable") || !isTableFilled("toTable")) {
+            return false;
+        }
     }
 
-    return true; 
+    return true;
 }
+
 
 // Function to check if the table is filled
 function isTableFilled(tableId) {
     const table = document.getElementById(tableId);
     const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < rows.length; i++) { 
+    for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName("td");
         for (let j = 0; j < cells.length; j++) {
-            if (cells[j].textContent.trim() === "") {
+            const inputField = cells[j].getElementsByTagName("input")[0];
+            if (inputField && inputField.value.trim() === "") {
+                alert("Please fill in all the fields in the table.");
                 return false;
             }
         }
     }
-    return true; 
+    return true;
 }
 
 // Event listener for the "Add Row" button for Table1
@@ -149,8 +171,8 @@ document.getElementById("add-row").addEventListener("click", function () {
     }
 });
 
-// Event listener for the "Add Row" button for Table2
-document.getElementById("add-row2").addEventListener("click", function () {
+// Event listener for the "Add Row" button for Table2 (fromTable)
+document.getElementById("add-row-to").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
 
     if (selectedACE === "COS") {
@@ -174,7 +196,41 @@ document.getElementById("add-row2").addEventListener("click", function () {
 
         const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
         const deleteButton = document.createElement("button");
-        deleteButton.className = "delete-row2";
+        deleteButton.className = "delete-row";
+        deleteButton.textContent = "Delete Row";
+        deleteButton.onclick = function () {
+            deleteRow(this);
+        };
+        deleteCell.appendChild(deleteButton);
+    }
+});
+
+// Event listener for the "Add Row" button for Table2 (toTable)
+document.getElementById("add-row-from").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "COS") {
+        const table = document.getElementById("fromTable");
+        const originalRow = table.rows[1]; // Assuming the first row is the original row
+        const newRow = table.insertRow(-1);
+
+        for (let i = 0; i < originalRow.cells.length - 1; i++) {
+            const newCell = newRow.insertCell(i);
+            newCell.innerHTML = originalRow.cells[i].innerHTML; // Clone the cell structure
+            newCell.contentEditable = true; // Make the cell editable
+
+            if (i === 0) {
+                newCell.addEventListener("input", function () {
+                    if (newCell.textContent.length > 10) {
+                        newCell.textContent = newCell.textContent.slice(0, 10);
+                    }
+                });
+            }
+        }
+
+        const deleteCell = newRow.insertCell(originalRow.cells.length - 1);
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-row2"; // Change class to delete-row2
         deleteButton.textContent = "Delete Row";
         deleteButton.onclick = function () {
             deleteRow(this);
@@ -191,13 +247,13 @@ function clearReasonsTextArea() {
 
 // Event listener for the ACE dropdown
 document.getElementById("ACE").addEventListener("change", function () {
-    clearReasonsTextArea(); 
+    clearReasonsTextArea();
     const selectedACE = this.value;
 
     if (selectedACE === "AOS" || selectedACE === "COS") {
-        toggleSubmitButton("block"); 
+        toggleSubmitButton("block");
     } else {
-        toggleSubmitButton("none"); 
+        toggleSubmitButton("none");
     }
 });
 
@@ -221,4 +277,3 @@ function closePopup() {
 }
 // Automatically open the pop-up when the page loads
 window.onload = openPopup;
-

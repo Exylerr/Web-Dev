@@ -21,22 +21,17 @@
 
             <nav class="navigation-bar">
                 <ul>
-                    <li><a href="#" id="settingsLink"><img src="Images/Settings.png" class="settings" id="settingsIcon"></a></li>
+                    <li><a href="#" id="logoutLink"><img src="Images/logout.png" class="logout" id="logoutIcon"></a></li>
                 </ul>
             </nav>
-        </div>
-
-        <div class="dropdown-panel" id="dropdownPanel">
-            <a href="#">History</a>
-            <a href="#">Log Out</a>
         </div>
     </header>
 
     <main>
         <div class="container">
             <div class="student-info">
-                <h2 class="custom-h2">[STUDENT NAME]</h2>
-                <div class="custom-student-no">[STUDENT NUMBER]</div>
+                <h2 class="custom-h2"></h2>
+                <div class="custom-student-no"></div>
             </div>
 
             <div class="semester-info">
@@ -46,10 +41,10 @@
             <div class="page-body">
                 <div class="centered-content">
                     <div class="academic-status">
-                        <p>Academic Status: <b>Regular</b></p>
-                        <p>Units Allowed to Enroll: <b>21</b></p>
-                        <p>Approved Overload Units: <b>0</b></p>
-                        <p>Units Currently Enrolled: <b>21</b></p>
+                        <p>Academic Status: <b></b></p>
+                        <p>Units Allowed to Enroll: <b></b></p>
+                        <p>Approved Overload Units: <b></b></p>
+                        <p>Units Currently Enrolled: <b></b></p>
                     </div>
                 </div>
 
@@ -76,7 +71,7 @@
 
                 <div class="box" id="contentAOS" style="display: none;">
                     <h3 class="custom-h3">SUBJECTS TO BE ADDED:</h3>
-                    <form id="formAOS" onsubmit="return validateForm()" action="" method="">
+                    <form id="formAOS" onsubmit="return validateForm()" action="" method="post">
                         <div id="table-container">
                             <table id="myTable">
                                 <tr>
@@ -108,9 +103,10 @@
 
                 <div class="box" id="contentCOS" style="display: none;">
                     <h3 class="custom-h3">SUBJECTS OR SCHEDULE TO BE CHANGED:</h3>
-                    <form id="formCOS" onsubmit="return validateForm()" action="" method="">
-                        <div id="table-container2">
-                            <table id="toTable">
+                    <form id="formCOS" onsubmit="return validateForm()" action="" method="post">
+                        <div id="table-container-from">
+                            <label for="from-table">From:</label>
+                            <table id="fromTable">
                                 <tr>
                                     <th>CODE</th>
                                     <th>SUBJECT TITLE</th>
@@ -131,10 +127,37 @@
                                     <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
                                 </tr>
                             </table>
-                
-                            <button id="add-row2" type="button">Add Row</button>
+                    
+                            <button id="add-row-from" type="button">Add Row</button>
                         </div>
-                
+                    
+                        <div id="table-container-to">
+                            <label for="to-table">To:</label>
+                            <table id="toTable">
+                                <tr>
+                                    <th>CODE</th>
+                                    <th>SUBJECT TITLE</th>
+                                    <th>DAY</th>
+                                    <th>TIME</th>
+                                    <th>ROOM</th>
+                                    <th>UNITS</th>
+                                    <th>Action</th>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="text" name="to-code[]" required></td>
+                                    <td><input type="text" name="to-subjectTitle[]" required></td>
+                                    <td><input type="text" name="to-day[]" required></td>
+                                    <td><input type="text" name="to-time[]" required></td>
+                                    <td><input type="text" name="to-room[]" required></td>
+                                    <td><input type="text" name="to-units[]" required></td>
+                                    <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
+                                </tr>
+                            </table>
+
+                            <button id="add-row-to" type="button">Add Row</button>
+                        </div>
+                        
                         <input type="submit" id="submitCOS" value="Submit">
                     </form>
                 </div>

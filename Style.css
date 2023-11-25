@@ -134,7 +134,7 @@ button {
 .no-hover {
     pointer-events: none;
 }
-.settings {
+.logout {
     width: 30px;
     height: 30px;
     margin-left: -100px;
@@ -177,12 +177,6 @@ button {
 .dropdown-panel a:hover {
     background-color: #800000;
     color: #fff;
-}
-
-/* Show the dropdown panel when the settings icon is clicked */
-#settingsIcon:hover + #dropdownPanel,
-#dropdownPanel:hover {
-    display: block;
 }
 
 /* body */
@@ -331,6 +325,49 @@ label[for="application-date"] {
 #myTable th[contenteditable="true"]:focus,
 #toTable th[contenteditable="true"]:focus {
     outline: 2px solid #800000;
+}
+/* Apply styling to the tables under "Change of Subject" */
+#fromTable,
+#toTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+#fromTable th,
+#toTable th,
+#fromTable td,
+#toTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+#fromTable th,
+#toTable th {
+    background-color: #f2f2f2;
+}
+
+/* Style the editable cells when they are focused for both tables */
+#fromTable td[contenteditable="true"]:focus,
+#toTable td[contenteditable="true"]:focus {
+    outline: 2px solid #800000;
+}
+
+/* Style the table headers when they are focused for both tables */
+#fromTable th[contenteditable="true"]:focus,
+#toTable th[contenteditable="true"]:focus {
+    outline: 2px solid #800000;
+}
+
+/* Style the "Add Row" button for both tables */
+#add-row-from,
+#add-row-to {
+    display: block;
+    margin-top: 10px;
+    background-color: #800000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
 }
 
 /* Style the "Add Row" button */

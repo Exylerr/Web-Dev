@@ -75,6 +75,122 @@ button {
     color: #800000;
 }
 
+/*new front page*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma';
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Images/PUP.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(128, 0, 0, 0.4);  /* White with 70% transparency */
+    backdrop-filter: blur(10px); /* Optional: adds a blurred effect */
+}
+
+
+.PUPlogo{
+    width: 100px;
+    cursor: pointer;
+    margin-left: 60px;
+}
+
+.title1 {
+    font-size: 18px;
+    margin-right: 950px;
+    color: #ffffff;
+    text-decoration: none; 
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0    ;
+    background: #800000;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:white;
+}
+
+.content h1{
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+.btn #applyButton{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #800000;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position:relative;
+    overflow: hidden;
+}
+
+span{
+    background:#800000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn #applyButton:hover span{
+    width: 100%;
+}
+
+.btn #applyButton:hover{
+    border:none;
+}
+
 /* homepage */
 .page2-background {
     margin: 0;

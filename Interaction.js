@@ -1,3 +1,7 @@
+function redirectToApplicationPage() {
+    window.location.href = 'ACE-FORM.html';
+  }
+
 /* Global function*/
 var submitButton = document.getElementById("submit-button");
 

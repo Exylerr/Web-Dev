@@ -149,14 +149,12 @@ body {
 
 .content img.AnotherPUPLogo {
     width: 150px;
-    cursor: pointer;
     display: block;
     margin: 0 auto;
 }
 
 .content img.PUPlogo {
     width: 100px;
-    cursor: pointer;
     display: block;
 }
 

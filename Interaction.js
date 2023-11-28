@@ -63,12 +63,12 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="day" required>';
+        timeCell.innerHTML = '<input type="text" name="time" required>';
+        roomCell.innerHTML = '<input type="text" name="room" required>';
+        unitsCell.innerHTML = '<input type="text" name="units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -90,12 +90,12 @@ document.getElementById("add-row-from").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="day" required>';
+        timeCell.innerHTML = '<input type="text" name="time" required>';
+        roomCell.innerHTML = '<input type="text" name="room" required>';
+        unitsCell.innerHTML = '<input type="text" name="units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -116,12 +116,12 @@ document.getElementById("add-row-to").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="day" required>';
+        timeCell.innerHTML = '<input type="text" name="time" required>';
+        roomCell.innerHTML = '<input type="text" name="room" required>';
+        unitsCell.innerHTML = '<input type="text" name="units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -143,12 +143,12 @@ document.getElementById("add-row-W").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="day" required>';
+        timeCell.innerHTML = '<input type="text" name="time" required>';
+        roomCell.innerHTML = '<input type="text" name="room" required>';
+        unitsCell.innerHTML = '<input type="text" name="units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });

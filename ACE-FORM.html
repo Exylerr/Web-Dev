@@ -33,7 +33,7 @@
 
                     <div class = "select-college">
                         <label for="college">COLLEGE:</label>
-                    <select id="college">
+                    <select id="college" required name="college">
                         <option value="" disabled selected></option>
                         <option value="CAF">CAF</option>
                         <option value="CADBE">CADBE</option>
@@ -59,7 +59,7 @@
 
                     <div class="academic_year">
                         <label for="academic_year">ACADEMIC YEAR:</label>
-                        <select id="academic_year">
+                        <select id="academic_year" required name="academic_year">
                             <option value="" disabled selected></option>
                             <option value="2010-2011">2010-2011</option>
                             <option value="2011-2012">2011-2012</option>
@@ -86,7 +86,7 @@
 
                     <div class="academic_semester">
                         <label for="academic_semester">ACADEMIC SEMESTER:</label>
-                        <select id="academic_semester" name="academic_semester">
+                        <select id="academic_semester" required name="academic_semester">
                             <option value="" disabled selected></option>
                             <option value="1st Semester">1st SEMESTER</option>
                             <option value="2nd Semester">2nd SEMESTER</option>
@@ -96,7 +96,7 @@
 
                     <div class="ACE">
                         <label for="ACE">APPLICATION FOR CHANGE OF ENROLLMENT:</label>
-                    <select id="ACE" onchange="displaySections()" name="ACE">
+                    <select id="ACE" onchange="displaySections()" required name="ACE">
                         <option value="" disabled selected></option>
                         <option value="AOS">ADDING OF SUBJECT</option>
                         <option value="COS">CHANGE OF SUBJECT</option>
@@ -128,12 +128,12 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" name="code[]" required></td>
-                                        <td><input type="text" name="subjectTitle[]" required></td>
-                                        <td><input type="text" name="day[]" required></td>
-                                        <td><input type="text" name="time[]" required></td>
-                                        <td><input type="text" name="room[]" required></td>
-                                        <td><input type="text" name="units[]" required></td>
+                                        <td><input type="text" name="code" required></td>
+                                        <td><input type="text" name="subjectTitle" required></td>
+                                        <td><input type="text" name="day" required></td>
+                                        <td><input type="text" name="time" required></td>
+                                        <td><input type="text" name="room" required></td>
+                                        <td><input type="text" name="units" required></td>
                                         <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
                                     </tr>
                                 </table>
@@ -168,12 +168,12 @@
                                         </tr>
                         
                                         <tr>
-                                            <td><input type="text" name="code[]" required></td>
-                                            <td><input type="text" name="subjectTitle[]" required></td>
-                                            <td><input type="text" name="day[]" required></td>
-                                            <td><input type="text" name="time[]" required></td>
-                                            <td><input type="text" name="room[]" required></td>
-                                            <td><input type="text" name="units[]" required></td>
+                                            <td><input type="text" name="code" required></td>
+                                            <td><input type="text" name="subjectTitle" required></td>
+                                            <td><input type="text" name="day" required></td>
+                                            <td><input type="text" name="time" required></td>
+                                            <td><input type="text" name="room" required></td>
+                                            <td><input type="text" name="units" required></td>
                                             <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
                                         </tr>
                                     </table>
@@ -194,12 +194,12 @@
                                         </tr>
 
                                         <tr>
-                                            <td><input type="text" name="to-code[]" required></td>
-                                            <td><input type="text" name="to-subjectTitle[]" required></td>
-                                            <td><input type="text" name="to-day[]" required></td>
-                                            <td><input type="text" name="to-time[]" required></td>
-                                            <td><input type="text" name="to-room[]" required></td>
-                                            <td><input type="text" name="to-units[]" required></td>
+                                            <td><input type="text" name="to-code" required></td>
+                                            <td><input type="text" name="to-subjectTitle" required></td>
+                                            <td><input type="text" name="to-day" required></td>
+                                            <td><input type="text" name="to-time" required></td>
+                                            <td><input type="text" name="to-room" required></td>
+                                            <td><input type="text" name="to-units" required></td>
                                             <td><button class="delete-row3" onclick="deleteRow(this)">Delete Row</button></td>
                                         </tr>
                                     </table>
@@ -232,12 +232,12 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" name="code[]" required></td>
-                                        <td><input type="text" name="subjectTitle[]" required></td>
-                                        <td><input type="text" name="day[]" required></td>
-                                        <td><input type="text" name="time[]" required></td>
-                                        <td><input type="text" name="room[]" required></td>
-                                        <td><input type="text" name="units[]" required></td>
+                                        <td><input type="text" name="code" required></td>
+                                        <td><input type="text" name="subjectTitle" required></td>
+                                        <td><input type="text" name="day" required></td>
+                                        <td><input type="text" name="time" required></td>
+                                        <td><input type="text" name="room" required></td>
+                                        <td><input type="text" name="units" required></td>
                                         <td><button class="delete-row4" onclick="deleteRow(this)">Delete Row</button></td>
                                     </tr>
                                 </table>

@@ -1,0 +1,227 @@
+/* front */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Styles */
+.background {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Images/PUP.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header1 {
+    display: flex;
+    align-items: center;
+}
+
+.navbar img.PUPlogo {
+    width: 100px;
+    cursor: pointer;
+    margin-left: 70px;
+}
+
+.navbar a.title1 {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar {
+    width: 100%;
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(128, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    z-index: 2; /* Set z-index to a higher value */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    display: block;
+}
+
+.navbar ul li:hover > a {
+    background-color: #800000;
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(128, 0, 0, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Container */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #800000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: -10px;
+    width: 220px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.navbar:hover .content {
+    display: none;
+}
+
+.content img.AnotherPUPLogo {
+    width: 150px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.content img.PUPlogo {
+    width: 100px;
+    cursor: pointer;
+    display: block;
+}
+
+.content h1 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.btn #applyButton {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #800000;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#applySpan {
+    background: #800000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn #applyButton:hover #applySpan {
+    width: 100%;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: rgba(128, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    color: #fff;
+    /* Set text color */
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.site-footer-links {
+    margin: 0;
+}
+
+.site-footer-link {
+    color: #fff;
+    /* Set link color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.site-footer-link:hover {
+    text-decoration: underline;
+}

@@ -4,7 +4,6 @@ function redirectToApplicationPage() {
 
 /* Global function*/
 var submitButton = document.getElementById("submit-button");
-var alignment = document.getElementById("alignment");
 
 /*Function for displaying or hiding */
 function displaySections() {
@@ -14,10 +13,10 @@ function displaySections() {
     var tableAOS = document.getElementById("contentAOS");
     var tableCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW"); 
-    
+    var alignment = document.getElementById("alignment");
 
     // Hide all sections by default
-    [reasonSection, dateSection, tableAOS, tableCOS, tableW].forEach(section => {
+    [reasonSection, dateSection, tableAOS, tableCOS, tableW, alignment, submitButton].forEach(section => {
         section.style.display = "none";
     });
 

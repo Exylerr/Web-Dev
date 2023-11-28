@@ -1,87 +1,17 @@
-/*log in page*/
-.page1-background {
-    background-image: url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-body {
-    font-family: 'Tahoma';
-    margin: 0;
-    padding: 0;
-}
-
-/*inside log-in panel*/
-.rounded-panel {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 40px;
-    opacity: 0.9;
-    text-align: center;
-    margin: 70px auto 0 auto; 
-    max-width: 600px;
-    box-shadow: 0 2px 4px #0000001a;
-}
-.pup-ace {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-}
-.sign-in {
-    font-size: 20px;
-    text-align: center;
-    color: #555;
-    margin-top: 10px;
-}
-.login-form {
-    margin-top: 20px;
-}
-.terms {
-    font-size: 16px;
-    text-align: center;
-    color: #888;
-    margin-top: 20px;
-}
-
-/*inputting information when logging in*/
-input[type=text], input[type=password] { 
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    display: block;
-    box-sizing: border-box;
-}
-button {
-    background-color: #800000;
-    color: #fff;
-    border-radius: 20px;
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/*Class terms*/
-.termsuse, .privacy {
-    color: #800000;
-}
-
-/*new front page*/
+/* front */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Tahoma';
+    box-sizing: border-box;
 }
 
+/* Body Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Styles */
 .background {
     width: 100%;
     height: 100vh;
@@ -90,73 +20,153 @@ button {
     background-position: center;
 }
 
-.navbar{
+.header1 {
+    display: flex;
+    align-items: center;
+}
+
+.navbar img.PUPlogo {
+    width: 100px;
+    cursor: pointer;
+    margin-left: 70px;
+}
+
+.navbar a.title1 {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar {
     width: 100%;
     margin: auto;
-    padding: 35px 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(128, 0, 0, 0.4);  /* White with 70% transparency */
-    backdrop-filter: blur(10px); /* Optional: adds a blurred effect */
+    background-color: rgba(128, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    z-index: 2; /* Set z-index to a higher value */
 }
 
-
-.PUPlogo{
-    width: 100px;
-    cursor: pointer;
-    margin-left: 60px;
-}
-
-.title1 {
-    font-size: 18px;
-    margin-right: 950px;
-    color: #ffffff;
-    text-decoration: none; 
-}
-
-.navbar ul li{
+.navbar ul {
     list-style: none;
-    display: inline-block;
-    margin: 0 20px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
     position: relative;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
-    color:white;
+    color: white;
     text-transform: uppercase;
+    padding: 14px 16px;
+    display: block;
 }
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0    ;
-    background: #800000;
+
+.navbar ul li:hover > a {
+    background-color: #800000;
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-content {
+    display: none;
     position: absolute;
+    top: 100%;
     left: 0;
-    bottom: -10px;
-    transition: 0.5s;
+    background-color: rgba(128, 0, 0, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.navbar ul li:hover::after{
-    width: 100%;
+.navbar .dropdown-content a {
+    color: white;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
 }
 
-.content{
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Container */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #800000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: -10px;
+    width: 220px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+.content {
     width: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    color:white;
+    color: white;
 }
 
-.content h1{
+.navbar:hover .content {
+    display: none;
+}
+
+.content img.AnotherPUPLogo {
+    width: 150px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.content img.PUPlogo {
+    width: 100px;
+    cursor: pointer;
+    display: block;
+}
+
+.content h1 {
     font-size: 20px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
-.btn #applyButton{
+/* Button Styles */
+.btn #applyButton {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -167,29 +177,56 @@ button {
     background-color: transparent;
     color: white;
     cursor: pointer;
-    position:relative;
+    position: relative;
     overflow: hidden;
 }
 
-span{
-    background:#800000;
+#applySpan {
+    background: #800000;
     height: 100%;
     width: 0;
     border-radius: 25px;
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: 0;
     z-index: -1;
     transition: 0.5s;
 }
 
-.btn #applyButton:hover span{
+.btn #applyButton:hover #applySpan {
     width: 100%;
 }
 
-.btn #applyButton:hover{
-    border:none;
+/* Site Footer */
+.site-footer {
+    background-color: rgba(128, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    color: #fff;
+    /* Set text color */
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+
+.site-footer-links {
+    margin: 0;
+}
+
+.site-footer-link {
+    color: #fff;
+    /* Set link color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.site-footer-link:hover {
+    text-decoration: underline;
+}
+
+
 
 /* homepage */
 .page2-background {

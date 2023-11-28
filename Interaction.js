@@ -416,6 +416,7 @@ document.getElementById("total-units").addEventListener("input", function () {
     validateNumberField("total-units", "Total Number of Units Enrolled");
 });
 
+// Add event listener to the submit button
 if (submitButton) {
     submitButton.addEventListener("click", function (event) {
         console.log("Submit button clicked");
@@ -425,6 +426,6 @@ if (submitButton) {
             console.log("Submission successful");
             alert("Submission successful! Please Check your PUP Webmail for Updates"); // Show alert for successful submission
             window.location.reload(); // Reload the page
-        } 
+        }
     });
 }

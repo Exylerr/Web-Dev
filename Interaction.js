@@ -240,7 +240,7 @@ function validateDate() {
 
     // Check if the value is not an empty string
     if (!dateInput.value) {
-        alert("Please select a date");
+        alert("Please select a Date");
         return false;
     }
 
@@ -252,7 +252,7 @@ function validateReason() {
     var reasonInput = document.getElementById("Reasons");
 
     if (reasonInput.value.trim().length < 5) {
-        alert("Please enter a reason");
+        alert("Please enter a Reason");
         reasonInput.value = ""; // Clear the input field
         return false;
     }

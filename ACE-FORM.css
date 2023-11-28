@@ -85,7 +85,7 @@ header {
 }
 
 /*hiding the contents*/
-#contentReasons, #contentDate, #contentAOS, #contentCOS, #contentW, #submit-button {
+#contentReasons, #contentDate, #contentAOS, #contentCOS, #contentW, #alignment, #submit-button {
     display: none;
 }
 
@@ -152,21 +152,19 @@ header {
     cursor: pointer;
 }
 
-.alignmentAOS, .alignmentCOS, .alignmentW {
+/* Units */
+.alignment {
     display: flex;
     justify-content: space-between;
     margin: 0 10px 0 10px;
 }
-.alignmentAOS label, .alignmentCOS label, .alignmentW label {
-
-    margin: 0 10px 0 10px;
+.alignment label {
+    margin: 0 5px 0 5px;
     text-align: left;
 }
-
-.alignmentAOS input, .alignmentCOS input, .alignmentW input{
-
-    width: 20%;
-    margin: 0 10px 20px 0;
+.alignment input {
+    width: 10%;
+    margin: 0 15px 10px 0;
     box-sizing: border-box;
 }
 

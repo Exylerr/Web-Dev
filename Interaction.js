@@ -4,6 +4,7 @@ function redirectToApplicationPage() {
 
 /* Global function*/
 var submitButton = document.getElementById("submit-button");
+var alignment = document.getElementById("alignment");
 
 /*Function for displaying or hiding */
 function displaySections() {
@@ -12,7 +13,7 @@ function displaySections() {
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
     var tableCOS = document.getElementById("contentCOS");
-    var tableW = document.getElementById("contentW");
+    var tableW = document.getElementById("contentW"); 
     
 
     // Hide all sections by default
@@ -35,11 +36,11 @@ function displaySections() {
 
     // Check if any option in "Application for Change of Enrollment" is selected
     if (aceSelect.value !== "") {
-        [reasonSection, dateSection, submitButton].forEach(element => {
+        [reasonSection, dateSection, alignment, submitButton].forEach(element => {
             element.style.display = "block";
         });
     } else {
-        [reasonSection, dateSection, submitButton].forEach(element => {
+        [reasonSection, dateSection, alignment, submitButton].forEach(element => {
             element.style.display = "none";
         });
     }

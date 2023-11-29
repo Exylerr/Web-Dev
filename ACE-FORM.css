@@ -106,14 +106,12 @@ header {
     border-collapse: collapse;
     table-layout: fixed;
 }
-
 #AOSTable th, #fromCOSTable th, #toCOSTable th, #WTable th, #AOSTable td, #fromCOSTable td, #toCOSTable td, #WTable td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
     font-size: 14px;
 }
-
 #AOSTable th, #fromCOSTable th, #toCOSTable th, #WTable th {
     background-color: #f2f2f2;
 }
@@ -156,14 +154,14 @@ header {
 .alignment {
     display: flex;
     justify-content: space-between;
-    margin: 0 10px 0 10px;
+    margin: 0 10px 0 0px;
 }
 .alignment label {
-    margin: 0 5px 0 5px;
-    text-align: left;
+    margin: 0 10px 0 10px;
+    text-align: center;
 }
 .alignment input {
-    width: 10%;
+    width: 12%;
     margin: 0 15px 10px 0;
     box-sizing: border-box;
 }
@@ -175,11 +173,10 @@ header {
     border: none;
     border-radius: 5px;
     font-size: 14px;
-    margin: 30px 0 0 0;
+    margin: 40px 0 0 0;
     padding: 10px 20px;
     cursor: pointer;
 }
-
 #submitForm:hover {
     background-color: #600000;
 }
@@ -194,19 +191,16 @@ footer {
     text-align: center;
     position: sticky;
 }
-
 .footer-links {
     color: #ffffff;
     font-family: 'Tahoma';
     font-size: 12px;
 }
-
 footer a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-
 footer a:hover {
     text-decoration: underline;
 }

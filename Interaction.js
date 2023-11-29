@@ -11,12 +11,13 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tableCOS = document.getElementById("contentCOS");
+    var tablefromCOS = document.getElementById("contentCOS");
+    var tabletoCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW"); 
     var alignment = document.getElementById("alignment");
 
     // Hide all sections by default
-    [reasonSection, dateSection, tableAOS, tableCOS, tableW, alignment, submitButton].forEach(section => {
+    [reasonSection, dateSection, tableAOS, tablefromCOS, tabletoCOS, tableW, alignment, submitButton].forEach(section => {
         section.style.display = "none";
     });
 
@@ -26,7 +27,8 @@ function displaySections() {
             tableAOS.style.display = "block";
             break;
         case "COS":
-            tableCOS.style.display = "block";
+            tablefromCOS.style.display = "block";
+            tabletoCOS.style.display = "block";
             break;
         case "W":
             tableW.style.display = "block";
@@ -279,9 +281,33 @@ function validateTableAOS() {
     return true;
 }
 
-// Function to validate TableCOS rows
-function validateTableCOS() {
+// Function to validate TablefromCOS rows
+function validateTablefromCOS() {
     var fromTable = document.getElementById("fromCOSTable");
+
+    var fromRows = fromTable.getElementsByTagName("tr");
+    var toRows = toTable.getElementsByTagName("tr");
+
+    for (var i = 1; i < fromRows.length; i++) {
+        var fromCells = fromRows[i].getElementsByTagName("td");
+        var toCells = toRows[i].getElementsByTagName("td");
+
+        for (var j = 0; j < fromCells.length - 1; j++) { // Exclude the last cell with the delete button
+            var fromInput = fromCells[j].getElementsByTagName("input")[0];
+            var toInput = toCells[j].getElementsByTagName("input")[0];
+
+            if (fromInput.value.trim() === "" || toInput.value.trim() === "") {
+                alert("Please fill in all fields in the Change of Subject table");
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+// Function to validate TabletoCOS rows
+function validateTabletoCOS() {
     var toTable = document.getElementById("toCOSTable");
 
     var fromRows = fromTable.getElementsByTagName("tr");
@@ -366,10 +392,19 @@ function validateForm(event) {
             return false;
         }
     } else if (selectedACE === "COS") {
-        var isTableCOSValid = validateTableCOS();
+        var isTablefromCOSValid = validateTablefromCOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
             !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid) {
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTablefromCOSValid) {
+            console.log("Validation failed");
+            if (event) event.preventDefault(); // Prevent form submission if validation fails
+            return false;
+        }
+    } else if (selectedACE === "COS") {
+        var isTabletoCOSValid = validateTabletoCOS();
+        if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
+            !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTabletoCOSValid) {
             console.log("Validation failed");
             if (event) event.preventDefault(); // Prevent form submission if validation fails
             return false;

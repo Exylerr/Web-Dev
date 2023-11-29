@@ -141,7 +141,7 @@
                             </div>
                     </div>
 
-                    <div class="box" id="contentfromCOS">
+                    <div class="box" id="contentCOS">
                         <h3>SUBJECT/S OR SCHEDULE TO BE CHANGED:</h3>
                             <div id="tablefromCOS">
                                 <label for="from-table">From:</label>
@@ -168,34 +168,32 @@
                                     </table>
                                 <button id="add-row-from" type="button">Add Row</button>
                             </div>
-                    </div>
+                    
+                            <div id="tabletoCOS">
+                                <label for="to-table">To:</label>
+                                    <table id="toCOSTable">
+                                        <tr>
+                                            <th>CODE</th>
+                                            <th>SUBJECT TITLE</th>
+                                            <th>DAY</th>
+                                            <th>TIME</th>
+                                            <th>ROOM</th>
+                                            <th>UNITS</th>
+                                            <th>Action</th>
+                                        </tr>
 
-                    <div class="box" id="contenttoCOS">
-                        <div id="tabletoCOS">
-                            <label for="to-table">To:</label>
-                                <table id="toCOSTable">
-                                    <tr>
-                                        <th>CODE</th>
-                                        <th>SUBJECT TITLE</th>
-                                        <th>DAY</th>
-                                        <th>TIME</th>
-                                        <th>ROOM</th>
-                                        <th>UNITS</th>
-                                        <th>Action</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="text" name="toCos_code"></td>
-                                        <td><input type="text" name="toCos_subjectTitle"></td>
-                                        <td><input type="text" name="toCos_day"></td>
-                                        <td><input type="text" name="toCos_time"></td>
-                                        <td><input type="text" name="toCos_room"></td>
-                                        <td><input type="text" name="toCos_units"></td>
-                                        <td><button class="delete-row3" onclick="deleteRow(this)">Delete Row</button></td>
-                                    </tr>
-                                </table>
-                            <button id="add-row-to" type="button">Add Row</button>
-                        </div>
+                                        <tr>
+                                            <td><input type="text" name="toCos_code"></td>
+                                            <td><input type="text" name="toCos_subjectTitle"></td>
+                                            <td><input type="text" name="toCos_day"></td>
+                                            <td><input type="text" name="toCos_time"></td>
+                                            <td><input type="text" name="toCos_room"></td>
+                                            <td><input type="text" name="toCos_units"></td>
+                                            <td><button class="delete-row3" onclick="deleteRow(this)">Delete Row</button></td>
+                                        </tr>
+                                    </table>
+                                <button id="add-row-to" type="button">Add Row</button>
+                            </div>
                     </div>
 
                     <div class="box" id="contentW">

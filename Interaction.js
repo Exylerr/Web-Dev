@@ -11,8 +11,8 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tablefromCOS = document.getElementById("contentfromCOS");
-    var tabletoCOS = document.getElementById("contenttoCOS");
+    var tablefromCOS = document.getElementById("contentdCOS");
+    var tabletoCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW");
     var alignment = document.getElementById("alignment");
 

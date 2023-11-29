@@ -63,12 +63,12 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="day" required>';
-        timeCell.innerHTML = '<input type="text" name="time" required>';
-        roomCell.innerHTML = '<input type="text" name="room" required>';
-        unitsCell.innerHTML = '<input type="text" name="units" required>';
+        codeCell.innerHTML = '<input type="text" name="aos_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="aos_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="aos_day" required>';
+        timeCell.innerHTML = '<input type="text" name="aos_time" required>';
+        roomCell.innerHTML = '<input type="text" name="aos_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="aos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -90,12 +90,12 @@ document.getElementById("add-row-from").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="day" required>';
-        timeCell.innerHTML = '<input type="text" name="time" required>';
-        roomCell.innerHTML = '<input type="text" name="room" required>';
-        unitsCell.innerHTML = '<input type="text" name="units" required>';
+        codeCell.innerHTML = '<input type="text" name="fromCos_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="fromCos_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="fromCos_day" required>';
+        timeCell.innerHTML = '<input type="text" name="fromCos_time" required>';
+        roomCell.innerHTML = '<input type="text" name="fromCos_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="fromCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -116,12 +116,12 @@ document.getElementById("add-row-to").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="day" required>';
-        timeCell.innerHTML = '<input type="text" name="time" required>';
-        roomCell.innerHTML = '<input type="text" name="room" required>';
-        unitsCell.innerHTML = '<input type="text" name="units" required>';
+        codeCell.innerHTML = '<input type="text" name="toCos_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="toCos_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="toCos_day" required>';
+        timeCell.innerHTML = '<input type="text" name="toCos_time" required>';
+        roomCell.innerHTML = '<input type="text" name="toCos_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="toCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -143,12 +143,12 @@ document.getElementById("add-row-W").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="day" required>';
-        timeCell.innerHTML = '<input type="text" name="time" required>';
-        roomCell.innerHTML = '<input type="text" name="room" required>';
-        unitsCell.innerHTML = '<input type="text" name="units" required>';
+        codeCell.innerHTML = '<input type="text" name="W_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="W_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="W_day" required>';
+        timeCell.innerHTML = '<input type="text" name="W_time" required>';
+        roomCell.innerHTML = '<input type="text" name="W_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="W_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -425,7 +425,6 @@ if (submitButton) {
         } else {
             console.log("Submission successful");
             alert("Submission successful! Please Check your PUP Webmail for Updates"); // Show alert for successful submission
-            window.location.reload(); // Reload the page
         }
     });
 }

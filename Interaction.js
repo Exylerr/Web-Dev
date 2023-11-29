@@ -11,7 +11,7 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tablefromCOS = document.getElementById("contentdCOS");
+    var tablefromCOS = document.getElementById("contentCOS");
     var tabletoCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW");
     var alignment = document.getElementById("alignment");

@@ -85,7 +85,7 @@ header {
 }
 
 /*hiding the contents*/
-#contentReasons, #contentDate, #contentAOS, #contentCOS, #contentW, #alignment, #submit-button {
+#contentReasons, #contentDate, #contentAOS, #contentfromCOS, #contenttoCOS, #contentW, #alignment, #submit-button {
     display: none;
 }
 

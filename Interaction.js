@@ -11,17 +11,22 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tablefromCOS = document.getElementById("contentCOS");
-    var tabletoCOS = document.getElementById("contentCOS");
-    var tableW = document.getElementById("contentW"); 
+    var tablefromCOS = document.getElementById("contentfromCOS");
+    var tabletoCOS = document.getElementById("contenttoCOS");
+    var tableW = document.getElementById("contentW");
     var alignment = document.getElementById("alignment");
 
+    // Disable all table forms by default
+    [tableAOS, tablefromCOS, tabletoCOS, tableW].forEach(table => {
+        table.style.display = "none";
+    });
+
     // Hide all sections by default
-    [reasonSection, dateSection, tableAOS, tablefromCOS, tabletoCOS, tableW, alignment, submitButton].forEach(section => {
+    [reasonSection, dateSection, alignment, submitButton].forEach(section => {
         section.style.display = "none";
     });
 
-    // Check the selected option and display the corresponding section
+    // Check the selected option and enable the corresponding table form
     switch (aceSelect.value) {
         case "AOS":
             tableAOS.style.display = "block";
@@ -46,6 +51,7 @@ function displaySections() {
         });
     }
 }
+
 
 
 // Event listener for the "Add Row" button for TableAOS

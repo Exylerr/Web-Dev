@@ -380,8 +380,8 @@ function validateForm(event) {
     var isTotalUnitsValid = validateNumberField("total-units", "Total Number of Units Enrolled");
 
     var selectedACE = document.getElementById("ACE").value;
-    
-    // Additional check for presence of values in required fields
+
+    // Additional check for the presence of values in required fields
     if (selectedACE === "AOS") {
         var isTableAOSValid = validateTableAOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
@@ -456,10 +456,11 @@ if (submitButton) {
     submitButton.addEventListener("click", function (event) {
         console.log("Submit button clicked");
         if (!validateForm(event)) {
-            // event.preventDefault(); // Prevent form submission if validation fails
+            event.preventDefault(); // Prevent form submission if validation fails
         } else {
             console.log("Submission successful");
             alert("Submission successful! Please Check your PUP Webmail for Updates"); // Show alert for successful submission
+            // You can perform any other actions here if needed
         }
     });
 }

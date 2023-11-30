@@ -71,12 +71,12 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="aos_code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="aos_subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="aos_day" required>';
-        timeCell.innerHTML = '<input type="text" name="aos_time" required>';
-        roomCell.innerHTML = '<input type="text" name="aos_room" required>';
-        unitsCell.innerHTML = '<input type="text" name="aos_units" required>';
+        codeCell.innerHTML = '<input type="text" name="AOS_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="AOS_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="AOS_day" required>';
+        timeCell.innerHTML = '<input type="text" name="AOS_time" required>';
+        roomCell.innerHTML = '<input type="text" name="AOS_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="AOS_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });

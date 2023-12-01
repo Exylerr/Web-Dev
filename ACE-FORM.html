@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ACE-FORM.css" type="text/css">
+    <title>PUP-ACE FORM</title>
+    <link rel="icon" type="image/png" href="Images/PUPLogo.png">
+</head>
+
+<body class="whole-page">
+    <header>
+        <div class="navigation-bar">
+            <img src="Images/PUPLogo.png" class="logo">
+            <a class="title"><b>PUP-ACE FORM</b></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-background">
+            <form action="https://script.google.com/macros/s/AKfycbx1L-yISux4oVsFtwKx_YCihf5ZENJwBvfvN8H6VYi_tV7bIcuqZDfNxSnvDXeHFoUhoA/exec" method="POST" name="mainForm" id="mainForm">
+                    <div class="student_number">   
+                        <label for="student_number">STUDENT NUMBER:</label>
+                        <input type="text" id="stud_number" placeholder="Ex. 20** - ***** - MN - 0" name="student_number" required></input>
+                    </div>
+
+                    <div class="student_name">   
+                        <label for="student_name">STUDENT NAME:</label>
+                        <input type="text" id="stud_name" placeholder="Ex. JUAN DELA CRUZ" name="student_name" required></input>
+                    </div>
+
+                    <div class = "select-college">
+                        <label for="college">COLLEGE:</label>
+                    <select id="college" required name="college">
+                        <option value="" disabled selected></option>
+                        <option value="CAF">CAF</option>
+                        <option value="CADBE">CADBE</option>
+                        <option value="CAL">CAL</option>
+                        <option value="CBA">CBA</option>
+                        <option value="COC">COC</option>
+                        <option value="CCIS">CCIS</option>
+                        <option value="COED">COED</option>
+                        <option value="CE">CE</option>
+                        <option value="CHK">CHK</option>
+                        <option value="CL">CL</option>
+                        <option value="CPSPA">CPSPA</option>
+                        <option value="CSSD">CSSD</option>
+                        <option value="CS">CS</option>
+                        <option value="CTHTM">CTHTM</option>
+                    </select>
+                    </div>
+
+                    <div class="course_section">   
+                        <label for="course-section">COURSE/YR/SECTION:</label>
+                        <input type="text" id="course-section" placeholder="Ex. BSIT 3-1N" name="course_section" required></input>
+                    </div>
+
+                    <div class="academic_year">
+                        <label for="academic_year">ACADEMIC YEAR:</label>
+                        <select id="academic_year" required name="academic_year">
+                            <option value="" disabled selected></option>
+                            <option value="2010-2011">2010-2011</option>
+                            <option value="2011-2012">2011-2012</option>
+                            <option value="2012-2013">2012-2013</option>
+                            <option value="2013-2014">2013-2014</option>
+                            <option value="2014-2015">2014-2015</option>
+                            <option value="2015-2016">2015-2016</option>
+                            <option value="2016-2017">2016-2017</option>
+                            <option value="2017-2018">2017-2018</option>
+                            <option value="2018-2019">2018-2019</option>
+                            <option value="2019-2020">2019-2020</option>
+                            <option value="2020-2021">2020-2021</option>
+                            <option value="2021-2022">2021-2022</option>
+                            <option value="2022-2023">2022-2023</option>
+                            <option value="2023-2024">2023-2024</option>
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026">2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                            <option value="2027-2028">2027-2028</option>
+                            <option value="2028-2029">2028-2029</option>
+                            <option value="2029-2030">2029-2030</option>
+                        </select>
+                    </div>
+
+                    <div class="academic_semester">
+                        <label for="academic_semester">ACADEMIC SEMESTER:</label>
+                        <select id="academic_semester" required name="academic_semester">
+                            <option value="" disabled selected></option>
+                            <option value="1st Semester">1st SEMESTER</option>
+                            <option value="2nd Semester">2nd SEMESTER</option>
+                            <option value="Summer">SUMMER</option>
+                        </select>
+                    </div>
+
+                    <div class="ACE">
+                        <label for="ACE">APPLICATION FOR CHANGE OF ENROLLMENT:</label>
+                    <select id="ACE" onchange="displaySections()" required name="ACE">
+                        <option value="" disabled selected></option>
+                        <option value="AOS">ADDING OF SUBJECT</option>
+                        <option value="COS">CHANGE OF SUBJECT</option>
+                        <option value="W">WITHDRAWAL</option>
+                    </select>                       
+                    </div>
+
+                    <div class="date" id="contentDate">                        
+                        <label for="date">APPLICATION DATE:</label>
+                        <input type='date' id="date" name="date" required>                    
+                    </div>
+
+                    <div class="Reason/s" id="contentReasons">                       
+                        <p><label for="Reasons">REASON/S FOR CHANGE OF ENROLLMENT:</label></p>
+                        <textarea id="Reasons" placeholder="Please state your reason." name="Reasons" rows="5" cols="70" required></textarea>
+                    </div>
+
+                    <div class="box" id="contentAOS">
+                        <h3>SUBJECT/S TO BE ADDED:</h3>
+                            <div id="tableAOS">
+                                <table id="AOSTable">
+                                    <tr>
+                                        <th>CODE</th>
+                                        <th>SUBJECT TITLE</th>
+                                        <th>DAY</th>
+                                        <th>TIME</th>
+                                        <th>ROOM</th>
+                                        <th>UNITS</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="AOS_code"></td>
+                                        <td><input type="text" name="AOS_subjectTitle"></td>
+                                        <td><input type="text" name="AOS_day"></td>
+                                        <td><input type="text" name="AOS_time"></td>
+                                        <td><input type="text" name="AOS_room"></td>
+                                        <td><input type="text" name="AOS_units"></td>
+                                        <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
+                                    </tr>
+                                </table>
+                                <button id="add-row-AOS" type="button">Add Row</button>
+                            </div>
+                    </div>
+
+                    <div class="box" id="contentCOS">
+                        <h3>SUBJECT/S OR SCHEDULE TO BE CHANGED:</h3>
+                            <div id="tablefromCOS">
+                                <label for="from-table">From:</label>
+                                    <table id="fromCOSTable">
+                                        <tr>
+                                            <th>CODE</th>
+                                            <th>SUBJECT TITLE</th>
+                                            <th>DAY</th>
+                                            <th>TIME</th>
+                                            <th>ROOM</th>
+                                            <th>UNITS</th>
+                                            <th>Action</th>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><input type="text" name="fromCOS_code"></td>
+                                            <td><input type="text" name="fromCOS_subjectTitle"></td>
+                                            <td><input type="text" name="fromCOS_day"></td>
+                                            <td><input type="text" name="fromCOS_time"></td>
+                                            <td><input type="text" name="fromCOS_room"></td>
+                                            <td><input type="text" name="fromCOS_units"></td>
+                                            <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
+                                        </tr>
+                                    </table>
+                                <button id="add-row-from" type="button">Add Row</button>
+                            </div>
+                    
+                            <div id="tabletoCOS">
+                                <label for="to-table">To:</label>
+                                    <table id="toCOSTable">
+                                        <tr>
+                                            <th>CODE</th>
+                                            <th>SUBJECT TITLE</th>
+                                            <th>DAY</th>
+                                            <th>TIME</th>
+                                            <th>ROOM</th>
+                                            <th>UNITS</th>
+                                            <th>Action</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td><input type="text" name="toCOS_code"></td>
+                                            <td><input type="text" name="toCOS_subjectTitle"></td>
+                                            <td><input type="text" name="toCOS_day"></td>
+                                            <td><input type="text" name="toCOS_time"></td>
+                                            <td><input type="text" name="toCOS_room"></td>
+                                            <td><input type="text" name="toCOS_units"></td>
+                                            <td><button class="delete-row3" onclick="deleteRow(this)">Delete Row</button></td>
+                                        </tr>
+                                    </table>
+                                <button id="add-row-to" type="button">Add Row</button>
+                            </div>
+                    </div>
+
+                    <div class="box" id="contentW">
+                        <h3>SUBJECT/S TO BE WITHDRAWN:</h3>
+                            <div id="tableW">
+                                <table id="WTable">
+                                    <tr>
+                                        <th>CODE</th>
+                                        <th>SUBJECT TITLE</th>
+                                        <th>DAY</th>
+                                        <th>TIME</th>
+                                        <th>ROOM</th>
+                                        <th>UNITS</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="W_code"></td>
+                                        <td><input type="text" name="W_subjectTitle"></td>
+                                        <td><input type="text" name="W_day"></td>
+                                        <td><input type="text" name="W_time"></td>
+                                        <td><input type="text" name="W_room"></td>
+                                        <td><input type="text" name="W_units"></td>
+                                        <td><button class="delete-row4" onclick="deleteRow(this)">Delete Row</button></td>
+                                    </tr>
+                                </table>
+                                <button id="add-row-W" type="button">Add Row</button>
+                            </div>
+                    </div> 
+
+                <div class="alignment" id="alignment">
+                    <label for="number-of-units">NUMBER OF UNITS (REGISTRATION CERTIFICATE):</label>
+                    <input type="text" id="number-of-units" name="number_of_units" required></input>
+
+                    <label for="number-of-units-added">NUMBER OF UNITS TO BE ADDED:</label>
+                    <input type="text" id="number-of-units-added" name="number_of_units_added" required></input>
+
+                    <label for="total-units">TOTAL NUMBER OF UNITS ENROLLED:</label>
+                    <input type="text" id="total-units" name="total_units" required></input>
+                </div>   
+                
+                <div id="submit-button">
+                    <input type="submit" id="submitForm" value="Submit"/>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-links">
+            <a href="https://www.pup.edu.ph/"><b>Polytechnic University of the Philippines</b></a> |
+            <a href="https://www.pup.edu.ph/terms/"><b>Terms of Use</b></a> |
+            <a href="https://www.pup.edu.ph/privacy/"><b>Privacy Statement</b></a>
+        </p>
+    </footer>
+
+    <div class="popup" id="popupContainer">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Rules</h2>
+            <p>Welcome to PUP-ACE Form. Before proceeding, please be aware of the following rules. Make sure you understand well the instruction:</p>
+            <ul>
+                <li> You can not process ACE if you are not officially enrolled </li>
+                <li> You can not add subject if you have no available units</li>
+                <li> You can not join a section if the total enrolled students in the said section is more than 75</li>
+                <li> You can not leave a section if the total enrolled students in the said section is less than or equal to 35</li>
+                <li> You can not join a section with conflict to your current schedule</li>
+                <li> You can not join a section with no available slot</li>
+                <li> You can not enroll a subject with prerequisite if the prerequiste is not yet passed</li>
+                <li> You can not re-enroll a subject if the immediate previous grade of the said subject is INC or No Grade</li>
+                <li> You can not enroll advance subjects</li>
+                <li> You ca not enroll subjects not in your curriculum </li>
+                <li> You can not enroll subjects with units more than your available units</li>
+                <li> You can not join a section if the total enrolled students in the said section is more than 75</li>
+            </ul>
+            <p>By using this form, you agree to abide by the rules stated above.</p>
+        </div>
+    </div>
+
+    <script src="Interaction.js"></script>
+</body>
+
+</html>

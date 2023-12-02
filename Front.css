@@ -200,9 +200,8 @@ body {
     backdrop-filter: blur(10px);
     position: sticky;
     color: #fff;
-    /* Set text color */
     text-align: center;
-    padding: 15px;
+    padding: 22px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -210,6 +209,8 @@ body {
 
 .site-footer-links {
     margin: 0;
+    font-family: 'Tahoma';
+    font-size: 12px;
 }
 
 .site-footer-link {

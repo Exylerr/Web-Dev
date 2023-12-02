@@ -26,22 +26,21 @@ body {
 }
 
 .navbar img.PUPlogo {
-    width: 100px;
-    cursor: pointer;
-    margin-left: 70px;
+    width: 60px;
+    margin: 0 0 0 80px;
 }
 
 .navbar a.title1 {
     font-size: 18px;
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 30px; /* Adjust this value to move the content to the left */
 }
 
 .navbar {
     width: 100%;
     margin: auto;
-    padding: 10px 0;
+    padding: 10px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;

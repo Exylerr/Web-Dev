@@ -20,7 +20,7 @@
 
     <main>
         <div class="page-background">
-            <form action="" method="POST" name="mainForm" id="mainForm">
+            <form action="https://script.google.com/macros/s/AKfycbx1L-yISux4oVsFtwKx_YCihf5ZENJwBvfvN8H6VYi_tV7bIcuqZDfNxSnvDXeHFoUhoA/exec" method="POST" name="mainForm" id="mainForm">
                     <div class="student_number">   
                         <label for="student_number">STUDENT NUMBER:</label>
                         <input type="text" id="stud_number" placeholder="Ex. 20** - ***** - MN - 0" name="student_number" required></input>
@@ -33,7 +33,7 @@
 
                     <div class = "select-college">
                         <label for="college">COLLEGE:</label>
-                    <select id="college">
+                    <select id="college" required name="college">
                         <option value="" disabled selected></option>
                         <option value="CAF">CAF</option>
                         <option value="CADBE">CADBE</option>
@@ -54,12 +54,12 @@
 
                     <div class="course_section">   
                         <label for="course-section">COURSE/YR/SECTION:</label>
-                        <input type="text" id="course-section" placeholder="Ex. BSIT 3-1N" name="course-section" required></input>
+                        <input type="text" id="course-section" placeholder="Ex. BSIT 3-1N" name="course_section" required></input>
                     </div>
 
                     <div class="academic_year">
                         <label for="academic_year">ACADEMIC YEAR:</label>
-                        <select id="academic_year">
+                        <select id="academic_year" required name="academic_year">
                             <option value="" disabled selected></option>
                             <option value="2010-2011">2010-2011</option>
                             <option value="2011-2012">2011-2012</option>
@@ -86,7 +86,7 @@
 
                     <div class="academic_semester">
                         <label for="academic_semester">ACADEMIC SEMESTER:</label>
-                        <select id="academic_semester" name="academic_semester">
+                        <select id="academic_semester" required name="academic_semester">
                             <option value="" disabled selected></option>
                             <option value="1st Semester">1st SEMESTER</option>
                             <option value="2nd Semester">2nd SEMESTER</option>
@@ -96,7 +96,7 @@
 
                     <div class="ACE">
                         <label for="ACE">APPLICATION FOR CHANGE OF ENROLLMENT:</label>
-                    <select id="ACE" onchange="displaySections()" name="ACE">
+                    <select id="ACE" onchange="displaySections()" required name="ACE">
                         <option value="" disabled selected></option>
                         <option value="AOS">ADDING OF SUBJECT</option>
                         <option value="COS">CHANGE OF SUBJECT</option>
@@ -106,7 +106,7 @@
 
                     <div class="date" id="contentDate">                        
                         <label for="date">APPLICATION DATE:</label>
-                        <input type='date' id="date" name='date' required>                    
+                        <input type='date' id="date" name="date" required>                    
                     </div>
 
                     <div class="Reason/s" id="contentReasons">                       
@@ -128,33 +128,22 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" name="code[]" required></td>
-                                        <td><input type="text" name="subjectTitle[]" required></td>
-                                        <td><input type="text" name="day[]" required></td>
-                                        <td><input type="text" name="time[]" required></td>
-                                        <td><input type="text" name="room[]" required></td>
-                                        <td><input type="text" name="units[]" required></td>
+                                        <td><input type="text" name="AOS_code"></td>
+                                        <td><input type="text" name="AOS_subjectTitle"></td>
+                                        <td><input type="text" name="AOS_day"></td>
+                                        <td><input type="text" name="AOS_time"></td>
+                                        <td><input type="text" name="AOS_room"></td>
+                                        <td><input type="text" name="AOS_units"></td>
                                         <td><button class="delete-row" onclick="deleteRow(this)">Delete Row</button></td>
                                     </tr>
                                 </table>
                                 <button id="add-row-AOS" type="button">Add Row</button>
                             </div>
-
-                        <div class="alignmentAOS">
-                            <label for="number-of-units">NUMBER OF UNITS (REGISTRATION CERTIFICATE):</label>
-                            <input type="text" id="number-of-units" name="number-of-units" required></input>
-
-                            <label for="number-of-units-added">NUMBER OF UNITS TO BE ADDED:</label>
-                            <input type="text" id="number-of-units-added" name="number-of-units-added" required></input>
-
-                            <label for="total-units">TOTAL NUMBER OF UNITS ENROLLED:</label>
-                            <input type="text" id="total-units" name="total-units" required></input>
-                        </div>
                     </div>
 
                     <div class="box" id="contentCOS">
                         <h3>SUBJECT/S OR SCHEDULE TO BE CHANGED:</h3>
-                            <div id="tableCOS">
+                            <div id="tablefromCOS">
                                 <label for="from-table">From:</label>
                                     <table id="fromCOSTable">
                                         <tr>
@@ -168,19 +157,19 @@
                                         </tr>
                         
                                         <tr>
-                                            <td><input type="text" name="code[]" required></td>
-                                            <td><input type="text" name="subjectTitle[]" required></td>
-                                            <td><input type="text" name="day[]" required></td>
-                                            <td><input type="text" name="time[]" required></td>
-                                            <td><input type="text" name="room[]" required></td>
-                                            <td><input type="text" name="units[]" required></td>
+                                            <td><input type="text" name="fromCOS_code"></td>
+                                            <td><input type="text" name="fromCOS_subjectTitle"></td>
+                                            <td><input type="text" name="fromCOS_day"></td>
+                                            <td><input type="text" name="fromCOS_time"></td>
+                                            <td><input type="text" name="fromCOS_room"></td>
+                                            <td><input type="text" name="fromCOS_units"></td>
                                             <td><button class="delete-row2" onclick="deleteRow(this)">Delete Row</button></td>
                                         </tr>
                                     </table>
                                 <button id="add-row-from" type="button">Add Row</button>
                             </div>
                     
-                            <div id="table-container-to">
+                            <div id="tabletoCOS">
                                 <label for="to-table">To:</label>
                                     <table id="toCOSTable">
                                         <tr>
@@ -194,28 +183,17 @@
                                         </tr>
 
                                         <tr>
-                                            <td><input type="text" name="to-code[]" required></td>
-                                            <td><input type="text" name="to-subjectTitle[]" required></td>
-                                            <td><input type="text" name="to-day[]" required></td>
-                                            <td><input type="text" name="to-time[]" required></td>
-                                            <td><input type="text" name="to-room[]" required></td>
-                                            <td><input type="text" name="to-units[]" required></td>
+                                            <td><input type="text" name="toCOS_code"></td>
+                                            <td><input type="text" name="toCOS_subjectTitle"></td>
+                                            <td><input type="text" name="toCOS_day"></td>
+                                            <td><input type="text" name="toCOS_time"></td>
+                                            <td><input type="text" name="toCOS_room"></td>
+                                            <td><input type="text" name="toCOS_units"></td>
                                             <td><button class="delete-row3" onclick="deleteRow(this)">Delete Row</button></td>
                                         </tr>
                                     </table>
                                 <button id="add-row-to" type="button">Add Row</button>
                             </div>
-
-                        <div class="alignmentCOS">
-                            <label for="number-of-units">NUMBER OF UNITS (REGISTRATION CERTIFICATE):</label>
-                            <input type="text" id="number-of-units" name="number-of-units" required></input>
-                        
-                            <label for="number-of-units-added">NUMBER OF UNITS TO BE ADDED:</label>
-                            <input type="text" id="number-of-units-added" name="number-of-units-added" required></input>
-                        
-                            <label for="total-units">TOTAL NUMBER OF UNITS ENROLLED:</label>
-                            <input type="text" id="total-units" name="total-units" required></input>
-                        </div>
                     </div>
 
                     <div class="box" id="contentW">
@@ -232,29 +210,32 @@
                                         <th>Action</th>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" name="code[]" required></td>
-                                        <td><input type="text" name="subjectTitle[]" required></td>
-                                        <td><input type="text" name="day[]" required></td>
-                                        <td><input type="text" name="time[]" required></td>
-                                        <td><input type="text" name="room[]" required></td>
-                                        <td><input type="text" name="units[]" required></td>
+                                        <td><input type="text" name="W_code"></td>
+                                        <td><input type="text" name="W_subjectTitle"></td>
+                                        <td><input type="text" name="W_day"></td>
+                                        <td><input type="text" name="W_time"></td>
+                                        <td><input type="text" name="W_room"></td>
+                                        <td><input type="text" name="W_units"></td>
                                         <td><button class="delete-row4" onclick="deleteRow(this)">Delete Row</button></td>
                                     </tr>
                                 </table>
                                 <button id="add-row-W" type="button">Add Row</button>
                             </div>
-
-                        <div class="alignmentW">
-                            <label for="number-of-units">NUMBER OF UNITS (REGISTRATION CERTIFICATE):</label>
-                            <input type="text" id="number-of-units" name="number-of-units" required></input>
-                        
-                            <label for="total-units">TOTAL NUMBER OF UNITS ENROLLED:</label>
-                            <input type="text" id="total-units" name="total-units" required></input>
-                        </div>
                     </div> 
+
+                <div class="alignment" id="alignment">
+                    <label for="number-of-units">NUMBER OF UNITS (REGISTRATION CERTIFICATE):</label>
+                    <input type="text" id="number-of-units" name="number_of_units" required></input>
+
+                    <label for="number-of-units-added">NUMBER OF UNITS TO BE ADDED:</label>
+                    <input type="text" id="number-of-units-added" name="number_of_units_added" required></input>
+
+                    <label for="total-units">TOTAL NUMBER OF UNITS ENROLLED:</label>
+                    <input type="text" id="total-units" name="total_units" required></input>
+                </div>   
                 
                 <div id="submit-button">
-                    <input type="submit" id="submitForm" value="Submit">
+                    <input type="submit" id="submitForm" value="Submit"/>
                 </div>
             </form>
         </div>

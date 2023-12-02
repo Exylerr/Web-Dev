@@ -11,22 +11,29 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tableCOS = document.getElementById("contentCOS");
+    var tablefromCOS = document.getElementById("contentCOS");
+    var tabletoCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW");
-    
+    var alignment = document.getElementById("alignment");
+
+    // Disable all table forms by default
+    [tableAOS, tablefromCOS, tabletoCOS, tableW].forEach(table => {
+        table.style.display = "none";
+    });
 
     // Hide all sections by default
-    [reasonSection, dateSection, tableAOS, tableCOS, tableW].forEach(section => {
+    [reasonSection, dateSection, alignment, submitButton].forEach(section => {
         section.style.display = "none";
     });
 
-    // Check the selected option and display the corresponding section
+    // Check the selected option and enable the corresponding table form
     switch (aceSelect.value) {
         case "AOS":
             tableAOS.style.display = "block";
             break;
         case "COS":
-            tableCOS.style.display = "block";
+            tablefromCOS.style.display = "block";
+            tabletoCOS.style.display = "block";
             break;
         case "W":
             tableW.style.display = "block";
@@ -35,15 +42,16 @@ function displaySections() {
 
     // Check if any option in "Application for Change of Enrollment" is selected
     if (aceSelect.value !== "") {
-        [reasonSection, dateSection, submitButton].forEach(element => {
+        [reasonSection, dateSection, alignment, submitButton].forEach(element => {
             element.style.display = "block";
         });
     } else {
-        [reasonSection, dateSection, submitButton].forEach(element => {
+        [reasonSection, dateSection, alignment, submitButton].forEach(element => {
             element.style.display = "none";
         });
     }
 }
+
 
 
 // Event listener for the "Add Row" button for TableAOS
@@ -63,12 +71,12 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="AOS_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="AOS_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="AOS_day" required>';
+        timeCell.innerHTML = '<input type="text" name="AOS_time" required>';
+        roomCell.innerHTML = '<input type="text" name="AOS_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="AOS_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -90,12 +98,12 @@ document.getElementById("add-row-from").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="fromCos_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="fromCos_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="fromCos_day" required>';
+        timeCell.innerHTML = '<input type="text" name="fromCos_time" required>';
+        roomCell.innerHTML = '<input type="text" name="fromCos_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="fromCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -116,12 +124,12 @@ document.getElementById("add-row-to").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="toCos_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="toCos_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="toCos_day" required>';
+        timeCell.innerHTML = '<input type="text" name="toCos_time" required>';
+        roomCell.innerHTML = '<input type="text" name="toCos_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="toCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -143,12 +151,12 @@ document.getElementById("add-row-W").addEventListener("click", function () {
         const deleteCell = newRow.insertCell(6);
 
         // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="code[]" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="subjectTitle[]" required>';
-        dayCell.innerHTML = '<input type="text" name="day[]" required>';
-        timeCell.innerHTML = '<input type="text" name="time[]" required>';
-        roomCell.innerHTML = '<input type="text" name="room[]" required>';
-        unitsCell.innerHTML = '<input type="text" name="units[]" required>';
+        codeCell.innerHTML = '<input type="text" name="W_code" required>';
+        subjectTitleCell.innerHTML = '<input type="text" name="W_subjectTitle" required>';
+        dayCell.innerHTML = '<input type="text" name="W_day" required>';
+        timeCell.innerHTML = '<input type="text" name="W_time" required>';
+        roomCell.innerHTML = '<input type="text" name="W_room" required>';
+        unitsCell.innerHTML = '<input type="text" name="W_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
@@ -240,7 +248,7 @@ function validateDate() {
 
     // Check if the value is not an empty string
     if (!dateInput.value) {
-        alert("Please select a date");
+        alert("Please select a Date");
         return false;
     }
 
@@ -252,7 +260,7 @@ function validateReason() {
     var reasonInput = document.getElementById("Reasons");
 
     if (reasonInput.value.trim().length < 5) {
-        alert("Please enter a reason");
+        alert("Please enter a Reason");
         reasonInput.value = ""; // Clear the input field
         return false;
     }
@@ -279,9 +287,33 @@ function validateTableAOS() {
     return true;
 }
 
-// Function to validate TableCOS rows
-function validateTableCOS() {
+// Function to validate TablefromCOS rows
+function validateTablefromCOS() {
     var fromTable = document.getElementById("fromCOSTable");
+
+    var fromRows = fromTable.getElementsByTagName("tr");
+    var toRows = toTable.getElementsByTagName("tr");
+
+    for (var i = 1; i < fromRows.length; i++) {
+        var fromCells = fromRows[i].getElementsByTagName("td");
+        var toCells = toRows[i].getElementsByTagName("td");
+
+        for (var j = 0; j < fromCells.length - 1; j++) { // Exclude the last cell with the delete button
+            var fromInput = fromCells[j].getElementsByTagName("input")[0];
+            var toInput = toCells[j].getElementsByTagName("input")[0];
+
+            if (fromInput.value.trim() === "" || toInput.value.trim() === "") {
+                alert("Please fill in all fields in the Change of Subject table");
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+// Function to validate TabletoCOS rows
+function validateTabletoCOS() {
     var toTable = document.getElementById("toCOSTable");
 
     var fromRows = fromTable.getElementsByTagName("tr");
@@ -354,8 +386,8 @@ function validateForm(event) {
     var isTotalUnitsValid = validateNumberField("total-units", "Total Number of Units Enrolled");
 
     var selectedACE = document.getElementById("ACE").value;
-    
-    // Additional check for presence of values in required fields
+
+    // Additional check for the presence of values in required fields
     if (selectedACE === "AOS") {
         var isTableAOSValid = validateTableAOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
@@ -366,10 +398,19 @@ function validateForm(event) {
             return false;
         }
     } else if (selectedACE === "COS") {
-        var isTableCOSValid = validateTableCOS();
+        var isTablefromCOSValid = validateTablefromCOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
             !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid) {
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTablefromCOSValid) {
+            console.log("Validation failed");
+            if (event) event.preventDefault(); // Prevent form submission if validation fails
+            return false;
+        }
+    } else if (selectedACE === "COS") {
+        var isTabletoCOSValid = validateTabletoCOS();
+        if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
+            !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTabletoCOSValid) {
             console.log("Validation failed");
             if (event) event.preventDefault(); // Prevent form submission if validation fails
             return false;
@@ -416,15 +457,16 @@ document.getElementById("total-units").addEventListener("input", function () {
     validateNumberField("total-units", "Total Number of Units Enrolled");
 });
 
+// Add event listener to the submit button
 if (submitButton) {
     submitButton.addEventListener("click", function (event) {
         console.log("Submit button clicked");
         if (!validateForm(event)) {
-            // event.preventDefault(); // Prevent form submission if validation fails
+            event.preventDefault(); // Prevent form submission if validation fails
         } else {
             console.log("Submission successful");
             alert("Submission successful! Please Check your PUP Webmail for Updates"); // Show alert for successful submission
-            window.location.reload(); // Reload the page
-        } 
+            // You can perform any other actions here if needed
+        }
     });
 }

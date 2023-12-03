@@ -1,8 +1,7 @@
 function redirectToApplicationPage() {
     window.location.href = 'ACE-FORM.html';
-  }
+}
 
-/* Global function*/
 var submitButton = document.getElementById("submit-button");
 
 /*Function for displaying or hiding */
@@ -78,6 +77,9 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
         roomCell.innerHTML = '<input type="text" name="AOS_room" required>';
         unitsCell.innerHTML = '<input type="text" name="AOS_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+
+        console.log("Added row for 'AOSTable'");
+        console.log("Row data:", newRow.innerHTML);
     }
 });
 
@@ -105,8 +107,13 @@ document.getElementById("add-row-from").addEventListener("click", function () {
         roomCell.innerHTML = '<input type="text" name="fromCos_room" required>';
         unitsCell.innerHTML = '<input type="text" name="fromCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+
+        // Log statement for debugging
+        console.log("Added row for 'fromCOSTable'");
+        console.log("Row data:", newRow.innerHTML);
     }
 });
+
 // Event listener for the "Add Row" button for toCOSTable
 document.getElementById("add-row-to").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
@@ -131,6 +138,9 @@ document.getElementById("add-row-to").addEventListener("click", function () {
         roomCell.innerHTML = '<input type="text" name="toCos_room" required>';
         unitsCell.innerHTML = '<input type="text" name="toCos_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+
+        console.log("Added row for 'toCOSTable'");
+        console.log("Row data:", newRow.innerHTML);
     }
 });
 
@@ -158,8 +168,58 @@ document.getElementById("add-row-W").addEventListener("click", function () {
         roomCell.innerHTML = '<input type="text" name="W_room" required>';
         unitsCell.innerHTML = '<input type="text" name="W_units" required>';
         deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+
+        console.log("Added row for 'WTable'");
+        console.log("Row data:", newRow.innerHTML);
     }
 });
+
+// Event listener for the "Add Row" button for TableAOS
+document.getElementById("add-row-AOS").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "AOS") {
+        addRowToBackend("AOS");
+    }
+});
+
+// Event listener for the "Add Row" button for fromCOSTable
+document.getElementById("add-row-from").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "COS") {
+        addRowToBackend("fromCOS");
+    }
+});
+
+// Event listener for the "Add Row" button for toCOSTable
+document.getElementById("add-row-to").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "COS") {
+        addRowToBackend("toCOS");
+    }
+});
+
+// Event listener for the "Add Row" button for tableW
+document.getElementById("add-row-W").addEventListener("click", function () {
+    const selectedACE = document.getElementById("ACE").value;
+
+    if (selectedACE === "W") {
+        addRowToBackend("W");
+    }
+});
+
+// Function to add a row to the backend (Google Sheets)
+function addRowToBackend(sheetName) {
+    google.script.run.doPost({
+        ACE: sheetName,
+        // Add other parameters as needed
+    }, function(response) {
+        console.log(response);
+    });
+}
+
 
 // Function to delete a row
 function deleteRow(button) {

@@ -174,6 +174,7 @@ document.getElementById("add-row-W").addEventListener("click", function () {
     }
 });
 
+
 // Event listener for the "Add Row" button for TableAOS
 document.getElementById("add-row-AOS").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
@@ -209,6 +210,17 @@ document.getElementById("add-row-W").addEventListener("click", function () {
         addRowToBackend("W");
     }
 });
+
+initializeAddRowButton("add-row-AOS", "AOS");
+
+// Event listener for the "Add Row" button for fromCOSTable
+initializeAddRowButton("add-row-from", "fromCOS");
+
+// Event listener for the "Add Row" button for toCOSTable
+initializeAddRowButton("add-row-to", "toCOS");
+
+// Event listener for the "Add Row" button for tableW
+initializeAddRowButton("add-row-W", "W");
 
 // Function to add a row to the backend (Google Sheets)
 function addRowToBackend(sheetName) {

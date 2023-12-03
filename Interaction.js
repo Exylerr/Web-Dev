@@ -1,22 +1,7 @@
 function redirectToApplicationPage() {
-    var formData = collectFormData();
-
-    // Call Google Apps Script function to submit data
-    google.script.run.doPost(formData);
-
-    // Redirect to the application page
     window.location.href = 'ACE-FORM.html';
-}
-function collectFormData() {
-    // Collect form data and return as an object
-    // Modify this function based on your form structure
-    var formData = {
-        ACE: document.getElementById("ACE").value,
-        // Add other form fields as needed
-    };
+  }
 
-    return formData;
-}
 /* Global function*/
 var submitButton = document.getElementById("submit-button");
 

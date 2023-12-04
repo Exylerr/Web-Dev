@@ -275,8 +275,10 @@ function validateTableAOS() {
 
     for (var i = 1; i < rows.length; i++) {
         var cells = rows[i].getElementsByTagName("td");
+
         for (var j = 0; j < cells.length - 1; j++) { // Exclude the last cell with the delete button
             var input = cells[j].getElementsByTagName("input")[0];
+
             if (input.value.trim() === "") {
                 alert("Please fill in all fields in the Adding of Subject/s table");
                 return false;
@@ -290,6 +292,7 @@ function validateTableAOS() {
 // Function to validate TablefromCOS rows
 function validateTablefromCOS() {
     var fromTable = document.getElementById("fromCOSTable");
+    var toTable = document.getElementById("toCOSTable"); // Added line to get the "toCOSTable" table
 
     var fromRows = fromTable.getElementsByTagName("tr");
     var toRows = toTable.getElementsByTagName("tr");
@@ -315,6 +318,7 @@ function validateTablefromCOS() {
 // Function to validate TabletoCOS rows
 function validateTabletoCOS() {
     var toTable = document.getElementById("toCOSTable");
+    var fromTable = document.getElementById("fromCOSTable"); // Added line to get the "fromCOSTable" table
 
     var fromRows = fromTable.getElementsByTagName("tr");
     var toRows = toTable.getElementsByTagName("tr");
@@ -344,6 +348,7 @@ function validateTableW() {
 
     for (var i = 1; i < rows.length; i++) {
         var cells = rows[i].getElementsByTagName("td");
+        
         for (var j = 0; j < cells.length - 1; j++) { // Exclude the last cell with the delete button
             var input = cells[j].getElementsByTagName("input")[0];
             if (input.value.trim() === "") {
@@ -434,8 +439,38 @@ function validateForm(event) {
         }
     }
 
+    // Populate the hidden input field with the table data
+    var tableData = getTableData();
+    document.getElementById("tableData").value = JSON.stringify(tableData);
+
     console.log("Validation successful");
     return true;
+}
+
+// Function to get table data from the dynamically added rows
+function getTableData() {
+    var selectedACE = document.getElementById("ACE").value;
+    var tableData = [];
+
+    if (selectedACE === "AOS" || selectedACE === "COS" || selectedACE === "W") {
+        var tableId = selectedACE + "Table";
+        var table = document.getElementById(tableId);
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var rowData = {};
+
+            for (var j = 0; j < cells.length - 1; j++) {
+                var input = cells[j].getElementsByTagName("input")[0];
+                rowData[input.name] = input.value.trim();
+            }
+
+            tableData.push(rowData);
+        }
+    }
+
+    return tableData;
 }
 
 // Add event listeners to call validation functions on relevant events

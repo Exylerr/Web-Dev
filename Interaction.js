@@ -296,6 +296,12 @@ function validateTableCOS() {
     var fromRows = fromTable.getElementsByTagName("tr");
     var toRows = toTable.getElementsByTagName("tr");
 
+    // Check if the number of rows in fromCOSTable and toCOSTable is the same
+    if (fromRows.length !== toRows.length) {
+        alert("Please make sure there are the same number of rows in both From COS and To COS tables");
+        return false;
+    }
+
     for (var i = 1; i < fromRows.length; i++) {
         var fromCells = fromRows[i].getElementsByTagName("td");
         var toCells = toRows[i].getElementsByTagName("td");
@@ -323,6 +329,7 @@ function validateTableCOS() {
 
     return true;
 }
+
 
 
 // Function to validate TableW rows
@@ -390,7 +397,7 @@ function validateForm(event) {
         var isTableCOSValid = validateTableCOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
             !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid()) {
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid) {
             console.log("Validation failed");
             if (event) event.preventDefault(); // Prevent form submission if validation fails
             return false;
@@ -427,29 +434,45 @@ function getTableData() {
     var selectedACE = document.getElementById("ACE").value;
     var tableData = [];
 
-    if (selectedACE === "AOS" || selectedACE === "COS" || selectedACE === "W") {
-        var tableId = selectedACE + "Table";
-        var table = document.getElementById(tableId);
-        var rows = table.getElementsByTagName("tr");
+    if (selectedACE === "AOS") {
+        tableData = getTableDataFromTable("AOSTable");
+    } else if (selectedACE === "COS") {
+        var fromTableData = getTableDataFromTable("fromCOSTable");
+        var toTableData = getTableDataFromTable("toCOSTable");
 
-        for (var i = 1; i < rows.length; i++) {
-            // Check if the row has the class indicating it's dynamically added
-            if (rows[i].classList.contains("dynamic-row")) {
-                var cells = rows[i].getElementsByTagName("td");
-                var rowData = {};
+        // Combine data from both tables
+        tableData = fromTableData.concat(toTableData);
+    } else if (selectedACE === "W") {
+        tableData = getTableDataFromTable("WTable");
+    }
 
-                for (var j = 0; j < cells.length - 1; j++) {
-                    var input = cells[j].getElementsByTagName("input")[0];
-                    rowData[input.name] = input.value.trim();
-                }
+    return tableData;
+}
 
-                tableData.push(rowData);
+// Helper function to get table data from a specific table
+function getTableDataFromTable(tableId) {
+    var tableData = [];
+    var table = document.getElementById(tableId);
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) {
+        // Check if the row has the class indicating it's dynamically added
+        if (rows[i].classList.contains("dynamic-row")) {
+            var cells = rows[i].getElementsByTagName("td");
+            var rowData = {};
+
+            for (var j = 0; j < cells.length - 1; j++) {
+                var input = cells[j].getElementsByTagName("input")[0];
+                rowData[input.name] = input.value.trim();
             }
+
+            tableData.push(rowData);
         }
     }
 
     return tableData;
 }
+
 
 
 // Add event listeners to call validation functions on relevant events

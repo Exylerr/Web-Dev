@@ -90,7 +90,7 @@ header {
 }
 
 /*Add Styling for Table forms*/
-#tableAOS, #tableCOS, #tableW {
+#tableAOS, #tablefromCOS, #tabletoCOS #tableW {
     align-items: center;
     justify-content: center;
     width: 100%;

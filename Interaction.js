@@ -105,7 +105,7 @@ document.getElementById("add-row-COS").addEventListener("click", function () {
         timeCellFrom.innerHTML = '<input type="text" name="fromCOS_time" required>';
         roomCellFrom.innerHTML = '<input type="text" name="fromCOS_room" required>';
         unitsCellFrom.innerHTML = '<input type="text" name="fromCOS_units" required>';
-        deleteCellFrom.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+        deleteCellFrom.innerHTML = '<button class="delete-row2" onclick="deleteRow(this)">Delete Row</button>';
 
         // Code to add a row for toCOS table
         const toTable = document.getElementById("toCOSTable");
@@ -127,7 +127,7 @@ document.getElementById("add-row-COS").addEventListener("click", function () {
         timeCellTo.innerHTML = '<input type="text" name="toCOS_time" required>';
         roomCellTo.innerHTML = '<input type="text" name="toCOS_room" required>';
         unitsCellTo.innerHTML = '<input type="text" name="toCOS_units" required>';
-        deleteCellTo.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+        deleteCellTo.innerHTML = '<button class="delete-row3" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
 

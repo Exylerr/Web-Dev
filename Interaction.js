@@ -437,7 +437,11 @@ function getTableData() {
     if (selectedACE === "AOS") {
         tableData = getTableDataFromTable("AOSTable");
     } else if (selectedACE === "COS") {
-        tableData = getPairedTableData("fromCOSTable", "toCOSTable");
+        var fromTableData = getTableDataFromTable("fromCOSTable");
+        var toTableData = getTableDataFromTable("toCOSTable");
+
+        // Combine data from both tables
+        tableData = fromTableData.concat(toTableData);
     } else if (selectedACE === "W") {
         tableData = getTableDataFromTable("WTable");
     }
@@ -445,56 +449,28 @@ function getTableData() {
     return tableData;
 }
 
-// Helper function to get paired table data from "fromCOS" and "toCOS" tables
-function getPairedTableData(fromTableId, toTableId) {
-    var fromTable = document.getElementById(fromTableId);
-    var toTable = document.getElementById(toTableId);
-    var fromRows = fromTable.getElementsByTagName("tr");
-    var toRows = toTable.getElementsByTagName("tr");
-    var pairedTableData = [];
+// Helper function to get table data from a specific table
+function getTableDataFromTable(tableId) {
+    var tableData = [];
+    var table = document.getElementById(tableId);
+    var rows = table.getElementsByTagName("tr");
 
-    // Check if the number of rows in "fromCOSTable" and "toCOSTable" is the same
-    if (fromRows.length !== toRows.length) {
-        alert("Please make sure there are the same number of rows in both From COS and To COS tables");
-        return pairedTableData;
-    }
-
-    for (var i = 1; i < fromRows.length; i++) {
-        // Check if the rows have the class indicating they're dynamically added
-        if (fromRows[i].classList.contains("dynamic-row") && toRows[i].classList.contains("dynamic-row")) {
-            var fromCells = fromRows[i].getElementsByTagName("td");
-            var toCells = toRows[i].getElementsByTagName("td");
+    for (var i = 1; i < rows.length; i++) {
+        // Check if the row has the class indicating it's dynamically added
+        if (rows[i].classList.contains("dynamic-row")) {
+            var cells = rows[i].getElementsByTagName("td");
             var rowData = {};
 
-            // Collect data from "fromCOS" table
-            for (var j = 0; j < fromCells.length - 1; j++) {
-                var fromInput = fromCells[j].getElementsByTagName("input")[0];
-                rowData[fromInput.name] = fromInput.value.trim();
+            for (var j = 0; j < cells.length - 1; j++) {
+                var input = cells[j].getElementsByTagName("input")[0];
+                rowData[input.name] = input.value.trim();
             }
 
-            // Collect data from "toCOS" table
-            for (var k = 0; k < toCells.length - 1; k++) {
-                var toInput = toCells[k].getElementsByTagName("input")[0];
-                rowData[toInput.name] = toInput.value.trim();
-            }
-
-            pairedTableData.push(rowData);
+            tableData.push(rowData);
         }
     }
 
-    return pairedTableData;
-}
-
-// Function to validate TableCOS rows
-function validateTableCOS() {
-    var pairedTableData = getPairedTableData("fromCOSTable", "toCOSTable");
-
-    if (pairedTableData.length === 0) {
-        // Validation failed if the tables are not paired correctly
-        return false;
-    }
-
-    return true;
+    return tableData;
 }
 
 

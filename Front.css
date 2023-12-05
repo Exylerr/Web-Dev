@@ -239,11 +239,13 @@ body {
     }
 
     .navbar a.title1 {
-        margin-left: 0; /* Adjust this value for smaller screens */
+        margin-left: 10px; /* Adjust this value for smaller screens */
+        font-size: 14px;
     }
 
     .navbar {
         padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px;
     }
 
     .navbar ul li {
@@ -254,4 +256,35 @@ body {
     .navbar ul li a {
         padding: 10px; /* Adjust padding for smaller screens */
     }
+    .site-footer-links {
+        margin: 0;
+        font-family: 'Tahoma';
+        font-size: 10px;
+    }
+    
+    .site-footer-link {
+        color: #fff;
+        /* Set link color */
+        text-decoration: none;
+        margin: 0 5px;
+    }
+    
+    .site-footer-link:hover {
+        text-decoration: underline;
+    }
+    .content img.AnotherPUPLogo {
+        width: 80px; /* Adjust size as needed */
+        margin: 20px auto; /* Center the image horizontally */
+        display: block;
+    }
+    .content h1 {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    .btn #applyButton {
+        width: 80%; /* Adjust the width as needed */
+        max-width: 200px; /* Set a maximum width */
+        margin: 10px 0; /* Adjust margin as needed */
+    }
+
 }

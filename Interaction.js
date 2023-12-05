@@ -330,8 +330,6 @@ function validateTableCOS() {
     return true;
 }
 
-
-
 // Function to validate TableW rows
 function validateTableW() {
     var table = document.getElementById("WTable");

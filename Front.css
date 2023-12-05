@@ -1,3 +1,4 @@
+
 /* front */
 * {
     margin: 0;
@@ -27,27 +28,28 @@ body {
 
 .navbar img.PUPlogo {
     width: 60px;
-    margin: 0 0 0 80px;
+    margin: 0 0 0 20px; /* Adjust margin for smaller screens */
 }
 
 .navbar a.title1 {
     font-size: 18px;
     color: #ffffff;
     text-decoration: none;
-    margin-left: 30px; /* Adjust this value to move the content to the left */
+    margin-left: 10px; /* Adjust this value to move the content to the left on smaller screens */
 }
 
 .navbar {
     width: 100%;
     margin: auto;
-    padding: 10px 50px;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
     align-items: center;
     justify-content: space-between;
     background-color: rgba(128, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     position: sticky;
-    z-index: 2; /* Set z-index to a higher value */
+    z-index: 2;
 }
 
 .navbar ul {
@@ -55,20 +57,25 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
 }
 
 .navbar ul li {
     position: relative;
+    margin-right: 10px; /* Adjust margin for smaller screens */
+}
+
+.navbar ul li:last-child {
+    margin-right: 0; /* Remove margin for the last item on smaller screens */
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    padding: 14px 16px;
+    padding: 14px 10px; /* Adjust padding for smaller screens */
     display: block;
 }
-
 .navbar ul li:hover > a {
     background-color: #800000;
 }
@@ -222,4 +229,29 @@ body {
 
 .site-footer-link:hover {
     text-decoration: underline;
+}
+
+
+/* Responsive Styles using Media Queries */
+@media screen and (max-width: 768px) {
+    .navbar img.PUPlogo {
+        margin: 0; /* Adjust margin for smaller screens */
+    }
+
+    .navbar a.title1 {
+        margin-left: 0; /* Adjust this value for smaller screens */
+    }
+
+    .navbar {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .navbar ul li {
+        margin-right: 0; /* Remove margin for all items on smaller screens */
+        margin-bottom: 10px; /* Add margin bottom to separate items on smaller screens */
+    }
+
+    .navbar ul li a {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
 }

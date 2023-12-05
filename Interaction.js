@@ -390,7 +390,7 @@ function validateForm(event) {
         var isTableCOSValid = validateTableCOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
             !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !validateTableCOS()) {
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid()) {
             console.log("Validation failed");
             if (event) event.preventDefault(); // Prevent form submission if validation fails
             return false;

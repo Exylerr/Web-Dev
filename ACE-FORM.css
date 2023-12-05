@@ -90,7 +90,7 @@ header {
 }
 
 /*Add Styling for Table forms*/
-#tableAOS, #tablefromCOS, #tabletoCOS #tableW {
+#tableAOS, #tableCOS, #tableW {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -127,7 +127,7 @@ header {
 }
 
 /* Style the "Add Row" button for both tables */
-#add-row-AOS, #add-row-from, #add-row-to, #add-row-W {
+#add-row-AOS, #add-row-COS, #add-row-W {
     margin: 10px 0 30px 0;
     background-color: #800000;
     color: white;

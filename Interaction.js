@@ -11,13 +11,12 @@ function displaySections() {
     var reasonSection = document.getElementById("contentReasons");
     var dateSection = document.getElementById("contentDate");
     var tableAOS = document.getElementById("contentAOS");
-    var tablefromCOS = document.getElementById("contentCOS");
-    var tabletoCOS = document.getElementById("contentCOS");
+    var tableCOS = document.getElementById("contentCOS");
     var tableW = document.getElementById("contentW");
     var alignment = document.getElementById("alignment");
 
     // Disable all table forms by default
-    [tableAOS, tablefromCOS, tabletoCOS, tableW].forEach(table => {
+    [tableAOS, tableCOS, tableW].forEach(table => {
         table.style.display = "none";
     });
 
@@ -32,8 +31,7 @@ function displaySections() {
             tableAOS.style.display = "block";
             break;
         case "COS":
-            tablefromCOS.style.display = "block";
-            tabletoCOS.style.display = "block";
+            tableCOS.style.display = "block";
             break;
         case "W":
             tableW.style.display = "block";
@@ -61,6 +59,7 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
     if (selectedACE === "AOS") {
         const table = document.getElementById("AOSTable");
         const newRow = table.insertRow(-1);
+        newRow.classList.add("dynamic-row");
 
         const codeCell = newRow.insertCell(0);
         const subjectTitleCell = newRow.insertCell(1);
@@ -81,58 +80,57 @@ document.getElementById("add-row-AOS").addEventListener("click", function () {
     }
 });
 
-// Event listener for the "Add Row" button for fromCOSTable
-document.getElementById("add-row-from").addEventListener("click", function () {
+// Event listener for the "Add Row" button for COS tables
+document.getElementById("add-row-COS").addEventListener("click", function () {
     const selectedACE = document.getElementById("ACE").value;
 
     if (selectedACE === "COS") {
-        const table = document.getElementById("fromCOSTable");
-        const newRow = table.insertRow(-1);
+        // Code to add a row for fromCOS table
+        const fromTable = document.getElementById("fromCOSTable");
+        const newRowFrom = fromTable.insertRow(-1);
+        newRowFrom.classList.add("dynamic-row");
 
-        const codeCell = newRow.insertCell(0);
-        const subjectTitleCell = newRow.insertCell(1);
-        const dayCell = newRow.insertCell(2);
-        const timeCell = newRow.insertCell(3);
-        const roomCell = newRow.insertCell(4);
-        const unitsCell = newRow.insertCell(5);
-        const deleteCell = newRow.insertCell(6);
+        const codeCellFrom = newRowFrom.insertCell(0);
+        const subjectTitleCellFrom = newRowFrom.insertCell(1);
+        const dayCellFrom = newRowFrom.insertCell(2);
+        const timeCellFrom = newRowFrom.insertCell(3);
+        const roomCellFrom = newRowFrom.insertCell(4);
+        const unitsCellFrom = newRowFrom.insertCell(5);
+        const deleteCellFrom = newRowFrom.insertCell(6);
 
-        // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="fromCos_code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="fromCos_subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="fromCos_day" required>';
-        timeCell.innerHTML = '<input type="text" name="fromCos_time" required>';
-        roomCell.innerHTML = '<input type="text" name="fromCos_room" required>';
-        unitsCell.innerHTML = '<input type="text" name="fromCos_units" required>';
-        deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
+        // Set content and attributes for cells in fromCOS table
+        codeCellFrom.innerHTML = '<input type="text" name="fromCOS_code" required>';
+        subjectTitleCellFrom.innerHTML = '<input type="text" name="fromCOS_subjectTitle" required>';
+        dayCellFrom.innerHTML = '<input type="text" name="fromCOS_day" required>';
+        timeCellFrom.innerHTML = '<input type="text" name="fromCOS_time" required>';
+        roomCellFrom.innerHTML = '<input type="text" name="fromCOS_room" required>';
+        unitsCellFrom.innerHTML = '<input type="text" name="fromCOS_units" required>';
+        deleteCellFrom.innerHTML = '<button class="delete-row2" onclick="deleteRow(this)">Delete Row</button>';
+
+        // Code to add a row for toCOS table
+        const toTable = document.getElementById("toCOSTable");
+        const newRowTo = toTable.insertRow(-1);
+        newRowTo.classList.add("dynamic-row");
+
+        const codeCellTo = newRowTo.insertCell(0);
+        const subjectTitleCellTo = newRowTo.insertCell(1);
+        const dayCellTo = newRowTo.insertCell(2);
+        const timeCellTo = newRowTo.insertCell(3);
+        const roomCellTo = newRowTo.insertCell(4);
+        const unitsCellTo = newRowTo.insertCell(5);
+        const deleteCellTo = newRowTo.insertCell(6);
+
+        // Set content and attributes for cells in toCOS table
+        codeCellTo.innerHTML = '<input type="text" name="toCOS_code" required>';
+        subjectTitleCellTo.innerHTML = '<input type="text" name="toCOS_subjectTitle" required>';
+        dayCellTo.innerHTML = '<input type="text" name="toCOS_day" required>';
+        timeCellTo.innerHTML = '<input type="text" name="toCOS_time" required>';
+        roomCellTo.innerHTML = '<input type="text" name="toCOS_room" required>';
+        unitsCellTo.innerHTML = '<input type="text" name="toCOS_units" required>';
+        deleteCellTo.innerHTML = '<button class="delete-row3" onclick="deleteRow(this)">Delete Row</button>';
     }
 });
-// Event listener for the "Add Row" button for toCOSTable
-document.getElementById("add-row-to").addEventListener("click", function () {
-    const selectedACE = document.getElementById("ACE").value;
 
-    if (selectedACE === "COS") {
-        const table = document.getElementById("toCOSTable");
-        const newRow = table.insertRow(-1);
-
-        const codeCell = newRow.insertCell(0);
-        const subjectTitleCell = newRow.insertCell(1);
-        const dayCell = newRow.insertCell(2);
-        const timeCell = newRow.insertCell(3);
-        const roomCell = newRow.insertCell(4);
-        const unitsCell = newRow.insertCell(5);
-        const deleteCell = newRow.insertCell(6);
-
-        // Set content and attributes for cells
-        codeCell.innerHTML = '<input type="text" name="toCos_code" required>';
-        subjectTitleCell.innerHTML = '<input type="text" name="toCos_subjectTitle" required>';
-        dayCell.innerHTML = '<input type="text" name="toCos_day" required>';
-        timeCell.innerHTML = '<input type="text" name="toCos_time" required>';
-        roomCell.innerHTML = '<input type="text" name="toCos_room" required>';
-        unitsCell.innerHTML = '<input type="text" name="toCos_units" required>';
-        deleteCell.innerHTML = '<button class="delete-row" onclick="deleteRow(this)">Delete Row</button>';
-    }
-});
 
 // Event listener for the "Add Row" button for tableW
 document.getElementById("add-row-W").addEventListener("click", function () {
@@ -141,6 +139,7 @@ document.getElementById("add-row-W").addEventListener("click", function () {
     if (selectedACE === "W") {
         const table = document.getElementById("WTable");
         const newRow = table.insertRow(-1);
+        newRow.classList.add("dynamic-row");
 
         const codeCell = newRow.insertCell(0);
         const subjectTitleCell = newRow.insertCell(1);
@@ -289,50 +288,40 @@ function validateTableAOS() {
     return true;
 }
 
-// Function to validate TablefromCOS rows
-function validateTablefromCOS() {
+// Function to validate TableCOS rows
+function validateTableCOS() {
     var fromTable = document.getElementById("fromCOSTable");
-    var toTable = document.getElementById("toCOSTable"); // Added line to get the "toCOSTable" table
-
-    var fromRows = fromTable.getElementsByTagName("tr");
-    var toRows = toTable.getElementsByTagName("tr");
-
-    for (var i = 1; i < fromRows.length; i++) {
-        var fromCells = fromRows[i].getElementsByTagName("td");
-        var toCells = toRows[i].getElementsByTagName("td");
-
-        for (var j = 0; j < fromCells.length - 1; j++) { // Exclude the last cell with the delete button
-            var fromInput = fromCells[j].getElementsByTagName("input")[0];
-            var toInput = toCells[j].getElementsByTagName("input")[0];
-
-            if (fromInput.value.trim() === "" || toInput.value.trim() === "") {
-                alert("Please fill in all fields in the Change of Subject table");
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
-
-// Function to validate TabletoCOS rows
-function validateTabletoCOS() {
     var toTable = document.getElementById("toCOSTable");
-    var fromTable = document.getElementById("fromCOSTable"); // Added line to get the "fromCOSTable" table
 
     var fromRows = fromTable.getElementsByTagName("tr");
     var toRows = toTable.getElementsByTagName("tr");
+
+    // Check if the number of rows in fromCOSTable and toCOSTable is the same
+    if (fromRows.length !== toRows.length) {
+        alert("Please make sure there are the same number of rows in both From COS and To COS tables");
+        return false;
+    }
 
     for (var i = 1; i < fromRows.length; i++) {
         var fromCells = fromRows[i].getElementsByTagName("td");
         var toCells = toRows[i].getElementsByTagName("td");
 
-        for (var j = 0; j < fromCells.length - 1; j++) { // Exclude the last cell with the delete button
+        // Validate From table
+        for (var j = 0; j < fromCells.length - 1; j++) {
             var fromInput = fromCells[j].getElementsByTagName("input")[0];
-            var toInput = toCells[j].getElementsByTagName("input")[0];
 
-            if (fromInput.value.trim() === "" || toInput.value.trim() === "") {
-                alert("Please fill in all fields in the Change of Subject table");
+            if (fromInput.value.trim() === "") {
+                alert("Please fill in all fields in the From COS table");
+                return false;
+            }
+        }
+
+        // Validate To table
+        for (var k = 0; k < toCells.length - 1; k++) {
+            var toInput = toCells[k].getElementsByTagName("input")[0];
+
+            if (toInput.value.trim() === "") {
+                alert("Please fill in all fields in the To COS table");
                 return false;
             }
         }
@@ -340,6 +329,8 @@ function validateTabletoCOS() {
 
     return true;
 }
+
+
 
 // Function to validate TableW rows
 function validateTableW() {
@@ -403,23 +394,14 @@ function validateForm(event) {
             return false;
         }
     } else if (selectedACE === "COS") {
-        var isTablefromCOSValid = validateTablefromCOS();
+        var isTableCOSValid = validateTableCOS();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
             !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTablefromCOSValid) {
+            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTableCOSValid) {
             console.log("Validation failed");
             if (event) event.preventDefault(); // Prevent form submission if validation fails
             return false;
-        }
-    } else if (selectedACE === "COS") {
-        var isTabletoCOSValid = validateTabletoCOS();
-        if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
-            !isAcademicYearValid || !isAcademicSemesterValid || !isDateValid || !isReasonValid ||
-            !isNumberOfUnitsValid || !isNumberOfUnitsAddedValid || !isTotalUnitsValid || !isTabletoCOSValid) {
-            console.log("Validation failed");
-            if (event) event.preventDefault(); // Prevent form submission if validation fails
-            return false;
-        }
+        }        
     } else if (selectedACE === "W") {
         var isTableWValid = validateTableW();
         if (!isStudentNumberValid || !isStudentNameValid || !isCourseSectionValid ||
@@ -452,12 +434,30 @@ function getTableData() {
     var selectedACE = document.getElementById("ACE").value;
     var tableData = [];
 
-    if (selectedACE === "AOS" || selectedACE === "COS" || selectedACE === "W") {
-        var tableId = selectedACE + "Table";
-        var table = document.getElementById(tableId);
-        var rows = table.getElementsByTagName("tr");
+    if (selectedACE === "AOS") {
+        tableData = getTableDataFromTable("AOSTable");
+    } else if (selectedACE === "COS") {
+        var fromTableData = getTableDataFromTable("fromCOSTable");
+        var toTableData = getTableDataFromTable("toCOSTable");
 
-        for (var i = 1; i < rows.length; i++) {
+        // Combine data from both tables
+        tableData = fromTableData.concat(toTableData);
+    } else if (selectedACE === "W") {
+        tableData = getTableDataFromTable("WTable");
+    }
+
+    return tableData;
+}
+
+// Helper function to get table data from a specific table
+function getTableDataFromTable(tableId) {
+    var tableData = [];
+    var table = document.getElementById(tableId);
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) {
+        // Check if the row has the class indicating it's dynamically added
+        if (rows[i].classList.contains("dynamic-row")) {
             var cells = rows[i].getElementsByTagName("td");
             var rowData = {};
 
@@ -472,6 +472,8 @@ function getTableData() {
 
     return tableData;
 }
+
+
 
 // Add event listeners to call validation functions on relevant events
 document.getElementById("stud_number").addEventListener("blur", validateStudentNumber);
@@ -501,7 +503,6 @@ if (submitButton) {
         } else {
             console.log("Submission successful");
             alert("Submission successful! Please Check your PUP Webmail for Updates"); // Show alert for successful submission
-            // You can perform any other actions here if needed
         }
     });
 }

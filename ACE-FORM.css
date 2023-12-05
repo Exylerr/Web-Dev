@@ -90,7 +90,7 @@ header {
 }
 
 /*Add Styling for Table forms*/
-#tableAOS, #tablefromCOS, #tabletoCOS #tableW {
+#tableAOS, #tableCOS, #tableW {
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -127,7 +127,245 @@ header {
 }
 
 /* Style the "Add Row" button for both tables */
-#add-row-AOS, #add-row-from, #add-row-to, #add-row-W {
+#add-row-AOS, #add-row-COS, #add-row-W {
+    margin: 10px 0 30px 0;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Delete row button */
+.delete-row, .delete-row2, .delete-row3, .delete-row4 {
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Units */
+.alignment {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 0 0px;
+}
+.alignment label {
+    margin: 0 10px 0 10px;
+    text-align: center;
+}
+.alignment input {
+    width: 12%;
+    margin: 0 15px 10px 0;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+#submitForm {
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 40px 0 0 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#submitForm:hover {
+    background-color: #600000;
+}
+
+/* Footer */
+footer {
+    background-color: #80000066;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+}
+.footer-links {
+    color: #ffffff;
+    font-family: 'Tahoma';
+    font-size: 12px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*Pop-up for rules*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    backdrop-filter: blur(10px);
+}
+.popup-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+}
+.close {
+    color: #800000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}.whole-page {
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('Images/PUP_Mabini_Campus_-_gate_and_pylon_(close-up)_(PUP,_Santa_Mesa,_Manila)(2018-03-06) copy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+form {
+    margin: 0 0 20px 0;
+}
+label {
+    display: inline-block;
+    font-size: small;
+    font-weight: bold;
+    color: #800000;
+    margin: 0 10px 1px 0;
+}
+h3 {
+    display: inline-block;
+    font-size: larger;
+    font-weight: bold;
+    color: #800000;
+    margin: 30px 0px 1px 0;
+}
+input, select {
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*Header*/
+header {
+    margin: 0 0 20px 0;
+}
+.navigation-bar {
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #80000066;
+    backdrop-filter: blur(10px);
+}
+.logo {
+    width: 60px;
+    margin: 0 0 0 120px;
+}
+.title {
+    margin: 0 0 0 30px;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Tahoma';
+}
+
+/* Main content */
+.page-background {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 40px;
+    margin: 10px auto 0 auto;
+    max-width: 80%;
+    max-height: auto;
+    box-shadow: 0 2px 4px #0000001a;
+}
+
+/* Add space between sections */
+.student_number, .student_name, .select-college, .course_section, .academic_year, .academic_semester, .ACE, .date, .reasons {
+    margin: 0 0 20px 0;
+}
+.date {
+    display: flex;
+    align-items: center;
+    max-width: 20%;
+    margin: 0 0 20px 0;
+}
+
+/*hiding the contents*/
+#contentReasons, #contentDate, #contentAOS, #contentCOS, #contentW, #alignment, #submit-button {
+    display: none;
+}
+
+/*Add Styling for Table forms*/
+#tableAOS, #tableCOS, #tableW {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Apply styling to the tables */
+#AOSTable, #fromCOSTable, #toCOSTable, #WTable {
+    margin: 10px auto;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+#AOSTable th, #fromCOSTable th, #toCOSTable th, #WTable th, #AOSTable td, #fromCOSTable td, #toCOSTable td, #WTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+#AOSTable th, #fromCOSTable th, #toCOSTable th, #WTable th {
+    background-color: #f2f2f2;
+}
+
+/* Style the editable cells when they are focused */
+#AOSTable td[contenteditable="true"]:focus, #fromCOSTable td[contenteditable="true"]:focus, #toCOSTable td[contenteditable="true"]:focus, #WTable td[contenteditable="true"]:focus {
+    outline: 2px solid #800000;
+}
+
+/* Style the table headers when they are focused */
+#AOSTable th[contenteditable="true"]:focus, #fromCOSTable th[contenteditable="true"]:focus, #toCOSTable th[contenteditable="true"]:focus, #WTable th[contenteditable="true"]:focus {
+    outline: 2px solid #800000;
+}
+
+/* Style the "Add Row" button for both tables */
+#add-row-AOS, #add-row-COS, #add-row-W {
     margin: 10px 0 30px 0;
     background-color: #800000;
     color: white;

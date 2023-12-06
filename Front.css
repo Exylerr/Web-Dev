@@ -7,17 +7,16 @@
 
 /* Body Styles */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Background Styles */
-.background {
-    width: 100%;
-    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Images/PUP.jpg);
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header1 {
@@ -27,21 +26,22 @@ body {
 
 .navbar img.PUPlogo {
     width: 60px;
-    margin: 0 0 0 80px;
+    margin: 0 0 0 20px; /* Adjust margin for smaller screens */
 }
 
 .navbar a.title1 {
     font-size: 18px;
     color: #ffffff;
     text-decoration: none;
-    margin-left: 30px;
+    margin-left: 30px; /* Adjust this value to move the content to the left */
 }
 
 .navbar {
     width: 100%;
     margin: auto;
-    padding: 10px 50px;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
     align-items: center;
     justify-content: space-between;
     background-color: rgba(128, 0, 0, 0.4);
@@ -55,20 +55,25 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
 }
 
 .navbar ul li {
     position: relative;
+    margin-right: 10px; /* Adjust margin for smaller screens */
+}
+
+.navbar ul li:last-child {
+    margin-right: 0; /* Remove margin for the last item on smaller screens */
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    padding: 14px 16px;
+    padding: 14px 10px; /* Adjust padding for smaller screens */
     display: block;
 }
-
 .navbar ul li:hover > a {
     background-color: #800000;
 }
@@ -194,32 +199,80 @@ body {
     width: 100%;
 }
 
-/* Site Footer */
-.site-footer {
-    background-color: rgba(128, 0, 0, 0.4);
+/* Footer */
+footer {
+    background-color: #80000066;
     backdrop-filter: blur(10px);
-    position: sticky;
-    color: #fff;
+    top: 100%;
+    margin: 20px 0 0 0;
+    padding: 10px;
     text-align: center;
-    padding: 22px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    position: sticky;
 }
-
-.site-footer-links {
-    margin: 0;
+.footer-links {
+    color: #ffffff;
     font-family: 'Tahoma';
     font-size: 12px;
 }
-
-.site-footer-link {
-    color: #fff;
-    /* Set link color */
+footer a {
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-
-.site-footer-link:hover {
+footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Styles using Media Queries */
+@media screen and (max-width: 768px) {
+    .navbar img.PUPlogo {
+        margin: 0; /* Adjust margin for smaller screens */
+    }
+
+    .navbar a.title1 {
+        margin-left: 10px; /* Adjust this value for smaller screens */
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px;
+    }
+
+    .navbar ul li {
+        margin-right: 0; /* Remove margin for all items on smaller screens */
+        margin-bottom: 10px; /* Add margin bottom to separate items on smaller screens */
+    }
+
+    .navbar ul li a {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .footer-links {
+        color: #ffffff;
+        font-family: 'Tahoma';
+        font-size: 10px;
+    }
+    
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+    .content img.AnotherPUPLogo {
+        width: 80px; /* Adjust size as needed */
+        margin: 20px auto; /* Center the image horizontally */
+        display: block;
+    }
+    .content h1 {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    .btn #applyButton {
+        width: 80%; /* Adjust the width as needed */
+        max-width: 200px; /* Set a maximum width */
+        margin: 10px 0; /* Adjust margin as needed */
+    }
 }

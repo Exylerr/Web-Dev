@@ -1,0 +1,80 @@
+const scriptProp = PropertiesService.getScriptProperties();
+
+function initialSetup() {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  scriptProp.setProperty('key', activeSpreadsheet.getId());
+}
+
+function getSheetName(selectedACE) {
+  switch (selectedACE) {
+    case 'AOS':
+      return 'AOS';
+    case 'COS':
+      return 'COS';
+    case 'W':
+      return 'W';
+    default:
+      return 'DefaultSheet';
+  }
+}
+
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'));
+
+    // Determine the sheet name based on the selected ACE option
+    const selectedACE = e.parameter['ACE'];
+    const sheetName = getSheetName(selectedACE);
+
+    if (sheetName === 'DefaultSheet') {
+      throw new Error('Invalid ACE option');
+    }
+
+    const sheet = doc.getSheetByName(sheetName);
+
+    if (!sheet) {
+      throw new Error(`Sheet ${sheetName} not found`);
+    }
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const nextRow = sheet.getLastRow() + 1;
+
+    const newRow = headers.map(function (header) {
+      return header === 'Date' ? new Date() : e.parameter[header];
+    });
+
+    // Append the main form data
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+
+    // Append the table data
+    if (selectedACE === 'AOS' || selectedACE === 'COS' || selectedACE === 'W') {
+      const tableRows = e.parameter['tableData'];
+
+      if (tableRows) {
+        const tableData = JSON.parse(tableRows);
+
+        for (const rowData of tableData) {
+          const tableRow = headers.map(function (header) {
+            return rowData[header] || ''; // Assuming the headers match the table column names
+          });
+
+          // Append the table data to the next row
+          sheet.appendRow(tableRow);
+        }
+      }
+    }
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
